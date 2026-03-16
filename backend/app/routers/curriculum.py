@@ -8,6 +8,7 @@ from app.core.database import get_db_session
 from app.dependencies import get_current_user
 from app.models.chapter import Chapter
 from app.models.subject import Subject
+from app.models.student import Student
 from app.schemas.curriculum import (
     ChapterSummary,
     CurriculumGenerateRequest,
@@ -26,6 +27,12 @@ async def generate_curriculum_endpoint(
 ):
     """Generate curriculum via Claude, or return existing one (idempotent)."""
     student_id = uuid.UUID(user["sub"])
+
+    effective_grade = data.grade
+    if not effective_grade:
+        student_result = await db.execute(select(Student).where(Student.id == student_id))
+        student = student_result.scalar_one_or_none()
+        effective_grade = student.grade if student and getattr(student, "grade", None) else "10"
 
     # Return existing curriculum—curricula are preserved on re-onboarding
     existing = await db.execute(
@@ -51,7 +58,7 @@ async def generate_curriculum_endpoint(
     try:
         curriculum = await generate_curriculum(
             subject_name=data.subject_name,
-            grade=data.grade,
+            grade=effective_grade,
             background=data.background,
             difficulty_level=data.difficulty_level,
         )

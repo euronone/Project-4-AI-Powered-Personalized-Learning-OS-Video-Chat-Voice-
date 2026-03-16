@@ -1,8 +1,16 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, model_validator
 
 
 class ActivitySubmitRequest(BaseModel):
     responses: dict
+
+    @model_validator(mode="before")
+    @classmethod
+    def normalize_legacy_response_key(cls, data):
+        # Backward compatibility: accept both `response` and `responses`.
+        if isinstance(data, dict) and "responses" not in data and "response" in data:
+            data = {**data, "responses": data["response"]}
+        return data
 
 
 class ActivityEvaluationResponse(BaseModel):

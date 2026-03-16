@@ -18,7 +18,8 @@ _session_factory = None
 def _get_engine():
     global _engine
     if _engine is None:
-        _engine = create_async_engine(settings.supabase_db_url, echo=False)
+        db_url = settings.supabase_db_url or settings.test_db_url
+        _engine = create_async_engine(db_url, echo=False)
     return _engine
 
 

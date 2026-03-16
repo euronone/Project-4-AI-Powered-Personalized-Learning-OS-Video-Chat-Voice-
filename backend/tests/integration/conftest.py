@@ -48,6 +48,17 @@ def auth_headers() -> dict:
     return {"Authorization": f"Bearer {make_test_jwt()}"}
 
 
+@pytest.fixture(autouse=True)
+def _set_test_jwt_secret_for_integration():
+    """Ensure app-side JWT verification uses the same secret as integration tokens."""
+    original = settings.supabase_jwt_secret
+    settings.supabase_jwt_secret = TEST_JWT_SECRET
+    try:
+        yield
+    finally:
+        settings.supabase_jwt_secret = original
+
+
 @pytest.fixture
 async def integration_client() -> AsyncClient:
     """Real HTTP client hitting the real app (real DB via TEST_DB_URL)."""
@@ -144,7 +155,7 @@ def mock_claude():
 
 @pytest.fixture
 def mock_openai_realtime():
-    """Patch httpx calls to OpenAI Realtime API."""
+    """Patch voice session service response for integration tests."""
     fake_session = {
         "id": "sess_test123",
         "model": settings.openai_realtime_model,
@@ -152,12 +163,5 @@ def mock_openai_realtime():
         "client_secret": {"value": "ek_test_secret"},
     }
 
-    async def _fake_post(self, url, *, headers, json, timeout):
-        response = MagicMock()
-        response.status_code = 200
-        response.json.return_value = fake_session
-        response.raise_for_status = MagicMock()
-        return response
-
-    with patch("httpx.AsyncClient.post", new=_fake_post):
+    with patch("app.routers.voice.create_realtime_session", new=AsyncMock(return_value=fake_session)):
         yield fake_session

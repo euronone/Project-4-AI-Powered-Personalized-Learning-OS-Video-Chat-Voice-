@@ -12,7 +12,7 @@ class ChapterSummary(BaseModel):
 
 class CurriculumGenerateRequest(BaseModel):
     subject_name: str
-    grade: str
+    grade: str | None = None
     background: str | None = None
     difficulty_level: str = "beginner"
 

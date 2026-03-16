@@ -16,6 +16,9 @@ from app.schemas.onboarding import OnboardingRequest, OnboardingResponse
 
 router = APIRouter()
 
+# Backward compatibility for tests that patch app.routers.onboarding.supabase_client
+supabase_client = None
+
 _ALLOWED_MIME: frozenset[str] = frozenset(settings.allowed_upload_extensions)
 _MAX_BYTES: int = settings.max_upload_size_mb * 1024 * 1024
 
