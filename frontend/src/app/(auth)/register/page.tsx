@@ -29,7 +29,7 @@ export default function RegisterPage() {
   }
 
   return (
-    <main className="flex min-h-screen items-center justify-center bg-dark">
+    <main className="flex min-h-screen items-center justify-center bg-dark pt-16">
       <div className="w-full max-w-md px-4">
         <div className="glass rounded-xl p-8">
           <div className="text-center mb-8">

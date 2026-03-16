@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import Sidebar from '@/components/common/Sidebar'
 
 export const metadata: Metadata = {
-  title: 'LearnOS — AI-Powered Learning',
+  title: 'AI Powered Personalized Learning OS',
   description: 'Your personalized AI-powered learning platform',
 }
 
@@ -15,9 +15,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className="font-sans antialiased">
-        <div className="flex h-screen bg-dark text-white">
+        <div className="min-h-screen bg-dark text-white">
           <Sidebar />
-          <main className="flex-1 overflow-y-auto">
+          <main className="min-h-screen overflow-y-auto">
             {children}
           </main>
         </div>

@@ -170,7 +170,7 @@ export default function ChatbotPage() {
   }
 
   return (
-    <div className="flex flex-col h-[calc(100vh-2rem)] max-w-4xl mx-auto p-6 pt-8">
+    <div className="flex flex-col h-[calc(100vh-5rem)] max-w-4xl mx-auto px-6 pt-20 pb-6">
       <div className="mb-6 flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-black text-white tracking-tight">AI Tutor</h1>
