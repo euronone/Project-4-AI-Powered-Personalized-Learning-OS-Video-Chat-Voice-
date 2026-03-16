@@ -14,8 +14,7 @@ const courses = [
     rating: 4.9,
     students: 4200,
     image: 'from-red-600 to-orange-500',
-    icon: '📐',
-    watermark: 'x²+y²',
+    coverImg: '/subjects/math.jpg',
     progress: 72
   },
   {
@@ -27,8 +26,7 @@ const courses = [
     rating: 4.8,
     students: 3100,
     image: 'from-blue-600 to-cyan-400',
-    icon: '⚡',
-    watermark: 'F=ma',
+    coverImg: '/subjects/physics.jpg',
     progress: 45
   },
   {
@@ -40,8 +38,7 @@ const courses = [
     rating: 4.7,
     students: 2800,
     image: 'from-green-500 to-emerald-400',
-    icon: '🧪',
-    watermark: 'H₂O',
+    coverImg: '/subjects/chemistry.jpg',
     progress: 60
   },
   {
@@ -53,8 +50,7 @@ const courses = [
     rating: 4.8,
     students: 3500,
     image: 'from-orange-500 to-amber-400',
-    icon: '🧬',
-    watermark: 'DNA',
+    coverImg: '/subjects/biology.jpg',
     progress: 33
   },
   {
@@ -66,8 +62,7 @@ const courses = [
     rating: 4.9,
     students: 5600,
     image: 'from-pink-500 to-rose-400',
-    icon: '📖',
-    watermark: 'ABC',
+    coverImg: '/subjects/english.jpg',
     progress: 85
   },
   {
@@ -79,8 +74,7 @@ const courses = [
     rating: 4.8,
     students: 6200,
     image: 'from-indigo-500 to-purple-500',
-    icon: '💻',
-    watermark: '</>',
+    coverImg: '/subjects/cs.jpg',
     progress: 20
   },
   {
@@ -92,8 +86,7 @@ const courses = [
     rating: 4.6,
     students: 2400,
     image: 'from-amber-600 to-orange-500',
-    icon: '🏛️',
-    watermark: 'ERA',
+    coverImg: '/subjects/history.jpg',
     progress: 55
   },
   {
@@ -105,8 +98,7 @@ const courses = [
     rating: 4.7,
     students: 1900,
     image: 'from-teal-500 to-cyan-400',
-    icon: '🌍',
-    watermark: 'MAP',
+    coverImg: '/subjects/geography.jpg',
     progress: 40
   },
   {
@@ -118,8 +110,7 @@ const courses = [
     rating: 4.5,
     students: 1500,
     image: 'from-violet-600 to-purple-500',
-    icon: '📊',
-    watermark: 'GDP',
+    coverImg: '/subjects/economics.jpg',
     progress: 28
   },
   {
@@ -131,8 +122,7 @@ const courses = [
     rating: 4.7,
     students: 3800,
     image: 'from-red-500 to-pink-500',
-    icon: '🔤',
-    watermark: 'अ',
+    coverImg: '/subjects/hindi.jpg',
     progress: 68
   },
   {
@@ -144,8 +134,7 @@ const courses = [
     rating: 4.6,
     students: 2200,
     image: 'from-lime-500 to-green-500',
-    icon: '🌿',
-    watermark: 'ECO',
+    coverImg: '/subjects/environmental.jpg',
     progress: 50
   },
   {
@@ -157,8 +146,7 @@ const courses = [
     rating: 4.8,
     students: 1700,
     image: 'from-fuchsia-500 to-purple-500',
-    icon: '🎨',
-    watermark: 'ART',
+    coverImg: '/subjects/art.jpg',
     progress: 15
   },
   {
@@ -170,8 +158,7 @@ const courses = [
     rating: 4.4,
     students: 2900,
     image: 'from-sky-500 to-blue-500',
-    icon: '🏃',
-    watermark: 'FIT',
+    coverImg: '/subjects/pe.jpg',
     progress: 0
   },
   {
@@ -183,8 +170,7 @@ const courses = [
     rating: 4.5,
     students: 1300,
     image: 'from-slate-500 to-zinc-500',
-    icon: '⚖️',
-    watermark: 'LAW',
+    coverImg: '/subjects/civics.jpg',
     progress: 0
   }
 ]
@@ -249,15 +235,9 @@ export default function CoursesPage() {
         {filteredCourses.map((course) => (
           <Link key={course.id} href={`/learn/${course.category.toLowerCase().replace(/ /g, '-')}`}>
             <div className="card-hover rounded-lg overflow-hidden bg-dark-100 border border-white/5 group cursor-pointer">
-              <div className={`h-[130px] bg-gradient-to-br ${course.image} relative overflow-hidden`}>
-                {/* Decorative shapes */}
-                <div className="absolute -top-4 -right-4 w-20 h-20 rounded-full bg-white/10" />
-                <div className="absolute -bottom-3 -left-3 w-14 h-14 rounded-full bg-black/10" />
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full bg-white/5" />
-                {/* Watermark */}
-                <span className="absolute bottom-1 right-2 text-[36px] font-black text-white/10 leading-none select-none">{course.watermark}</span>
-                {/* Icon */}
-                <span className="absolute top-3 left-3 text-3xl drop-shadow-lg">{course.icon}</span>
+              <div className="h-[130px] relative overflow-hidden">
+                <img src={course.coverImg} alt={course.title} className="absolute inset-0 w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                 {/* Play overlay */}
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 flex items-center justify-center transition-all">
                   <div className="w-10 h-10 bg-white/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity scale-75 group-hover:scale-100 shadow-2xl">
