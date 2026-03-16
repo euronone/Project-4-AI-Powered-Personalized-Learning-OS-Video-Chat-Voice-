@@ -1,19 +1,27 @@
-import type { Metadata } from "next";
-import "./globals.css";
+import './globals.css'
+import type { Metadata } from 'next'
+import Sidebar from '@/components/common/Sidebar'
 
 export const metadata: Metadata = {
-  title: "LearnOS - AI-Powered Personalized Learning",
-  description: "A Netflix-like AI education platform for K-12 students",
-};
+  title: 'AI Powered Personalized Learning OS',
+  description: 'Your personalized AI-powered learning platform',
+}
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" className="dark">
+      <body className="font-sans antialiased">
+        <div className="min-h-screen bg-dark text-white">
+          <Sidebar />
+          <main className="min-h-screen overflow-y-auto">
+            {children}
+          </main>
+        </div>
+      </body>
     </html>
-  );
+  )
 }

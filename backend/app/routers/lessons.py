@@ -1,4 +1,5 @@
 import json
+import logging
 import uuid
 
 from fastapi import APIRouter, Depends, HTTPException, status
@@ -14,10 +15,11 @@ from app.models.chat_message import ChatMessage
 from app.models.student import Student
 from app.models.subject import Subject
 from app.schemas.lesson import ChatRequest, ChapterStatusUpdate
-from app.services.curriculum_generator import generate_chapter_content
-from app.services.teaching_engine import stream_teaching_response
 from app.services.activity_evaluator import generate_activities
+from app.services.curriculum_generator import generate_chapter_content
+from app.services.teaching_engine import get_teaching_response, stream_teaching_response
 
+logger = logging.getLogger(__name__)
 router = APIRouter()
 
 
@@ -30,13 +32,10 @@ async def get_lesson_content(
     """Return chapter content. Generates via Claude on first request (lazy)."""
     chapter, student = await _get_chapter_and_student(chapter_id, user, db)
 
-    # Return cached content if the text field is already populated
     if chapter.content_json and chapter.content_json.get("text"):
         return chapter.content_json
 
-    subject_result = await db.execute(
-        select(Subject).where(Subject.id == chapter.subject_id)
-    )
+    subject_result = await db.execute(select(Subject).where(Subject.id == chapter.subject_id))
     subject = subject_result.scalar_one_or_none()
 
     try:
@@ -53,7 +52,6 @@ async def get_lesson_content(
             detail="Content generation failed. Please try again.",
         )
 
-    # Merge: keep learning_objectives from curriculum generation, add new content
     merged = {**(chapter.content_json or {}), **generated}
     chapter.content_json = merged
     await db.commit()
@@ -83,15 +81,9 @@ async def update_chapter_status(
         if next_chapter and next_chapter.status == "locked":
             next_chapter.status = "available"
 
-        # Auto-generate activities when chapter is completed
-        # Runs in the background via a fire-and-forget task so it doesn't block the response
-        subject_result = await db.execute(
-            select(Subject).where(Subject.id == chapter.subject_id)
-        )
+        subject_result = await db.execute(select(Subject).where(Subject.id == chapter.subject_id))
         subject = subject_result.scalar_one_or_none()
-        student_result = await db.execute(
-            select(Student).where(Student.id == uuid.UUID(user["sub"]))
-        )
+        student_result = await db.execute(select(Student).where(Student.id == uuid.UUID(user["sub"])))
         student = student_result.scalar_one_or_none()
 
         if chapter.content_json and chapter.content_json.get("key_concepts"):
@@ -110,7 +102,6 @@ async def update_chapter_status(
                         )
                     )
             except Exception:
-                # Activity generation failure must not block chapter completion
                 pass
 
     await db.commit()
@@ -126,9 +117,7 @@ async def list_chapter_activities(
     """List all activities for a chapter."""
     chapter, _ = await _get_chapter_and_student(chapter_id, user, db)
 
-    result = await db.execute(
-        select(Activity).where(Activity.chapter_id == chapter.id)
-    )
+    result = await db.execute(select(Activity).where(Activity.chapter_id == chapter.id))
     activities = result.scalars().all()
 
     return [
@@ -149,7 +138,6 @@ async def teaching_chat(
     chapter_uuid = chapter.id
     student_id = uuid.UUID(user["sub"])
 
-    # Persist student message before streaming begins
     db.add(
         ChatMessage(
             chapter_id=chapter_uuid,
@@ -171,12 +159,12 @@ async def teaching_chat(
                 student_background=student.background if student else None,
             ):
                 response_parts.append(chunk)
-                yield f"data: {json.dumps({'content': chunk})}\n\n"
+                yield f"data: {json.dumps({'content': chunk})}\\n\\n"
         except Exception:
-            yield f"data: {json.dumps({'error': 'Stream interrupted'})}\n\n"
+            logger.exception("SSE stream error")
+            yield f"data: {json.dumps({'error': 'Stream interrupted'})}\\n\\n"
         finally:
-            yield "data: [DONE]\n\n"
-            # Persist the complete tutor response in a fresh session
+            yield "data: [DONE]\\n\\n"
             full_content = "".join(response_parts)
             if full_content:
                 async with create_session() as persist_db:
@@ -189,6 +177,61 @@ async def teaching_chat(
                         )
                     )
                     await persist_db.commit()
+
+    return StreamingResponse(
+        event_stream(),
+        media_type="text/event-stream",
+        headers={"Cache-Control": "no-cache", "X-Content-Type-Options": "nosniff"},
+    )
+
+
+@router.post("/{chapter_id}/chat/sync")
+async def teaching_chat_sync(
+    chapter_id: str,
+    data: ChatRequest,
+    user: dict = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db_session),
+):
+    """Non-streaming chapter-aware teaching chat."""
+    chapter, student = await _get_chapter_and_student(chapter_id, user, db)
+
+    response = await get_teaching_response(
+        chapter_content=chapter.content_json or {},
+        student_message=data.message,
+        conversation_history=data.conversation_history,
+        student_grade=student.grade if student else "10",
+        student_background=student.background if student else None,
+    )
+    return {"role": "assistant", "content": response}
+
+
+@router.post("/chat")
+async def general_chat(data: ChatRequest):
+    """General AI tutor chat endpoint without chapter context."""
+    response = await get_teaching_response(
+        chapter_content=None,
+        student_message=data.message,
+        conversation_history=data.conversation_history,
+    )
+    return {"role": "assistant", "content": response}
+
+
+@router.post("/chat/stream")
+async def general_chat_stream(data: ChatRequest):
+    """General AI tutor streaming endpoint without chapter context."""
+
+    async def event_stream():
+        try:
+            async for chunk in stream_teaching_response(
+                chapter_content=None,
+                student_message=data.message,
+                conversation_history=data.conversation_history,
+            ):
+                yield f"data: {json.dumps(chunk)}\\n\\n"
+            yield "data: [DONE]\\n\\n"
+        except Exception:
+            logger.exception("SSE stream error")
+            yield f"data: {json.dumps('[ERROR]')}\\n\\n"
 
     return StreamingResponse(
         event_stream(),

@@ -3,7 +3,6 @@ from sqlalchemy.orm import DeclarativeBase
 
 from app.config import settings
 
-
 class Base(DeclarativeBase):
     pass
 
@@ -18,7 +17,7 @@ _session_factory = None
 def _get_engine():
     global _engine
     if _engine is None:
-        db_url = settings.supabase_db_url or settings.test_db_url
+        db_url = settings.supabase_db_url or settings.test_db_url or "sqlite+aiosqlite:///./learnos_dev.db"
         _engine = create_async_engine(db_url, echo=False)
     return _engine
 
