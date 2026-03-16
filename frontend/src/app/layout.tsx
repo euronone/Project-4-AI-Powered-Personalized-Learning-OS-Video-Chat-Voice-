@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import Sidebar from '@/components/common/Sidebar'
 
 export const metadata: Metadata = {
-  title: 'LearnOS — AI-Powered Learning',
+  title: 'AI Powered Personalized Learning OS',
   description: 'Your personalized AI-powered learning platform',
 }
 

@@ -54,7 +54,7 @@ export default function OnboardingPage() {
             ))}
           </div>
 
-          <h1 className="text-2xl font-bold text-white mb-1">Welcome to LearnOS</h1>
+          <h1 className="text-2xl font-bold text-white mb-1">Welcome to AI Powered Personalized Learning OS</h1>
           <p className="text-white/40 text-sm mb-6">Let&apos;s personalize your learning experience</p>
 
           {/* Step content */}

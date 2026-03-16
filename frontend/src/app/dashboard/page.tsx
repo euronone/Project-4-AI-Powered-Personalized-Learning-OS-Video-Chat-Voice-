@@ -157,7 +157,7 @@ export default function DashboardPage() {
         </div>
       </section>
 
-      {/* New to LearnOS Row */}
+      {/* New to AI Powered Personalized Learning OS Row */}
       <section className="px-10 mb-12">
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-lg font-bold text-white">New to Explore</h2>

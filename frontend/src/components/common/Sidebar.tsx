@@ -40,7 +40,7 @@ export default function Sidebar() {
             <GraduationCap className="w-5 h-5 text-white" />
           </div>
           <div>
-            <h1 className="text-lg font-bold text-white tracking-tight">LearnOS</h1>
+            <h1 className="text-lg font-bold text-white tracking-tight">AI Learning OS</h1>
           </div>
         </Link>
       </div>
