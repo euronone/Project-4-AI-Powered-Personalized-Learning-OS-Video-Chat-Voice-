@@ -7,6 +7,7 @@ class ChapterSummary(BaseModel):
     title: str
     description: str
     status: str = "locked"
+    learning_objectives: list[str] = []
 
 
 class CurriculumGenerateRequest(BaseModel):

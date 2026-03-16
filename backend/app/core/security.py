@@ -15,3 +15,7 @@ def verify_supabase_jwt(token: str) -> dict | None:
         return payload
     except JWTError:
         return None
+
+
+# Explicit alias for WebSocket use (JWT arrives via query param, not header)
+verify_supabase_jwt_ws = verify_supabase_jwt
