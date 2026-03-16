@@ -3,7 +3,8 @@ from sqlalchemy.orm import DeclarativeBase
 
 from app.config import settings
 
-engine = create_async_engine(settings.supabase_db_url, echo=False)
+_db_url = settings.supabase_db_url or "sqlite+aiosqlite:///./learnos_dev.db"
+engine = create_async_engine(_db_url, echo=False)
 async_session = async_sessionmaker(engine, class_=AsyncSession, expire_on_commit=False)
 
 
