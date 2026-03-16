@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { Play, Clock, Flame, TrendingUp, BookOpen, ChevronRight, Star } from "lucide-react";
+import { Play, Clock, Flame, TrendingUp, BookOpen, ChevronRight, Star, Video } from "lucide-react";
 
 const continueWatching = [
   { id: 'mathematics', name: "Mathematics", chapter: "Quadratic Equations", progress: 72, image: "from-red-600 to-orange-500", time: "2h left", coverImg: "/subjects/math.jpg" },
@@ -27,6 +27,17 @@ const newSubjects = [
   { name: "Economics", desc: "Micro & Macro", image: "from-cyan-500 to-blue-400", coverImg: "/subjects/economics.jpg" },
   { name: "Geography", desc: "Physical & Human", image: "from-teal-500 to-green-400", coverImg: "/subjects/geography.jpg" },
   { name: "Civics & Government", desc: "Democracy & Rights", image: "from-slate-500 to-zinc-400", coverImg: "/subjects/civics.jpg" },
+];
+
+const recommendedVideos = [
+  { id: 'v1', title: "Understanding Quadratic Equations", subject: "Mathematics", duration: "32:15", views: "12.4K", coverImg: "/subjects/math.jpg" },
+  { id: 'v2', title: "Newton's Laws — Visual Experiments", subject: "Physics", duration: "45:00", views: "18.2K", coverImg: "/subjects/physics.jpg" },
+  { id: 'v3', title: "Organic Chemistry — Bonding Explained", subject: "Chemistry", duration: "28:40", views: "9.7K", coverImg: "/subjects/chemistry.jpg" },
+  { id: 'v4', title: "DNA Replication & Protein Synthesis", subject: "Biology", duration: "38:20", views: "14.1K", coverImg: "/subjects/biology.jpg" },
+  { id: 'v5', title: "Python Basics — Variables & Loops", subject: "Computer Science", duration: "52:10", views: "22.5K", coverImg: "/subjects/cs.jpg" },
+  { id: 'v6', title: "Ancient Rome — Rise & Fall", subject: "History", duration: "41:30", views: "8.3K", coverImg: "/subjects/history.jpg" },
+  { id: 'v7', title: "Macroeconomics — Supply & Demand", subject: "Economics", duration: "35:45", views: "6.8K", coverImg: "/subjects/economics.jpg" },
+  { id: 'v8', title: "Shakespeare's Hamlet — Deep Dive", subject: "English", duration: "47:20", views: "11.6K", coverImg: "/subjects/english.jpg" },
 ];
 
 export default function DashboardPage() {
@@ -149,6 +160,48 @@ export default function DashboardPage() {
                   <div className="flex items-center gap-2 mt-1">
                     <Star className="w-3 h-3 text-yellow-400 fill-yellow-400" />
                     <span className="text-[11px] text-white/50">{item.rating} • {item.students} students</span>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* Recommended Videos Row */}
+      <section className="px-10 mb-10">
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="text-lg font-bold text-white flex items-center gap-2">
+            <Video className="w-4 h-4 text-neon-purple" /> Recommended Videos
+          </h2>
+          <Link href="/video" className="text-xs text-white/40 hover:text-white/70 flex items-center gap-1 transition-colors">
+            See all <ChevronRight className="w-3.5 h-3.5" />
+          </Link>
+        </div>
+        <div className="scroll-row">
+          {recommendedVideos.map((vid) => (
+            <Link key={vid.id} href="/video" className="w-[260px] group">
+              <div className="card-hover rounded-lg overflow-hidden bg-dark-100 border border-white/5">
+                <div className="h-[146px] relative overflow-hidden">
+                  <img src={vid.coverImg} alt={vid.title} className="absolute inset-0 w-full h-full object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                  {/* Duration badge */}
+                  <span className="absolute bottom-2 right-2 text-[10px] font-semibold bg-black/70 text-white px-1.5 py-0.5 rounded backdrop-blur-sm">
+                    {vid.duration}
+                  </span>
+                  {/* Play overlay */}
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <div className="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center shadow-2xl">
+                      <Play className="w-5 h-5 text-dark fill-current ml-0.5" />
+                    </div>
+                  </div>
+                </div>
+                <div className="p-3">
+                  <p className="text-[13px] font-semibold text-white leading-tight line-clamp-2 mb-1">{vid.title}</p>
+                  <div className="flex items-center gap-2 text-[11px] text-white/40">
+                    <span>{vid.subject}</span>
+                    <span>•</span>
+                    <span>{vid.views} views</span>
                   </div>
                 </div>
               </div>
