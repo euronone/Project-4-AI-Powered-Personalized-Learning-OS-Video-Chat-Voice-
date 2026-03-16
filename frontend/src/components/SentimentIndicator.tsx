@@ -14,10 +14,10 @@ const emotionColors: Record<string, string> = {
 
 export default function SentimentIndicator({ emotion, confidence }: SentimentIndicatorProps) {
   return (
-    <div className="flex items-center gap-2">
-      <div className={`w-3 h-3 rounded-full ${emotionColors[emotion] || "bg-gray-300"}`} />
-      <span className="text-sm capitalize">{emotion}</span>
-      <span className="text-xs text-gray-400">({Math.round(confidence * 100)}%)</span>
+    <div className="flex items-center gap-2 bg-dark/80 backdrop-blur-sm px-2 py-1 rounded-md">
+      <div className={`w-2.5 h-2.5 rounded-full ${emotionColors[emotion] || "bg-gray-500"}`} />
+      <span className="text-xs capitalize text-white/80">{emotion}</span>
+      <span className="text-xs text-white/30">({Math.round(confidence * 100)}%)</span>
     </div>
   );
 }
