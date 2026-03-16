@@ -5,28 +5,28 @@ import Link from "next/link";
 import { Play, Clock, Flame, TrendingUp, BookOpen, ChevronRight, Star } from "lucide-react";
 
 const continueWatching = [
-  { id: 'mathematics', name: "Mathematics", chapter: "Quadratic Equations", progress: 72, image: "from-red-600 to-orange-500", time: "2h left" },
-  { id: 'physics', name: "Physics", chapter: "Newton's Laws", progress: 45, image: "from-blue-600 to-cyan-400", time: "4h left" },
-  { id: 'chemistry', name: "Chemistry", chapter: "Periodic Table", progress: 60, image: "from-green-500 to-emerald-400", time: "3h left" },
-  { id: 'english', name: "English", chapter: "Shakespeare's Sonnets", progress: 85, image: "from-pink-500 to-rose-400", time: "1h left" },
-  { id: 'hindi', name: "Hindi", chapter: "Premchand Literature", progress: 68, image: "from-amber-500 to-yellow-400", time: "2.5h left" },
+  { id: 'mathematics', name: "Mathematics", chapter: "Quadratic Equations", progress: 72, image: "from-red-600 to-orange-500", time: "2h left", icon: "📐", watermark: "x²" },
+  { id: 'physics', name: "Physics", chapter: "Newton's Laws", progress: 45, image: "from-blue-600 to-cyan-400", time: "4h left", icon: "⚡", watermark: "F=ma" },
+  { id: 'chemistry', name: "Chemistry", chapter: "Periodic Table", progress: 60, image: "from-green-500 to-emerald-400", time: "3h left", icon: "🧪", watermark: "H₂O" },
+  { id: 'english', name: "English", chapter: "Shakespeare's Sonnets", progress: 85, image: "from-pink-500 to-rose-400", time: "1h left", icon: "📖", watermark: "ABC" },
+  { id: 'hindi', name: "Hindi", chapter: "Premchand Literature", progress: 68, image: "from-amber-500 to-yellow-400", time: "2.5h left", icon: "🔤", watermark: "अ" },
 ];
 
 const trending = [
-  { id: 'physics', name: "Physics — Mechanics", rating: 4.9, students: "3.1K", image: "from-violet-600 to-blue-500" },
-  { id: 'mathematics', name: "Mathematics — Calculus", rating: 4.8, students: "4.2K", image: "from-red-600 to-pink-500" },
-  { id: 'chemistry', name: "Chemistry — Organic", rating: 4.7, students: "2.8K", image: "from-emerald-500 to-teal-400" },
-  { id: 'biology', name: "Biology — Genetics", rating: 4.8, students: "3.5K", image: "from-orange-500 to-amber-400" },
-  { id: 'cs', name: "CS — Programming", rating: 4.9, students: "6.2K", image: "from-indigo-500 to-purple-500" },
-  { id: 'history', name: "History — Civilizations", rating: 4.6, students: "2.4K", image: "from-yellow-600 to-orange-400" },
+  { id: 'physics', name: "Physics — Mechanics", rating: 4.9, students: "3.1K", image: "from-violet-600 to-blue-500", icon: "⚡", watermark: "ΔE" },
+  { id: 'mathematics', name: "Mathematics — Calculus", rating: 4.8, students: "4.2K", image: "from-red-600 to-pink-500", icon: "📐", watermark: "∫dx" },
+  { id: 'chemistry', name: "Chemistry — Organic", rating: 4.7, students: "2.8K", image: "from-emerald-500 to-teal-400", icon: "🧪", watermark: "CH₄" },
+  { id: 'biology', name: "Biology — Genetics", rating: 4.8, students: "3.5K", image: "from-orange-500 to-amber-400", icon: "🧬", watermark: "DNA" },
+  { id: 'cs', name: "CS — Programming", rating: 4.9, students: "6.2K", image: "from-indigo-500 to-purple-500", icon: "💻", watermark: "</>" },
+  { id: 'history', name: "History — Civilizations", rating: 4.6, students: "2.4K", image: "from-yellow-600 to-orange-400", icon: "🏛️", watermark: "ERA" },
 ];
 
 const newSubjects = [
-  { name: "Environmental Science", desc: "Ecology & Conservation", image: "from-green-600 to-lime-400" },
-  { name: "Art & Design", desc: "Visual Arts Foundations", image: "from-fuchsia-500 to-purple-400" },
-  { name: "Economics", desc: "Micro & Macro", image: "from-cyan-500 to-blue-400" },
-  { name: "Geography", desc: "Physical & Human", image: "from-teal-500 to-green-400" },
-  { name: "Civics & Government", desc: "Democracy & Rights", image: "from-slate-500 to-zinc-400" },
+  { name: "Environmental Science", desc: "Ecology & Conservation", image: "from-green-600 to-lime-400", icon: "🌿", watermark: "ECO" },
+  { name: "Art & Design", desc: "Visual Arts Foundations", image: "from-fuchsia-500 to-purple-400", icon: "🎨", watermark: "ART" },
+  { name: "Economics", desc: "Micro & Macro", image: "from-cyan-500 to-blue-400", icon: "📊", watermark: "GDP" },
+  { name: "Geography", desc: "Physical & Human", image: "from-teal-500 to-green-400", icon: "🌍", watermark: "MAP" },
+  { name: "Civics & Government", desc: "Democracy & Rights", image: "from-slate-500 to-zinc-400", icon: "⚖️", watermark: "LAW" },
 ];
 
 export default function DashboardPage() {
@@ -93,10 +93,17 @@ export default function DashboardPage() {
           {continueWatching.map((item) => (
             <Link key={item.id} href={`/learn/${item.id}`} className="w-[280px] group">
               <div className="card-hover rounded-lg overflow-hidden bg-dark-100 border border-white/5">
-                <div className={`h-[140px] bg-gradient-to-br ${item.image} relative`}>
+                <div className={`h-[140px] bg-gradient-to-br ${item.image} relative overflow-hidden`}>
+                  {/* Decorative circles */}
+                  <div className="absolute -top-6 -right-6 w-24 h-24 rounded-full bg-white/10" />
+                  <div className="absolute -bottom-4 -left-4 w-16 h-16 rounded-full bg-black/10" />
+                  {/* Watermark text */}
+                  <span className="absolute bottom-2 right-3 text-[40px] font-black text-white/10 leading-none select-none">{item.watermark}</span>
+                  {/* Icon */}
+                  <span className="absolute top-3 left-3 text-3xl drop-shadow-lg">{item.icon}</span>
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                    <div className="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center">
+                    <div className="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center shadow-2xl">
                       <Play className="w-5 h-5 text-dark fill-current ml-0.5" />
                     </div>
                   </div>
@@ -129,12 +136,21 @@ export default function DashboardPage() {
           {trending.map((item, i) => (
             <Link key={item.id} href={`/learn/${item.id}`} className="w-[200px] group">
               <div className="card-hover rounded-lg overflow-hidden bg-dark-100 border border-white/5">
-                <div className={`h-[120px] bg-gradient-to-br ${item.image} relative`}>
-                  <div className="absolute top-2 left-2 bg-black/60 backdrop-blur-sm text-white text-[11px] font-bold px-2 py-0.5 rounded">
+                <div className={`h-[120px] bg-gradient-to-br ${item.image} relative overflow-hidden`}>
+                  {/* Decorative elements */}
+                  <div className="absolute -top-4 -right-4 w-20 h-20 rounded-full bg-white/10" />
+                  <div className="absolute -bottom-3 -left-3 w-12 h-12 rounded-full bg-black/10" />
+                  <span className="absolute bottom-1 right-2 text-[32px] font-black text-white/10 leading-none select-none">{item.watermark}</span>
+                  <span className="absolute top-2.5 left-2.5 text-2xl drop-shadow-lg">{item.icon}</span>
+                  <div className="absolute top-2 left-2 bg-black/60 backdrop-blur-sm text-white text-[11px] font-bold px-2 py-0.5 rounded hidden">
+                    #{i + 1}
+                  </div>
+                  {/* Rank badge */}
+                  <div className="absolute bottom-2 left-2 text-[28px] font-black text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] leading-none">
                     #{i + 1}
                   </div>
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                    <div className="w-10 h-10 bg-white/90 rounded-full flex items-center justify-center">
+                    <div className="w-10 h-10 bg-white/90 rounded-full flex items-center justify-center shadow-2xl">
                       <Play className="w-4 h-4 text-dark fill-current ml-0.5" />
                     </div>
                   </div>
@@ -161,9 +177,13 @@ export default function DashboardPage() {
           {newSubjects.map((item) => (
             <Link key={item.name} href="/courses" className="w-[240px] group">
               <div className="card-hover rounded-lg overflow-hidden bg-dark-100 border border-white/5">
-                <div className={`h-[100px] bg-gradient-to-br ${item.image} relative`}>
+                <div className={`h-[100px] bg-gradient-to-br ${item.image} relative overflow-hidden`}>
+                  <div className="absolute -top-3 -right-3 w-16 h-16 rounded-full bg-white/10" />
+                  <div className="absolute -bottom-2 -left-2 w-10 h-10 rounded-full bg-black/10" />
+                  <span className="absolute bottom-1 right-2 text-[28px] font-black text-white/10 leading-none select-none">{item.watermark}</span>
+                  <span className="absolute top-2.5 left-2.5 text-2xl drop-shadow-lg">{item.icon}</span>
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                    <div className="w-10 h-10 bg-white/90 rounded-full flex items-center justify-center">
+                    <div className="w-10 h-10 bg-white/90 rounded-full flex items-center justify-center shadow-2xl">
                       <Play className="w-4 h-4 text-dark fill-current ml-0.5" />
                     </div>
                   </div>
