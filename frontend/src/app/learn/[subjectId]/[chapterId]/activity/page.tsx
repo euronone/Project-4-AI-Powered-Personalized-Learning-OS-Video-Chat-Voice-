@@ -1,7 +1,6 @@
 "use client";
 
 import Link from 'next/link'
-import Nav from '@/components/Nav'
 import ActivityPanel from '../../../components/ActivityPanel'
 
 export default function ActivityPage({
@@ -10,9 +9,7 @@ export default function ActivityPage({
   params: { subjectId: string; chapterId: string };
 }) {
   return (
-    <>
-      <Nav />
-      <main className="min-h-screen bg-dark p-6 md:p-10">
+      <main className="min-h-screen bg-dark px-6 md:px-10 pt-20 pb-6">
         <div className="max-w-2xl mx-auto">
           <Link
             href={`/learn/${params.subjectId}/${params.chapterId}`}
@@ -27,6 +24,5 @@ export default function ActivityPage({
           <ActivityPanel chapterId={params.chapterId} />
         </div>
       </main>
-    </>
   );
 }

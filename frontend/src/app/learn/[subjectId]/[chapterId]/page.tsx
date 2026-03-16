@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import Nav from '@/components/Nav'
 import LessonContent from '../../components/LessonContent'
 import VoiceChat from '../../components/VoiceChat'
 import VideoFeed from '../../components/VideoFeed'
@@ -25,9 +24,7 @@ export default function LessonPage({
   }
 
   return (
-    <>
-      <Nav />
-      <main className="min-h-screen bg-dark">
+      <main className="min-h-screen bg-dark pt-20">
         <div className="border-b border-white/5 bg-dark-100/80 backdrop-blur-xl px-6 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <Link href={`/learn/${params.subjectId}`} className="text-sm text-accent hover:text-accent-hover">&larr; Back</Link>
@@ -64,6 +61,5 @@ export default function LessonPage({
           )}
         </div>
       </main>
-    </>
   );
 }

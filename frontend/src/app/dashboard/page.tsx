@@ -43,29 +43,29 @@ const recommendedVideos = [
 export default function DashboardPage() {
   return (
     <div className="min-h-screen bg-dark">
-      {/* Hero Banner */}
-      <div className="relative h-[420px] overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-accent/30 via-dark-100 to-neon-purple/20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/60 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-r from-dark via-transparent to-transparent" />
+      {/* Hero Banner — Netflix-style full bleed behind nav */}
+      <div className="relative h-[520px] overflow-hidden">
+        <img src="/subjects/physics.jpg" alt="Hero" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-r from-dark via-dark/70 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-dark/20" />
         
-        <div className="relative z-10 flex flex-col justify-end h-full px-10 pb-10">
+        <div className="relative z-10 flex flex-col justify-end h-full px-6 lg:px-14 pb-16">
           <div className="flex items-center gap-2 mb-3">
-            <span className="px-2 py-0.5 bg-accent text-white text-[11px] font-bold rounded uppercase tracking-wider">Continue</span>
+            <span className="px-2.5 py-1 bg-accent text-white text-[11px] font-bold rounded uppercase tracking-wider">Continue Watching</span>
             <span className="text-white/50 text-sm">•</span>
             <span className="text-white/50 text-sm flex items-center gap-1"><Flame className="w-3.5 h-3.5 text-orange-400" /> 12 day streak</span>
           </div>
-          <h1 className="text-5xl font-black text-white mb-3 tracking-tight leading-tight max-w-2xl">
+          <h1 className="text-4xl lg:text-6xl font-black text-white mb-3 tracking-tight leading-[1.1] max-w-2xl">
             Physics — Newton&apos;s<br/>Laws of Motion
           </h1>
-          <p className="text-white/60 text-base max-w-xl mb-6 leading-relaxed">
+          <p className="text-white/60 text-sm lg:text-base max-w-lg mb-7 leading-relaxed">
             Continue where you left off. Master the fundamental laws governing motion and force in the physical universe.
           </p>
           <div className="flex items-center gap-3">
-            <Link href="/learn/physics/3" className="flex items-center gap-2 px-7 py-3 bg-white text-black rounded-md font-bold text-sm hover:bg-white/90 transition-colors">
+            <Link href="/learn/physics/3" className="flex items-center gap-2 px-8 py-3 bg-white text-black rounded-md font-bold text-sm hover:bg-white/90 transition-colors">
               <Play className="w-5 h-5 fill-current" /> Resume
             </Link>
-            <Link href="/chatbot" className="flex items-center gap-2 px-7 py-3 bg-white/20 text-white rounded-md font-semibold text-sm hover:bg-white/30 transition-colors backdrop-blur-sm">
+            <Link href="/chatbot" className="flex items-center gap-2 px-8 py-3 bg-white/20 text-white rounded-md font-semibold text-sm hover:bg-white/30 transition-colors backdrop-blur-sm">
               Ask AI Tutor
             </Link>
           </div>
@@ -73,8 +73,8 @@ export default function DashboardPage() {
       </div>
 
       {/* Stats Bar */}
-      <div className="px-10 -mt-2 mb-8">
-        <div className="grid grid-cols-4 gap-4">
+      <div className="px-6 lg:px-14 -mt-8 mb-10 relative z-10">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4">
           {[
             { label: "Subjects Active", val: "12", icon: BookOpen, color: "text-accent" },
             { label: "Hours This Week", val: "24.5", icon: Clock, color: "text-neon-blue" },
@@ -93,7 +93,7 @@ export default function DashboardPage() {
       </div>
 
       {/* Continue Watching Row — Netflix style */}
-      <section className="px-10 mb-10">
+      <section className="px-6 lg:px-14 mb-10">
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-lg font-bold text-white">Continue Learning</h2>
           <Link href="/courses" className="text-xs text-white/40 hover:text-white/70 flex items-center gap-1 transition-colors">
@@ -129,7 +129,7 @@ export default function DashboardPage() {
       </section>
 
       {/* Trending Now Row */}
-      <section className="px-10 mb-10">
+      <section className="px-6 lg:px-14 mb-10">
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-lg font-bold text-white flex items-center gap-2">
             <TrendingUp className="w-4 h-4 text-accent" /> Trending Now
@@ -169,7 +169,7 @@ export default function DashboardPage() {
       </section>
 
       {/* Recommended Videos Row */}
-      <section className="px-10 mb-10">
+      <section className="px-6 lg:px-14 mb-10">
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-lg font-bold text-white flex items-center gap-2">
             <Video className="w-4 h-4 text-neon-purple" /> Recommended Videos
@@ -211,7 +211,7 @@ export default function DashboardPage() {
       </section>
 
       {/* New to AI Powered Personalized Learning OS Row */}
-      <section className="px-10 mb-12">
+      <section className="px-6 lg:px-14 mb-16">
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-lg font-bold text-white">New to Explore</h2>
         </div>

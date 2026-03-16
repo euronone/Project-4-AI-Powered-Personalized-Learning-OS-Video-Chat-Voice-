@@ -8,6 +8,7 @@ const courses = [
   {
     id: 1,
     title: 'Mathematics — Algebra & Calculus',
+    slug: 'mathematics',
     category: 'Mathematics',
     level: 'Intermediate',
     duration: '16 weeks',
@@ -20,6 +21,7 @@ const courses = [
   {
     id: 2,
     title: 'Physics — Mechanics & Thermodynamics',
+    slug: 'physics',
     category: 'Science',
     level: 'Intermediate',
     duration: '14 weeks',
@@ -32,6 +34,7 @@ const courses = [
   {
     id: 3,
     title: 'Chemistry — Organic & Inorganic',
+    slug: 'chemistry',
     category: 'Science',
     level: 'Intermediate',
     duration: '14 weeks',
@@ -44,6 +47,7 @@ const courses = [
   {
     id: 4,
     title: 'Biology — Cell Biology & Genetics',
+    slug: 'biology',
     category: 'Science',
     level: 'Beginner',
     duration: '12 weeks',
@@ -56,6 +60,7 @@ const courses = [
   {
     id: 5,
     title: 'English — Literature & Composition',
+    slug: 'english',
     category: 'Language Arts',
     level: 'Intermediate',
     duration: '16 weeks',
@@ -68,6 +73,7 @@ const courses = [
   {
     id: 6,
     title: 'Computer Science — Programming Fundamentals',
+    slug: 'cs',
     category: 'Computer Science',
     level: 'Beginner',
     duration: '10 weeks',
@@ -80,6 +86,7 @@ const courses = [
   {
     id: 7,
     title: 'History — World Civilizations',
+    slug: 'history',
     category: 'Social Studies',
     level: 'Beginner',
     duration: '12 weeks',
@@ -92,6 +99,7 @@ const courses = [
   {
     id: 8,
     title: 'Geography — Physical & Human',
+    slug: 'geography',
     category: 'Social Studies',
     level: 'Beginner',
     duration: '10 weeks',
@@ -104,6 +112,7 @@ const courses = [
   {
     id: 9,
     title: 'Economics — Micro & Macroeconomics',
+    slug: 'economics',
     category: 'Social Studies',
     level: 'Intermediate',
     duration: '12 weeks',
@@ -116,6 +125,7 @@ const courses = [
   {
     id: 10,
     title: 'Hindi — Literature & Grammar',
+    slug: 'hindi',
     category: 'Language Arts',
     level: 'Intermediate',
     duration: '14 weeks',
@@ -128,6 +138,7 @@ const courses = [
   {
     id: 11,
     title: 'Environmental Science — Ecology & Conservation',
+    slug: 'environmental',
     category: 'Science',
     level: 'Beginner',
     duration: '8 weeks',
@@ -140,6 +151,7 @@ const courses = [
   {
     id: 12,
     title: 'Art & Design — Visual Arts Foundations',
+    slug: 'art',
     category: 'Creative Arts',
     level: 'Beginner',
     duration: '8 weeks',
@@ -152,6 +164,7 @@ const courses = [
   {
     id: 13,
     title: 'Physical Education & Health',
+    slug: 'pe',
     category: 'Health & PE',
     level: 'Beginner',
     duration: '10 weeks',
@@ -164,6 +177,7 @@ const courses = [
   {
     id: 14,
     title: 'Civics & Government',
+    slug: 'civics',
     category: 'Social Studies',
     level: 'Beginner',
     duration: '10 weeks',
@@ -188,7 +202,7 @@ export default function CoursesPage() {
   })
 
   return (
-    <div className="min-h-screen bg-dark p-8 px-10">
+    <div className="min-h-screen bg-dark pt-20 px-6 lg:px-14 pb-10">
       {/* Header */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
         <div>
@@ -233,7 +247,7 @@ export default function CoursesPage() {
       {/* Course Grid — Udemy/Netflix hybrid */}
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
         {filteredCourses.map((course) => (
-          <Link key={course.id} href={`/learn/${course.category.toLowerCase().replace(/ /g, '-')}`}>
+          <Link key={course.id} href={`/learn/${course.slug}`}>
             <div className="card-hover rounded-lg overflow-hidden bg-dark-100 border border-white/5 group cursor-pointer">
               <div className="h-[130px] relative overflow-hidden">
                 <img src={course.coverImg} alt={course.title} className="absolute inset-0 w-full h-full object-cover" />

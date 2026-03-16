@@ -7,7 +7,7 @@ export default function Nav() {
   return (
     <nav className="border-b border-white/5 bg-dark-100/80 backdrop-blur-xl px-6 py-3 flex items-center justify-between">
       <Link href="/dashboard" className="font-bold text-xl text-accent">
-        AI Learning OS
+        AI Powered Personalized Learning OS
       </Link>
 
       <div className="flex items-center gap-4">

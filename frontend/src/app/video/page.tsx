@@ -20,8 +20,8 @@ export default function VideoLearningPage() {
   const [activeTab, setActiveTab] = useState<'transcript' | 'notes' | 'recommendations'>('recommendations')
 
   return (
-    <div className="min-h-screen bg-dark p-6 px-10">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 h-[calc(100vh-3rem)]">
+    <div className="min-h-screen bg-dark pt-20 px-6 lg:px-14 pb-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 h-[calc(100vh-7rem)]">
         {/* Main Video Section */}
         <div className="lg:col-span-2 flex flex-col space-y-4">
           <div>

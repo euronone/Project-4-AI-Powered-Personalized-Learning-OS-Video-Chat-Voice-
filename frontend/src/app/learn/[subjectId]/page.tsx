@@ -2,7 +2,6 @@
 
 import Link from 'next/link'
 import { BookOpen, CheckCircle, Lock } from 'lucide-react'
-import Nav from '@/components/Nav'
 
 const SUBJECT_MAP: Record<string, { name: string; chapters: { id: string; title: string; status: 'completed' | 'current' | 'locked' }[] }> = {
   mathematics: {
@@ -35,6 +34,103 @@ const SUBJECT_MAP: Record<string, { name: string; chapters: { id: string; title:
       { id: '4', title: 'States of Matter', status: 'locked' },
     ],
   },
+  biology: {
+    name: 'Biology',
+    chapters: [
+      { id: '1', title: 'Cell Structure & Function', status: 'completed' },
+      { id: '2', title: 'Genetics & Heredity', status: 'current' },
+      { id: '3', title: 'Human Physiology', status: 'locked' },
+      { id: '4', title: 'Ecology & Environment', status: 'locked' },
+    ],
+  },
+  english: {
+    name: 'English',
+    chapters: [
+      { id: '1', title: 'Grammar Fundamentals', status: 'completed' },
+      { id: '2', title: 'Reading Comprehension', status: 'completed' },
+      { id: '3', title: 'Creative Writing', status: 'completed' },
+      { id: '4', title: 'Literature Analysis', status: 'current' },
+      { id: '5', title: 'Essay & Composition', status: 'locked' },
+    ],
+  },
+  cs: {
+    name: 'Computer Science',
+    chapters: [
+      { id: '1', title: 'Introduction to Programming', status: 'completed' },
+      { id: '2', title: 'Data Types & Variables', status: 'current' },
+      { id: '3', title: 'Control Flow & Loops', status: 'locked' },
+      { id: '4', title: 'Functions & Modules', status: 'locked' },
+      { id: '5', title: 'Data Structures Basics', status: 'locked' },
+    ],
+  },
+  history: {
+    name: 'History',
+    chapters: [
+      { id: '1', title: 'Ancient Civilizations', status: 'completed' },
+      { id: '2', title: 'Medieval Period', status: 'completed' },
+      { id: '3', title: 'Modern World History', status: 'current' },
+      { id: '4', title: 'Indian Independence Movement', status: 'locked' },
+    ],
+  },
+  geography: {
+    name: 'Geography',
+    chapters: [
+      { id: '1', title: 'Physical Geography', status: 'completed' },
+      { id: '2', title: 'Climate & Weather', status: 'current' },
+      { id: '3', title: 'Human Geography', status: 'locked' },
+      { id: '4', title: 'Map Skills & GIS', status: 'locked' },
+    ],
+  },
+  economics: {
+    name: 'Economics',
+    chapters: [
+      { id: '1', title: 'Introduction to Economics', status: 'completed' },
+      { id: '2', title: 'Supply & Demand', status: 'current' },
+      { id: '3', title: 'Money & Banking', status: 'locked' },
+      { id: '4', title: 'Indian Economy', status: 'locked' },
+    ],
+  },
+  hindi: {
+    name: 'Hindi',
+    chapters: [
+      { id: '1', title: 'व्याकरण — Grammar Basics', status: 'completed' },
+      { id: '2', title: 'गद्य — Prose Literature', status: 'completed' },
+      { id: '3', title: 'पद्य — Poetry', status: 'current' },
+      { id: '4', title: 'निबंध — Essay Writing', status: 'locked' },
+    ],
+  },
+  environmental: {
+    name: 'Environmental Science',
+    chapters: [
+      { id: '1', title: 'Ecosystems & Biodiversity', status: 'completed' },
+      { id: '2', title: 'Pollution & Conservation', status: 'current' },
+      { id: '3', title: 'Sustainable Development', status: 'locked' },
+    ],
+  },
+  art: {
+    name: 'Art & Design',
+    chapters: [
+      { id: '1', title: 'Elements of Art', status: 'completed' },
+      { id: '2', title: 'Color Theory & Composition', status: 'current' },
+      { id: '3', title: 'Drawing Techniques', status: 'locked' },
+    ],
+  },
+  pe: {
+    name: 'Physical Education',
+    chapters: [
+      { id: '1', title: 'Health & Nutrition', status: 'current' },
+      { id: '2', title: 'Sports & Fitness', status: 'locked' },
+      { id: '3', title: 'Yoga & Wellness', status: 'locked' },
+    ],
+  },
+  civics: {
+    name: 'Civics & Government',
+    chapters: [
+      { id: '1', title: 'Indian Constitution', status: 'current' },
+      { id: '2', title: 'Democracy & Governance', status: 'locked' },
+      { id: '3', title: 'Rights & Duties', status: 'locked' },
+    ],
+  },
 }
 
 export default function SubjectPage({ params }: { params: { subjectId: string } }) {
@@ -42,9 +138,7 @@ export default function SubjectPage({ params }: { params: { subjectId: string } 
   const completedCount = subject.chapters.filter(c => c.status === 'completed').length
 
   return (
-    <>
-      <Nav />
-      <main className="min-h-screen bg-dark p-6 md:p-10">
+      <main className="min-h-screen bg-dark px-6 md:px-10 pt-20 pb-6">
         <div className="max-w-3xl mx-auto">
           <Link href="/courses" className="text-sm text-accent hover:text-accent-hover mb-4 inline-block">&larr; All Courses</Link>
           <h1 className="text-2xl font-bold text-white mb-1">{subject.name}</h1>
@@ -85,6 +179,5 @@ export default function SubjectPage({ params }: { params: { subjectId: string } 
           </div>
         </div>
       </main>
-    </>
   );
 }

@@ -32,7 +32,7 @@ export default function OnboardingPage() {
   }
 
   return (
-    <main className="flex min-h-screen items-center justify-center bg-dark">
+    <main className="flex min-h-screen items-center justify-center bg-dark pt-16">
       <div className="w-full max-w-2xl px-4">
         <div className="glass rounded-xl p-8">
           {/* Progress indicator */}

@@ -98,7 +98,7 @@ export default function AnalyticsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-dark p-8 px-10 space-y-8">
+    <div className="min-h-screen bg-dark pt-20 px-6 lg:px-14 pb-8 space-y-8">
       <div>
         <h1 className="text-3xl font-black text-white tracking-tight">Analytics</h1>
         <p className="text-white/40 mt-1 text-sm">Track your progress and study habits</p>
