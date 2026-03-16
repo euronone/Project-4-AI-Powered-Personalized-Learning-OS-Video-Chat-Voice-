@@ -1,299 +1,124 @@
 'use client'
 
-import { useState } from 'react'
-import { Search, Filter, Play, Star, Clock, Users } from 'lucide-react'
+import { useMemo, useState } from 'react'
 import Link from 'next/link'
+import { Search, Star, Users, Clock3, SlidersHorizontal } from 'lucide-react'
 
 const courses = [
-  {
-    id: 1,
-    title: 'Mathematics — Algebra & Calculus',
-    slug: 'mathematics',
-    category: 'Mathematics',
-    level: 'Intermediate',
-    duration: '16 weeks',
-    rating: 4.9,
-    students: 4200,
-    image: 'from-red-600 to-orange-500',
-    coverImg: '/subjects/math.jpg',
-    progress: 72
-  },
-  {
-    id: 2,
-    title: 'Physics — Mechanics & Thermodynamics',
-    slug: 'physics',
-    category: 'Science',
-    level: 'Intermediate',
-    duration: '14 weeks',
-    rating: 4.8,
-    students: 3100,
-    image: 'from-blue-600 to-cyan-400',
-    coverImg: '/subjects/physics.jpg',
-    progress: 45
-  },
-  {
-    id: 3,
-    title: 'Chemistry — Organic & Inorganic',
-    slug: 'chemistry',
-    category: 'Science',
-    level: 'Intermediate',
-    duration: '14 weeks',
-    rating: 4.7,
-    students: 2800,
-    image: 'from-green-500 to-emerald-400',
-    coverImg: '/subjects/chemistry.jpg',
-    progress: 60
-  },
-  {
-    id: 4,
-    title: 'Biology — Cell Biology & Genetics',
-    slug: 'biology',
-    category: 'Science',
-    level: 'Beginner',
-    duration: '12 weeks',
-    rating: 4.8,
-    students: 3500,
-    image: 'from-orange-500 to-amber-400',
-    coverImg: '/subjects/biology.jpg',
-    progress: 33
-  },
-  {
-    id: 5,
-    title: 'English — Literature & Composition',
-    slug: 'english',
-    category: 'Language Arts',
-    level: 'Intermediate',
-    duration: '16 weeks',
-    rating: 4.9,
-    students: 5600,
-    image: 'from-pink-500 to-rose-400',
-    coverImg: '/subjects/english.jpg',
-    progress: 85
-  },
-  {
-    id: 6,
-    title: 'Computer Science — Programming Fundamentals',
-    slug: 'cs',
-    category: 'Computer Science',
-    level: 'Beginner',
-    duration: '10 weeks',
-    rating: 4.8,
-    students: 6200,
-    image: 'from-indigo-500 to-purple-500',
-    coverImg: '/subjects/cs.jpg',
-    progress: 20
-  },
-  {
-    id: 7,
-    title: 'History — World Civilizations',
-    slug: 'history',
-    category: 'Social Studies',
-    level: 'Beginner',
-    duration: '12 weeks',
-    rating: 4.6,
-    students: 2400,
-    image: 'from-amber-600 to-orange-500',
-    coverImg: '/subjects/history.jpg',
-    progress: 55
-  },
-  {
-    id: 8,
-    title: 'Geography — Physical & Human',
-    slug: 'geography',
-    category: 'Social Studies',
-    level: 'Beginner',
-    duration: '10 weeks',
-    rating: 4.7,
-    students: 1900,
-    image: 'from-teal-500 to-cyan-400',
-    coverImg: '/subjects/geography.jpg',
-    progress: 40
-  },
-  {
-    id: 9,
-    title: 'Economics — Micro & Macroeconomics',
-    slug: 'economics',
-    category: 'Social Studies',
-    level: 'Intermediate',
-    duration: '12 weeks',
-    rating: 4.5,
-    students: 1500,
-    image: 'from-violet-600 to-purple-500',
-    coverImg: '/subjects/economics.jpg',
-    progress: 28
-  },
-  {
-    id: 10,
-    title: 'Hindi — Literature & Grammar',
-    slug: 'hindi',
-    category: 'Language Arts',
-    level: 'Intermediate',
-    duration: '14 weeks',
-    rating: 4.7,
-    students: 3800,
-    image: 'from-red-500 to-pink-500',
-    coverImg: '/subjects/hindi.jpg',
-    progress: 68
-  },
-  {
-    id: 11,
-    title: 'Environmental Science — Ecology & Conservation',
-    slug: 'environmental',
-    category: 'Science',
-    level: 'Beginner',
-    duration: '8 weeks',
-    rating: 4.6,
-    students: 2200,
-    image: 'from-lime-500 to-green-500',
-    coverImg: '/subjects/environmental.jpg',
-    progress: 50
-  },
-  {
-    id: 12,
-    title: 'Art & Design — Visual Arts Foundations',
-    slug: 'art',
-    category: 'Creative Arts',
-    level: 'Beginner',
-    duration: '8 weeks',
-    rating: 4.8,
-    students: 1700,
-    image: 'from-fuchsia-500 to-purple-500',
-    coverImg: '/subjects/art.jpg',
-    progress: 15
-  },
-  {
-    id: 13,
-    title: 'Physical Education & Health',
-    slug: 'pe',
-    category: 'Health & PE',
-    level: 'Beginner',
-    duration: '10 weeks',
-    rating: 4.4,
-    students: 2900,
-    image: 'from-sky-500 to-blue-500',
-    coverImg: '/subjects/pe.jpg',
-    progress: 0
-  },
-  {
-    id: 14,
-    title: 'Civics & Government',
-    slug: 'civics',
-    category: 'Social Studies',
-    level: 'Beginner',
-    duration: '10 weeks',
-    rating: 4.5,
-    students: 1300,
-    image: 'from-slate-500 to-zinc-500',
-    coverImg: '/subjects/civics.jpg',
-    progress: 0
-  }
+  { id: 1, slug: 'mathematics', title: 'Mathematics — Algebra & Calculus', category: 'Mathematics', level: 'Intermediate', duration: '16 weeks', rating: 4.9, students: 4200, coverImg: '/subjects/math.jpg', progress: 72 },
+  { id: 2, slug: 'physics', title: 'Physics — Mechanics & Thermodynamics', category: 'Science', level: 'Intermediate', duration: '14 weeks', rating: 4.8, students: 3100, coverImg: '/subjects/physics.jpg', progress: 45 },
+  { id: 3, slug: 'chemistry', title: 'Chemistry — Organic & Inorganic', category: 'Science', level: 'Intermediate', duration: '14 weeks', rating: 4.7, students: 2800, coverImg: '/subjects/chemistry.jpg', progress: 60 },
+  { id: 4, slug: 'biology', title: 'Biology — Cell Biology & Genetics', category: 'Science', level: 'Beginner', duration: '12 weeks', rating: 4.8, students: 3500, coverImg: '/subjects/biology.jpg', progress: 33 },
+  { id: 5, slug: 'english', title: 'English — Literature & Composition', category: 'Language Arts', level: 'Intermediate', duration: '16 weeks', rating: 4.9, students: 5600, coverImg: '/subjects/english.jpg', progress: 85 },
+  { id: 6, slug: 'cs', title: 'Computer Science — Programming Fundamentals', category: 'Computer Science', level: 'Beginner', duration: '10 weeks', rating: 4.8, students: 6200, coverImg: '/subjects/cs.jpg', progress: 20 },
+  { id: 7, slug: 'history', title: 'History — World Civilizations', category: 'Social Studies', level: 'Beginner', duration: '12 weeks', rating: 4.6, students: 2400, coverImg: '/subjects/history.jpg', progress: 55 },
+  { id: 8, slug: 'geography', title: 'Geography — Physical & Human', category: 'Social Studies', level: 'Beginner', duration: '10 weeks', rating: 4.7, students: 1900, coverImg: '/subjects/geography.jpg', progress: 40 },
+  { id: 9, slug: 'economics', title: 'Economics — Micro & Macroeconomics', category: 'Social Studies', level: 'Intermediate', duration: '12 weeks', rating: 4.5, students: 1500, coverImg: '/subjects/economics.jpg', progress: 28 },
+  { id: 10, slug: 'hindi', title: 'Hindi — Literature & Grammar', category: 'Language Arts', level: 'Intermediate', duration: '14 weeks', rating: 4.7, students: 3800, coverImg: '/subjects/hindi.jpg', progress: 68 },
+  { id: 11, slug: 'environmental', title: 'Environmental Science — Ecology & Conservation', category: 'Science', level: 'Beginner', duration: '8 weeks', rating: 4.6, students: 2200, coverImg: '/subjects/environmental.jpg', progress: 50 },
+  { id: 12, slug: 'art', title: 'Art & Design — Visual Arts Foundations', category: 'Creative Arts', level: 'Beginner', duration: '8 weeks', rating: 4.8, students: 1700, coverImg: '/subjects/art.jpg', progress: 15 },
 ]
 
-const categories = ['All', 'Mathematics', 'Science', 'Language Arts', 'Computer Science', 'Social Studies', 'Creative Arts', 'Health & PE']
+const categories = ['All', 'Mathematics', 'Science', 'Language Arts', 'Computer Science', 'Social Studies', 'Creative Arts']
 
 export default function CoursesPage() {
   const [searchQuery, setSearchQuery] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('All')
 
-  const filteredCourses = courses.filter(course => {
-    const matchesSearch = course.title.toLowerCase().includes(searchQuery.toLowerCase())
-    const matchesCategory = selectedCategory === 'All' || course.category === selectedCategory
-    return matchesSearch && matchesCategory
-  })
+  const filteredCourses = useMemo(() => {
+    return courses.filter((course) => {
+      const matchesSearch = course.title.toLowerCase().includes(searchQuery.toLowerCase())
+      const matchesCategory = selectedCategory === 'All' || course.category === selectedCategory
+      return matchesSearch && matchesCategory
+    })
+  }, [searchQuery, selectedCategory])
 
   return (
-    <div className="min-h-screen bg-dark pt-20 px-6 lg:px-14 pb-10">
-      {/* Header */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
-        <div>
-          <h1 className="text-3xl font-black text-white tracking-tight">My Courses</h1>
-          <p className="text-white/40 mt-1 text-sm">Discover and continue your learning journey</p>
-        </div>
-        
-        <div className="flex w-full md:w-auto gap-3">
-          <div className="relative flex-1 md:w-64">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-white/30 w-4 h-4" />
-            <input
-              type="text"
-              placeholder="Search courses..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-2.5 bg-dark-100 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/50 text-white text-sm placeholder:text-white/30"
-            />
+    <div className="app-shell space-y-6">
+      <section className="surface-card p-6">
+        <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+          <div>
+            <h1 className="display-title text-2xl font-semibold tracking-tight text-slate-900 md:text-3xl">Course Library</h1>
+            <p className="mt-1 text-sm text-slate-500">Structured paths designed for focused, measurable progress.</p>
           </div>
-          <button className="flex items-center gap-2 px-4 py-2.5 bg-dark-100 border border-white/10 rounded-lg text-white/50 hover:text-white hover:bg-dark-50 transition-colors">
-            <Filter className="w-4 h-4" />
-          </button>
+
+          <div className="flex w-full gap-3 lg:w-auto">
+            <div className="relative flex-1 lg:w-80">
+              <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+              <input
+                type="text"
+                placeholder="Search courses"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full rounded-xl border border-slate-200 bg-white py-2.5 pl-10 pr-3 text-sm text-slate-700 outline-none ring-0 transition-all focus:border-slate-300 focus:shadow-sm"
+              />
+            </div>
+            <button className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 text-sm text-slate-600 hover:bg-slate-50">
+              <SlidersHorizontal className="h-4 w-4" />
+              Filter
+            </button>
+          </div>
         </div>
-      </div>
 
-      {/* Categories — pill style */}
-      <div className="flex gap-2 overflow-x-auto pb-2 mb-8 scrollbar-hide">
-        {categories.map((category) => (
-          <button
-            key={category}
-            onClick={() => setSelectedCategory(category)}
-            className={`px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-all duration-200 ${
-              selectedCategory === category
-                ? 'bg-white text-dark'
-                : 'bg-white/5 text-white/50 border border-white/10 hover:bg-white/10 hover:text-white'
-            }`}
-          >
-            {category}
-          </button>
-        ))}
-      </div>
+        <div className="mt-5 flex gap-2 overflow-x-auto pb-1">
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => setSelectedCategory(category)}
+              className={
+                selectedCategory === category
+                  ? 'rounded-full bg-brand-700 px-3.5 py-1.5 text-xs font-semibold text-white'
+                  : 'subtle-chip px-3.5 py-1.5 text-xs font-semibold hover:bg-slate-100'
+              }
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+      </section>
 
-      {/* Course Grid — Udemy/Netflix hybrid */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+      <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
         {filteredCourses.map((course) => (
-          <Link key={course.id} href={`/learn/${course.slug}`}>
-            <div className="card-hover rounded-lg overflow-hidden bg-dark-100 border border-white/5 group cursor-pointer">
-              <div className="h-[130px] relative overflow-hidden">
-                <img src={course.coverImg} alt={course.title} className="absolute inset-0 w-full h-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-                {/* Play overlay */}
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 flex items-center justify-center transition-all">
-                  <div className="w-10 h-10 bg-white/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity scale-75 group-hover:scale-100 shadow-2xl">
-                    <Play className="w-4 h-4 text-dark fill-current ml-0.5" />
-                  </div>
-                </div>
-                {/* Level badge */}
-                <span className="absolute top-2 right-2 text-[10px] font-bold bg-black/50 text-white px-2 py-0.5 rounded backdrop-blur-sm">
-                  {course.level}
+          <Link key={course.id} href={`/learn/${course.slug}`} className="card-hover overflow-hidden rounded-2xl border border-slate-200 bg-white">
+            <div className="relative">
+              <img src={course.coverImg} alt={course.title} className="subject-image h-40 w-full object-cover" />
+              <div className="subject-image-overlay absolute inset-0" />
+              <span className="absolute right-3 top-3 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-semibold text-slate-700">
+                {course.level}
+              </span>
+            </div>
+            <div className="p-4">
+              <h3 className="line-clamp-2 text-base font-semibold text-slate-900">{course.title}</h3>
+              <p className="mt-1 text-xs uppercase tracking-wide text-slate-500">{course.category}</p>
+
+              <div className="mt-4 flex items-center gap-4 text-xs text-slate-600">
+                <span className="inline-flex items-center gap-1">
+                  <Star className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
+                  {course.rating}
                 </span>
-                {/* Progress bar */}
-                {course.progress > 0 && (
-                  <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-white/20">
-                    <div className="h-full bg-accent" style={{ width: `${course.progress}%` }} />
-                  </div>
-                )}
+                <span className="inline-flex items-center gap-1">
+                  <Users className="h-3.5 w-3.5" />
+                  {(course.students / 1000).toFixed(1)}K
+                </span>
+                <span className="inline-flex items-center gap-1">
+                  <Clock3 className="h-3.5 w-3.5" />
+                  {course.duration}
+                </span>
               </div>
-              <div className="p-3">
-                <p className="text-[13px] font-semibold text-white leading-tight line-clamp-2 mb-2">{course.title}</p>
-                <div className="flex items-center gap-1.5 text-[11px] text-white/40">
-                  <Star className="w-3 h-3 text-yellow-400 fill-yellow-400" />
-                  <span className="text-yellow-400 font-semibold">{course.rating}</span>
-                  <span>•</span>
-                  <Users className="w-3 h-3" />
-                  <span>{(course.students / 1000).toFixed(1)}K</span>
-                  <span>•</span>
-                  <Clock className="w-3 h-3" />
-                  <span>{course.duration}</span>
-                </div>
-                {course.progress > 0 && (
-                  <p className="text-[11px] text-accent font-semibold mt-2">{course.progress}% complete</p>
-                )}
+
+              <div className="mt-4 h-2 overflow-hidden rounded-full bg-slate-100">
+                <div className="h-full rounded-full bg-brand-700" style={{ width: `${course.progress}%` }} />
               </div>
+              <p className="mt-2 text-xs font-medium text-slate-600">{course.progress}% completed</p>
             </div>
           </Link>
         ))}
-      </div>
-      
+      </section>
+
       {filteredCourses.length === 0 && (
-        <div className="text-center py-20">
-          <p className="text-white/30">No courses found matching your criteria.</p>
-        </div>
+        <section className="surface-card p-10 text-center">
+          <p className="text-sm text-slate-500">No courses match your current search and category filters.</p>
+        </section>
       )}
     </div>
   )

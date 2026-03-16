@@ -3,8 +3,8 @@ import type { Metadata } from 'next'
 import Sidebar from '@/components/common/Sidebar'
 
 export const metadata: Metadata = {
-  title: 'AI Powered Personalized Learning OS',
-  description: 'Your personalized AI-powered learning platform',
+  title: 'LearnOS | AI Learning Platform',
+  description: 'A modern and personalized AI-powered learning platform',
 }
 
 export default function RootLayout({
@@ -13,9 +13,9 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <body className="font-sans antialiased">
-        <div className="min-h-screen bg-dark text-white">
+        <div className="min-h-screen text-slate-900">
           <Sidebar />
           <main className="min-h-screen overflow-y-auto">
             {children}

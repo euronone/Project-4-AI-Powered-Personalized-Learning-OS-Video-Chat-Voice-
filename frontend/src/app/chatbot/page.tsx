@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useRef, useEffect, useCallback } from 'react'
-import { Send, Bot, User, Loader2, RotateCcw } from 'lucide-react'
+import { Send, Bot, Loader2, RotateCcw } from 'lucide-react'
 import ChatBubble from '@/components/chatbot/ChatBubble'
 import { API_URL } from '@/lib/constants'
 
@@ -16,25 +16,21 @@ export default function ChatbotPage() {
     {
       id: '1',
       role: 'assistant',
-      content: 'Hi! I am your AI Tutor. I can help explain concepts, answer questions about your subjects, or walk you through problems step by step. What would you like to learn today?'
-    }
+      content:
+        'Hello. I am your AI Tutor. I can explain concepts, help solve doubts step-by-step, and create focused practice plans. What would you like to learn today?',
+    },
   ])
   const [input, setInput] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const abortRef = useRef<AbortController | null>(null)
 
-  const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
-  }
-
   useEffect(() => {
-    scrollToBottom()
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
   }, [messages])
 
   const getConversationHistory = useCallback(() => {
-    // Send last 20 messages as context (skip the initial greeting)
-    return messages.slice(1).slice(-20).map(m => ({
+    return messages.slice(1).slice(-20).map((m) => ({
       role: m.role,
       content: m.content,
     }))
@@ -46,16 +42,15 @@ export default function ChatbotPage() {
     const userMessage: Message = {
       id: Date.now().toString(),
       role: 'user',
-      content: input.trim()
+      content: input.trim(),
     }
 
-    setMessages(prev => [...prev, userMessage])
+    setMessages((prev) => [...prev, userMessage])
     setInput('')
     setIsLoading(true)
 
     const assistantId = (Date.now() + 1).toString()
 
-    // Try streaming first, fall back to sync
     try {
       abortRef.current = new AbortController()
 
@@ -69,9 +64,7 @@ export default function ChatbotPage() {
         signal: abortRef.current.signal,
       })
 
-      if (!response.ok) {
-        throw new Error(`API error: ${response.status}`)
-      }
+      if (!response.ok) throw new Error(`API error: ${response.status}`)
 
       const reader = response.body?.getReader()
       if (!reader) throw new Error('No readable stream')
@@ -79,8 +72,7 @@ export default function ChatbotPage() {
       const decoder = new TextDecoder()
       let assistantContent = ''
 
-      // Add an empty assistant message that we'll stream into
-      setMessages(prev => [...prev, { id: assistantId, role: 'assistant', content: '' }])
+      setMessages((prev) => [...prev, { id: assistantId, role: 'assistant', content: '' }])
       setIsLoading(false)
 
       let buffer = ''
@@ -97,34 +89,33 @@ export default function ChatbotPage() {
           const payload = line.slice(6).trim()
           if (payload === '[DONE]') break
           if (payload === '"[ERROR]"') {
-            assistantContent += '\n\n⚠️ An error occurred. Please try again.'
+            assistantContent += '\n\nI encountered an error. Please try again.'
             break
           }
           try {
             const chunk = JSON.parse(payload)
             assistantContent += chunk
-            setMessages(prev =>
-              prev.map(m => m.id === assistantId ? { ...m, content: assistantContent } : m)
+            setMessages((prev) =>
+              prev.map((m) => (m.id === assistantId ? { ...m, content: assistantContent } : m))
             )
           } catch {
-            // skip unparseable lines
+            // ignore malformed chunks
           }
         }
       }
 
-      // If we got nothing from streaming, show a fallback
       if (!assistantContent.trim()) {
-        setMessages(prev =>
-          prev.map(m => m.id === assistantId
-            ? { ...m, content: 'I received your message but couldn\'t generate a response. Please try again.' }
-            : m
+        setMessages((prev) =>
+          prev.map((m) =>
+            m.id === assistantId
+              ? { ...m, content: 'I received your message but could not generate a response. Please retry.' }
+              : m
           )
         )
       }
     } catch (err: unknown) {
       if (err instanceof Error && err.name === 'AbortError') return
 
-      // Fallback: try the sync endpoint
       try {
         const response = await fetch(`${API_URL}/api/lessons/chat`, {
           method: 'POST',
@@ -137,21 +128,29 @@ export default function ChatbotPage() {
 
         if (response.ok) {
           const data = await response.json()
-          setMessages(prev => [...prev, {
-            id: assistantId,
-            role: 'assistant',
-            content: data.content || 'Sorry, I could not process your request.',
-          }])
+          setMessages((prev) => [
+            ...prev,
+            {
+              id: assistantId,
+              role: 'assistant',
+              content: data.content || 'Sorry, I could not process your request.',
+            },
+          ])
         } else {
           throw new Error('Sync endpoint failed')
         }
       } catch {
-        // Both endpoints failed — show error
-        setMessages(prev => [...prev, {
-          id: assistantId,
-          role: 'assistant',
-          content: '⚠️ Unable to reach the AI Tutor backend. Make sure the backend server is running on ' + API_URL + ' and the ANTHROPIC_API_KEY is configured.',
-        }])
+        setMessages((prev) => [
+          ...prev,
+          {
+            id: assistantId,
+            role: 'assistant',
+            content:
+              'Unable to reach AI Tutor backend. Ensure backend is running on ' +
+              API_URL +
+              ' and ANTHROPIC_API_KEY is configured.',
+          },
+        ])
       }
     } finally {
       setIsLoading(false)
@@ -161,83 +160,101 @@ export default function ChatbotPage() {
 
   const handleClearChat = () => {
     if (abortRef.current) abortRef.current.abort()
-    setMessages([{
-      id: '1',
-      role: 'assistant',
-      content: 'Chat cleared! How can I help you today?'
-    }])
+    setMessages([
+      {
+        id: '1',
+        role: 'assistant',
+        content: 'Chat reset. What topic would you like to continue with?',
+      },
+    ])
     setIsLoading(false)
   }
 
   return (
-    <div className="flex flex-col h-[calc(100vh-5rem)] max-w-4xl mx-auto px-6 pt-20 pb-6">
-      <div className="mb-6 flex items-center justify-between">
-        <div>
-          <h1 className="text-2xl font-black text-white tracking-tight">AI Tutor</h1>
-          <p className="text-white/40 text-sm">Your personalized learning assistant</p>
-        </div>
-        <button
-          onClick={handleClearChat}
-          className="flex items-center gap-2 px-3 py-2 text-sm text-white/40 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
-        >
-          <RotateCcw className="w-4 h-4" />
-          New Chat
-        </button>
-      </div>
-
-      <div className="flex-1 bg-dark-100/60 backdrop-blur-xl rounded-2xl border border-white/5 flex flex-col overflow-hidden">
-        {/* Chat Messages */}
-        <div className="flex-1 overflow-y-auto p-6 space-y-5">
-          {messages.map((message) => (
-            <ChatBubble
-              key={message.id}
-              isUser={message.role === 'user'}
-              message={message.content}
-              timestamp={new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-            />
-          ))}
-          {isLoading && (
-            <div className="flex gap-3">
-              <div className="w-8 h-8 rounded-full bg-neon-purple/20 text-neon-purple flex items-center justify-center shrink-0">
-                <Bot className="w-4 h-4" />
-              </div>
-              <div className="bg-dark-50 border border-white/5 rounded-2xl rounded-tl-sm px-4 py-3 flex items-center gap-2">
-                <Loader2 className="w-4 h-4 animate-spin text-accent" />
-                <span className="text-sm text-white/40">Thinking...</span>
-              </div>
+    <div className="app-shell space-y-6">
+      <section className="surface-card overflow-hidden p-5 md:p-6">
+        <div className="grid gap-4 md:grid-cols-[1.2fr_1fr] md:items-center">
+          <div>
+            <h1 className="text-2xl font-extrabold tracking-tight text-slate-900 md:text-3xl">AI Tutor Workspace</h1>
+            <p className="mt-1 text-sm text-slate-500">
+              Concept explanations, guided problem solving, and focused revision support in one place.
+            </p>
+          </div>
+          <div className="relative overflow-hidden rounded-2xl border border-slate-200">
+            <img src="/subjects/cs.jpg" alt="AI tutor visual" className="subject-image h-28 w-full object-cover md:h-32" />
+            <div className="subject-image-overlay absolute inset-0" />
+            <div className="absolute bottom-2 left-2 rounded-lg bg-white/90 px-2 py-1 text-[11px] font-semibold text-slate-700">
+              Personalized learning assistant
             </div>
-          )}
-          <div ref={messagesEndRef} />
+          </div>
+        </div>
+      </section>
+
+      <div className="surface-card flex h-[calc(100vh-16rem)] flex-col overflow-hidden">
+        <div className="flex items-center justify-between border-b border-slate-200 px-5 py-4">
+          <div>
+            <h1 className="text-lg font-bold text-slate-900">AI Tutor</h1>
+            <p className="text-xs text-slate-500">Ask doubts, get explanations, and build confidence.</p>
+          </div>
+          <button
+            onClick={handleClearChat}
+            className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 hover:bg-slate-50"
+          >
+            <RotateCcw className="h-4 w-4" />
+            New Chat
+          </button>
         </div>
 
-        {/* Input Area */}
-        <div className="p-4 border-t border-white/5">
-          <div className="flex items-end gap-3 max-w-4xl mx-auto">
-            <div className="flex-1">
-              <textarea
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' && !e.shiftKey) {
-                    e.preventDefault()
-                    handleSend()
-                  }
-                }}
-                placeholder="Ask your tutor anything..."
-                className="w-full resize-none rounded-xl bg-dark-50 border border-white/10 p-4 pr-12 text-white text-sm placeholder:text-white/25 focus:outline-none focus:ring-2 focus:ring-accent/50 max-h-32 min-h-[52px]"
-                rows={1}
+        <div className="flex-1 overflow-y-auto bg-slate-50/60 px-5 py-5">
+          <div className="mx-auto max-w-3xl space-y-4">
+            {messages.map((message) => (
+              <ChatBubble
+                key={message.id}
+                isUser={message.role === 'user'}
+                message={message.content}
+                timestamp={new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
               />
-            </div>
+            ))}
+            {isLoading && (
+              <div className="flex gap-3">
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-900 text-white">
+                  <Bot className="h-4 w-4" />
+                </div>
+                <div className="inline-flex items-center gap-2 rounded-2xl rounded-tl-sm border border-slate-200 bg-white px-4 py-2.5 text-sm text-slate-600">
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                  Thinking...
+                </div>
+              </div>
+            )}
+            <div ref={messagesEndRef} />
+          </div>
+        </div>
+
+        <div className="border-t border-slate-200 bg-white px-5 py-4">
+          <div className="mx-auto flex max-w-3xl items-end gap-3">
+            <textarea
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                  e.preventDefault()
+                  handleSend()
+                }
+              }}
+              placeholder="Ask your tutor anything..."
+              className="min-h-[52px] max-h-36 w-full resize-none rounded-xl border border-slate-200 bg-white p-3.5 text-sm text-slate-800 outline-none focus:border-slate-300"
+              rows={1}
+            />
             <button
               onClick={handleSend}
               disabled={!input.trim() || isLoading}
-              className="bg-accent text-white p-3.5 rounded-xl hover:bg-accent-hover transition-colors disabled:opacity-30 disabled:cursor-not-allowed shrink-0"
+              className="rounded-xl bg-slate-900 p-3.5 text-white hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-40"
             >
-              <Send className="w-4 h-4" />
+              <Send className="h-4 w-4" />
             </button>
           </div>
-          <p className="text-center text-[10px] text-white/15 mt-2">
-            AI Tutor can make mistakes. Consider verifying important information.
+          <p className="mt-2 text-center text-[11px] text-slate-400">
+            AI Tutor can make mistakes. Verify important details.
           </p>
         </div>
       </div>

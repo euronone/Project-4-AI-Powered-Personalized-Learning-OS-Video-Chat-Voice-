@@ -2,29 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap');
 
 :root {
-  --bg-primary: #0d0d0d;
-  --bg-card: #1a1a2e;
-  --bg-elevated: #16213e;
-  --accent: #e50914;
-  --accent-hover: #f40612;
-  --accent-purple: #7c3aed;
-  --text-primary: #ffffff;
-  --text-secondary: #a0a0b0;
-  --text-muted: #6b6b80;
-  --border: #2a2a3e;
+  --bg: #f6f4ef;
+  --bg-elevated: #ffffff;
+  --bg-muted: #f2eee6;
+  --text-primary: #172033;
+  --text-secondary: #3f4b61;
+  --text-muted: #677389;
+  --border: #e5dfd4;
+  --brand: #1f3c88;
+  --brand-soft: #dce5ff;
 }
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: #2a2a3e transparent;
+  scrollbar-color: #cbd5e1 transparent;
 }
 
 *::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
 }
 
 *::-webkit-scrollbar-track {
@@ -32,34 +31,58 @@
 }
 
 *::-webkit-scrollbar-thumb {
-  background: #2a2a3e;
-  border-radius: 3px;
+  background: #cbd5e1;
+  border-radius: 999px;
 }
 
 *::-webkit-scrollbar-thumb:hover {
-  background: #3a3a4e;
+  background: #94a3b8;
 }
 
 body {
   color: var(--text-primary);
-  background: var(--bg-primary);
-  font-family: 'Inter', sans-serif;
+  background:
+    radial-gradient(1100px 480px at -12% -18%, rgba(31, 60, 136, 0.1), transparent 62%),
+    radial-gradient(900px 420px at 112% -10%, rgba(193, 153, 97, 0.09), transparent 58%),
+    var(--bg);
+  font-family: 'Sora', 'Segoe UI', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Netflix-style horizontal scrolling row */
+.app-shell {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 6.25rem 1.25rem 2rem;
+}
+
+.surface-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  box-shadow: 0 14px 38px rgba(23, 32, 51, 0.08);
+}
+
+.surface-card-soft {
+  background: linear-gradient(180deg, #ffffff, #faf8f3);
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+}
+
+.subtle-chip {
+  border-radius: 999px;
+  border: 1px solid #e4ddcf;
+  background: #f9f6ee;
+  color: #414e65;
+}
+
 .scroll-row {
   display: flex;
-  gap: 0.75rem;
+  gap: 1rem;
   overflow-x: auto;
   scroll-behavior: smooth;
   padding-bottom: 0.5rem;
   scroll-snap-type: x mandatory;
-}
-
-.scroll-row::-webkit-scrollbar {
-  display: none;
 }
 
 .scroll-row > * {
@@ -67,51 +90,25 @@ body {
   flex-shrink: 0;
 }
 
-/* Card hover zoom effect */
 .card-hover {
-  transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow 0.3s ease;
+  transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
 }
 
 .card-hover:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
-  z-index: 10;
+  transform: translateY(-4px);
+  box-shadow: 0 18px 36px rgba(23, 32, 51, 0.14);
+  border-color: #d8c9af;
 }
 
-/* Gradient text */
-.text-gradient {
-  background: linear-gradient(135deg, #e50914, #7c3aed);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.subject-image {
+  filter: saturate(0.58) contrast(1.04);
 }
 
-/* Glass morphism */
-.glass {
-  background: rgba(26, 26, 46, 0.8);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+.subject-image-overlay {
+  background: linear-gradient(to top, rgba(17, 24, 39, 0.52), rgba(17, 24, 39, 0.16));
 }
 
-/* Shimmer for loading states */
-@keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
-}
-
-.shimmer {
-  background: linear-gradient(90deg, #1a1a2e 25%, #2a2a3e 50%, #1a1a2e 75%);
-  background-size: 200% 100%;
-  animation: shimmer 1.5s infinite;
-}
-
-/* Pulse glow */
-@keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(229, 9, 20, 0.4); }
-  50% { box-shadow: 0 0 20px 4px rgba(229, 9, 20, 0.2); }
-}
-
-.pulse-glow {
-  animation: pulse-glow 2s ease-in-out infinite;
+.display-title {
+  font-family: 'Source Serif 4', Georgia, serif;
+  letter-spacing: -0.01em;
 }

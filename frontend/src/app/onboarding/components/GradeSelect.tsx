@@ -23,18 +23,18 @@ const grades = [
 
 export default function GradeSelect({ value, onChange }: GradeSelectProps) {
   return (
-    <div className="space-y-4">
-      <h2 className="text-lg font-semibold text-white">What grade are you in?</h2>
-      <p className="text-white/40 text-sm">This helps us tailor content to your level.</p>
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-4">
+    <div className="space-y-4 animate-fade-in">
+      <h2 className="text-xl font-semibold text-slate-900">What grade are you in?</h2>
+      <p className="text-sm text-slate-600">This helps us calibrate lesson depth and the right pace from day one.</p>
+      <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
         {grades.map((grade) => (
           <button
             key={grade.value}
             onClick={() => onChange(grade.value)}
-            className={`p-3.5 rounded-lg border text-center text-sm font-medium transition-all ${
+            className={`rounded-xl border p-3.5 text-center text-sm font-medium transition-all ${
               value === grade.value
-                ? 'border-accent bg-accent/10 text-accent'
-                : 'border-white/5 hover:border-white/10 text-white/50 bg-dark-50'
+                ? 'border-brand-300 bg-brand-50 text-brand-700 shadow-sm'
+                : 'border-slate-200 bg-white text-slate-600 hover:border-slate-300 hover:text-slate-800'
             }`}
           >
             {grade.label}

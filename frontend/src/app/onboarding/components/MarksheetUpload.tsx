@@ -24,33 +24,33 @@ export default function MarksheetUpload({ file, onChange }: MarksheetUploadProps
   }
 
   return (
-    <div className="space-y-4">
-      <h2 className="text-lg font-semibold text-white">Upload your marksheet (optional)</h2>
-      <p className="text-white/40 text-sm">
+    <div className="space-y-4 animate-fade-in">
+      <h2 className="text-xl font-semibold text-slate-900">Upload your marksheet (optional)</h2>
+      <p className="text-sm text-slate-600">
         Upload your latest marksheet so we can better understand your strengths and areas to improve.
       </p>
 
       {!file ? (
         <div
           onClick={() => inputRef.current?.click()}
-          className="mt-4 border-2 border-dashed border-white/10 rounded-lg p-12 text-center cursor-pointer hover:border-accent/40 hover:bg-accent/5 transition-colors"
+          className="mt-4 cursor-pointer rounded-xl border-2 border-dashed border-slate-300 bg-slate-50 p-12 text-center transition-colors hover:border-brand-300 hover:bg-brand-50/60"
         >
-          <Upload className="w-10 h-10 text-white/20 mx-auto mb-3" />
-          <p className="text-sm font-medium text-white/50">Click to upload or drag & drop</p>
-          <p className="text-xs text-white/20 mt-1">PDF, JPG, or PNG (max 10MB)</p>
+          <Upload className="mx-auto mb-3 h-10 w-10 text-slate-400" />
+          <p className="text-sm font-medium text-slate-700">Click to upload or drag and drop</p>
+          <p className="mt-1 text-xs text-slate-500">PDF, JPG, or PNG (max 10MB)</p>
         </div>
       ) : (
-        <div className="mt-4 flex items-center gap-4 p-4 bg-green-500/10 border border-green-500/20 rounded-lg">
-          <FileText className="w-8 h-8 text-green-400" />
+        <div className="mt-4 flex items-center gap-4 rounded-xl border border-emerald-200 bg-emerald-50 p-4">
+          <FileText className="h-8 w-8 text-emerald-600" />
           <div className="flex-1 min-w-0">
-            <p className="text-sm font-medium text-green-300 truncate">{file.name}</p>
-            <p className="text-xs text-green-400/60">{(file.size / 1024).toFixed(1)} KB</p>
+            <p className="truncate text-sm font-medium text-emerald-800">{file.name}</p>
+            <p className="text-xs text-emerald-700/80">{(file.size / 1024).toFixed(1)} KB</p>
           </div>
           <button
             onClick={() => onChange(null)}
-            className="p-1 text-green-400 hover:text-accent transition-colors"
+            className="p-1 text-emerald-700 transition-colors hover:text-slate-700"
           >
-            <X className="w-5 h-5" />
+            <X className="h-5 w-5" />
           </button>
         </div>
       )}
