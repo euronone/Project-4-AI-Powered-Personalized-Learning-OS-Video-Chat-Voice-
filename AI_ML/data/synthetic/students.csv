@@ -1,0 +1,501 @@
+student_id,name,grade,interests,strengths,weaknesses,learning_style,onboarding_completed
+e750d9e1-621f-4d30-84e5-2763b84562ff,Reyansh,10,Mathematics|Art & Design,Biology|Psychology,Music,visual,True
+e33a1fe5-74aa-45cc-a658-26d9aba6f0d9,Mira,9,Mathematics|Psychology|Physics|Biology|Art & Design,Economics|Mathematics|Geography,Psychology,kinesthetic,True
+afc54a15-b616-433f-a145-02b88f8c0572,Rudra,3,Economics|Computer Science|Music|Mathematics|Chemistry,Hindi|English|Computer Science,Biology,reading,True
+4a5045e7-93d7-44f3-bfba-97a270d5d5a7,Om,1,Hindi|Physics,Environmental Science|English,Psychology|Mathematics,kinesthetic,True
+7de6794e-8e25-41db-a666-51bfe8564fd2,Kiara,8,Psychology|Hindi,Geography,Psychology|Art & Design,reading,True
+adef7d73-e4e9-42a1-a225-563a53699721,Reyansh,9,Art & Design|Physics|Mathematics,Biology|Music|Computer Science,English,kinesthetic,True
+5f2bd4f6-0191-4450-8a79-8233e5942353,Mira,4,Political Science|Environmental Science|English|Chemistry|Music,Biology|Political Science,Environmental Science|Music,visual,True
+80549e4c-b747-43fe-be0f-41a017d73e1a,Jai,9,Geography|Art & Design|Biology,History,Computer Science|Art & Design,auditory,True
+3f546215-cdef-4a88-9809-78c20bc40221,Rohan,10,Environmental Science|Music|Psychology|Mathematics,Environmental Science,Music,kinesthetic,True
+f1cfab24-aebb-4398-a129-67906ff5ba8f,Dev,4,Biology|Economics,English|Biology|Political Science,Geography|Environmental Science,auditory,True
+1d87b3b4-39c4-45a5-89dd-cc2e260a2757,Meera,4,Biology|Art & Design|Geography,Computer Science|Art & Design|Economics,Music|History,auditory,True
+16ec75a6-78de-4456-9a4b-d543ae17656e,Priya,2,Physics|Music|Mathematics|Psychology|Chemistry,Chemistry|Music|Political Science,Art & Design|Physics,kinesthetic,True
+165ef2ac-a644-4486-af9d-2e1665514ce3,Ayaan,9,Geography|Computer Science|Psychology|Mathematics|Political Science,Physics|Political Science|Geography,Environmental Science|Hindi,reading,True
+8672ef08-6fb1-4d11-8f5a-89d97828f2d8,Reyansh,6,History|Mathematics|Art & Design,Computer Science|Geography|Music,Political Science,reading,True
+9030c96f-152b-4455-8a6f-57d131b1e4ce,Rohan,10,Chemistry|English|Music,Geography,Political Science,kinesthetic,True
+012e91d4-af2a-4f56-b14c-8c9155af2183,Sai,K,Psychology|English,Biology|Mathematics,Art & Design,visual,True
+d6bb53d1-6b9d-4f1b-af98-b8d666b1293c,Pari,11,Environmental Science|Physics|Music|Geography|Chemistry,Political Science,Geography|Chemistry,kinesthetic,True
+71c1f904-f580-49ed-8fde-374cf4079f75,Aadhya,3,Art & Design|Computer Science|Hindi,Political Science|English|History,Physics|Biology,visual,True
+e9e124a1-0a4f-417f-87f8-63f5d102b603,Arjun,5,Economics|Geography,Economics,Mathematics,visual,True
+ef509374-9ca9-40ee-bcbf-84a7a7c8c833,Yash,3,Psychology|Mathematics,Physics|Geography,English,kinesthetic,True
+5f714c29-6809-4780-87a1-93715d82c1c6,Saanvi,3,Art & Design|Economics|Environmental Science,Biology|Music,Psychology|History,visual,True
+41efd84b-441f-4584-93b5-3d204471583f,Om,1,English|Hindi|Environmental Science|History|Mathematics,Political Science|Psychology|Physics,History,reading,True
+c32d6162-ec86-4844-b407-a26548781d85,Diya,12,Biology|Psychology,Geography,Chemistry|Hindi,reading,True
+63bd544c-a2b7-425f-9e82-80884e06f8cd,Rudra,7,Environmental Science|Physics|History,Physics|Mathematics|Political Science,Biology,auditory,True
+9af02df8-40df-42a8-8684-06b141ccdb0f,Pari,2,History|Psychology|Biology|Hindi|Mathematics,Hindi,History,kinesthetic,True
+db2b7b42-4a4a-4b28-9562-7c558e3fac46,Shreya,4,Art & Design|Psychology|Music|Geography|Political Science,History|Chemistry|Biology,English|Mathematics,visual,True
+044fd87d-41b1-4a5b-9c16-8534f38b7aad,Karan,11,Mathematics|Psychology|Economics|History,Psychology|Environmental Science|Geography,Mathematics,visual,True
+386ab489-05cc-4400-a0e9-222df34ff518,Isha,2,Economics|Physics,Environmental Science|Biology|Hindi,Art & Design,visual,True
+31f6deb3-c071-4e97-9601-8f8467f1d97d,Sanya,9,Hindi|Political Science,Economics|Geography|English,Biology|Environmental Science,reading,True
+735acbb2-7d32-4bf6-bfdc-be7aa4d53c8c,Dev,3,Hindi|Chemistry|Political Science|Music,History|English,Mathematics,visual,True
+79511d6d-6cac-4255-b9e7-b51736b24632,Sara,1,Geography|Computer Science|Chemistry,Psychology|Physics,Hindi,auditory,True
+d1b53c16-ef27-4656-906c-123e75447551,Krishna,7,Economics|Music|Political Science|Geography,Political Science,Art & Design|Physics,reading,True
+4082820a-21a5-4b69-b2e9-7420a8a3af4c,Sanya,1,Art & Design|Geography,Computer Science,Political Science|Biology,reading,True
+f33966b7-6928-4ead-85fa-d4ebb3084bbd,Aditya,3,Geography|History|Computer Science|Mathematics,Political Science,Psychology|Computer Science,visual,True
+adedf2f2-5561-447d-ad35-df4c7f21cf93,Ayaan,5,Political Science|Computer Science|Chemistry,History|Geography|Art & Design,Political Science|Mathematics,visual,True
+c9885cb1-e350-41f2-ac9a-e467495b57df,Navya,11,Geography|Mathematics|English,Geography|Chemistry|Hindi,Mathematics,reading,True
+96d8fe8d-07d2-4549-b87e-9f5f90b2d38f,Reyansh,12,Psychology|English,Political Science,Art & Design,reading,True
+60c8af3f-d65c-4486-a9ba-4b6d3647b9c9,Ahana,12,Economics|Art & Design|Chemistry|Biology|Music,Psychology,Mathematics|Chemistry,reading,True
+6634d2c9-259e-411f-885c-b506603ca8da,Aditya,12,Music|Political Science|Art & Design|Biology|Computer Science,Music,Hindi,kinesthetic,True
+7428fbee-9468-4155-849b-8797afaffbf7,Vivaan,3,Environmental Science|History|English,Environmental Science|Music,Biology,auditory,True
+d5c6a24e-0098-41b4-9124-888c17f2aa68,Kabir,6,Computer Science|Environmental Science|Physics|Psychology,Political Science|Geography,Music|Economics,visual,True
+52c225d2-ee91-4052-b219-60560607e332,Rohan,1,Chemistry|Economics|Computer Science|Mathematics,Economics,English|Music,kinesthetic,True
+6c64b318-3c92-4568-a8d7-26fc333bc475,Aryan,9,Hindi|Economics,Computer Science,Music,visual,True
+db391ee5-9de5-42ef-8054-8a890df342cb,Om,8,English|Hindi|Physics,Psychology|English|Economics,Music|Physics,reading,True
+1684944f-a6e9-46c5-8202-5c01c1eaef23,Yash,8,Political Science|Hindi|English|Environmental Science,Computer Science|Geography|Chemistry,Economics,kinesthetic,True
+9fb81d58-8cbe-44c0-94b0-e94f857f538d,Sara,10,Economics|Psychology|Computer Science,Geography|Environmental Science,Computer Science,auditory,True
+8e901402-4ed3-40bc-8ff6-6f9884b02f05,Ahana,6,History|Psychology|Environmental Science|Political Science,Geography,Environmental Science|Psychology,auditory,True
+cbb85cfd-8ad7-4d7b-a21f-4f0ea664dba4,Tara,10,Computer Science|Geography,Political Science|Economics|English,Biology,reading,True
+22e88e4f-0602-4617-b494-83579a8062e2,Neha,3,Chemistry|Mathematics|Environmental Science,History,Geography,auditory,True
+5cfc4671-62a0-4d7a-98e8-c99c62144d72,Aadhya,11,History|Hindi|Biology|Chemistry|Political Science,Mathematics|Music|Environmental Science,History,auditory,True
+6f7ba580-864e-4717-8d88-67b49a667e89,Pooja,12,Mathematics|Geography|Biology|Physics|History,Music,Political Science|Geography,reading,True
+ad7e7c2d-b46a-4525-aa18-1d77c858cfae,Rudra,12,Economics|Environmental Science|Art & Design|Geography|Hindi,History|Chemistry|Art & Design,Economics|English,auditory,True
+74b05afd-04a3-411f-a027-48c974ef1a93,Sara,10,Music|Psychology|Geography|History,Biology|Computer Science|History,Psychology,auditory,True
+a548b221-8542-4e9a-893c-fdbf42f36939,Sanya,4,English|Geography|Physics|Chemistry,Biology,Music|Chemistry,auditory,True
+dce96597-076b-4509-b09c-137adbf60112,Shreya,1,Hindi|English|Geography|History|Psychology,Biology,History|Environmental Science,visual,True
+49a11652-0493-49e2-85fd-64024aeac65e,Aadhya,12,History|Mathematics|English|Computer Science|Hindi,Geography|Art & Design,History,reading,True
+e9f3b5ec-680b-463d-9a1d-07e12654e2b6,Varun,6,Mathematics|Hindi|English|Political Science|Art & Design,Art & Design|Chemistry,Biology|Political Science,visual,True
+62cf3f31-965b-4197-84eb-854dc512480f,Pari,6,Physics|Political Science,Chemistry|Environmental Science,Biology|Mathematics,kinesthetic,True
+21b106b4-c58e-4779-8484-5478d092f82c,Zara,5,History|English|Environmental Science,Computer Science|Music,English|Physics,visual,True
+ad7ad474-96e9-4dcf-815e-d3343296e62d,Isha,11,English|Biology,Physics|Music|Political Science,Mathematics,auditory,True
+e807e78a-7834-49b5-b10d-46aff10d25d7,Kavya,K,Biology|Chemistry|History,Physics|Economics|Biology,Psychology|Hindi,reading,True
+71e07e78-fb35-411b-ba8a-1d434c09ba30,Vivaan,2,Music|Environmental Science,Computer Science,Political Science,reading,True
+133084d3-911b-446d-8207-5b1a47584458,Kavya,9,Hindi|Art & Design|Biology|Physics|Economics,Environmental Science|Political Science|Biology,Psychology,reading,True
+9110b5f3-0f34-4aad-b367-1ab2fb2f94fa,Arjun,10,Music|Economics,English,Art & Design|Hindi,reading,True
+02567eba-3cad-4164-b709-d902bbe9b9dc,Diya,K,Environmental Science|History|Physics|Hindi|English,Psychology|Environmental Science|History,Hindi,reading,True
+4ca058a9-1360-468c-a6ac-b58ad28a7fb9,Tanvi,9,History|Hindi|Art & Design|Economics|Computer Science,Environmental Science|Biology,English,auditory,True
+39307b20-ea6c-44f2-bac9-d31af530d82b,Aanya,12,Economics|Psychology|Political Science|Hindi|English,History,Chemistry|Geography,reading,True
+e173ff1e-9dc3-4013-bb94-bfd4ec616054,Isha,12,English|Computer Science|Economics|Art & Design,Geography|Mathematics,Chemistry,kinesthetic,True
+981c70cb-045d-4b0f-a672-3979d37197cb,Sara,7,Art & Design|History|Political Science,History|Psychology|Music,Physics,auditory,True
+d7d83686-5cef-4e76-ac07-69e9aa04540c,Pooja,6,Computer Science|Political Science|Economics,History|Geography,Hindi|Environmental Science,reading,True
+63602475-4593-41c6-a1d8-2c95a6b48f30,Aanya,5,Computer Science|Psychology|Environmental Science|Biology|Physics,Biology|English|Physics,Hindi,kinesthetic,True
+1ba6a8c5-f8d4-49b4-af35-7e54835a3b04,Aarav,4,Physics|Environmental Science|Biology|Computer Science,English,Computer Science,auditory,True
+fc6203a3-296b-4ff6-ac22-87ce3ec8f188,Arnav,4,Mathematics|Geography,Art & Design|Chemistry,Physics|Mathematics,reading,True
+84759cb8-1d96-4d38-8023-14132dcc1dd8,Riya,7,History|English|Chemistry|Mathematics|Computer Science,Physics|Environmental Science,History,visual,True
+1e76f34b-5557-42bd-bdbd-24f8331ff234,Rudra,9,Chemistry|Psychology,Computer Science|Physics|Biology,Art & Design,kinesthetic,True
+fafc8f16-5fb1-4327-a64b-c5e261548a33,Navya,9,Music|Geography|Hindi,Psychology|History,Political Science|Hindi,visual,True
+52480867-6e4c-49f6-82cb-f4a9be59d46e,Isha,9,Music|Biology,Biology|Computer Science|Political Science,Chemistry,auditory,True
+fa02ed1c-6d91-4e66-b5a1-1e45af66d566,Aadhya,8,Chemistry|Mathematics,History|Art & Design,Computer Science|Mathematics,reading,True
+0223d530-4be9-41e7-97f7-de31be5ca8b5,Ayaan,11,Art & Design|Environmental Science|History|Physics,Biology|Computer Science|Music,Geography,auditory,True
+218ec52a-0466-4e0c-b14e-832c5f4bde2d,Navya,10,Psychology|Computer Science|Chemistry,Mathematics,Environmental Science,reading,True
+8fee374a-5f9a-4a9d-b0a5-383eaebda193,Riya,7,History|Art & Design,Art & Design|Hindi,Economics|Psychology,kinesthetic,True
+d5f6fc49-950c-49f2-b668-577a3f97d6ec,Aadhya,1,Psychology|Hindi,English|Economics|Computer Science,Physics,visual,True
+241f0db6-2b65-4b4a-a7bc-ad3bd273dd58,Shreya,12,Economics|Mathematics|Music|Chemistry,Geography|Political Science,Computer Science|Chemistry,kinesthetic,True
+c77eec8d-fae9-43b0-8636-7b3eceade1fa,Neha,10,Physics|History|English|Hindi|Music,Political Science|Physics,Hindi,kinesthetic,True
+01b8e879-aa21-490f-91cf-afdd14d52bb9,Kavya,4,Environmental Science|Music|Geography|Mathematics|History,English,Hindi|Physics,kinesthetic,True
+05ee0a31-d308-4892-b082-fa6a07150334,Meera,8,Political Science|Environmental Science,History|Hindi|Mathematics,Art & Design,kinesthetic,True
+dfd9591a-6fb6-4c45-877b-67642332fe02,Riya,10,Music|Mathematics|Biology|Computer Science|Geography,Psychology,History|Art & Design,visual,True
+91b16d36-6fa6-4978-8bd0-fb99cfdeae5d,Ayaan,K,Art & Design|Chemistry|Computer Science,Mathematics|Geography|Hindi,Computer Science,kinesthetic,True
+770e8582-081f-4ea3-b9af-0bb9a7b41ea4,Dev,1,History|Art & Design|Computer Science,Art & Design|Computer Science|Hindi,Economics|Biology,auditory,True
+89c9e2bd-02fc-4239-b32f-c3e5a80af6d9,Karan,6,Psychology|Economics|Geography,Psychology|Chemistry|Physics,Geography|History,reading,True
+f9388536-75b2-4650-b611-48511630329d,Anika,K,Art & Design|Computer Science|Economics|Music,History|Environmental Science|Chemistry,Political Science|Economics,reading,True
+9938f079-cc00-45eb-8f7e-131bbfc46dbb,Ahana,8,History|English|Biology|Art & Design|Music,Hindi|Biology|Music,Mathematics|History,kinesthetic,True
+4af71aed-f175-4985-8efe-0294a7fc8e37,Reyansh,11,Hindi|Political Science|Music|Environmental Science|Chemistry,Mathematics|Chemistry,Biology|Economics,kinesthetic,True
+1df19ed6-03a3-4614-a659-bf5436f54b7e,Kabir,K,Hindi|Environmental Science|Political Science,Physics,Environmental Science|English,kinesthetic,True
+da416759-0957-4d80-b259-3550eb031482,Varun,10,Environmental Science|English,Environmental Science|Geography|Hindi,Music|Economics,visual,True
+53b8d099-7b5e-4ca3-839b-e91361585cb4,Reyansh,9,Biology|Political Science,Psychology|Computer Science|Biology,Geography,visual,True
+790b86d8-8645-474a-85bc-c1f4cdfc244c,Anika,7,Art & Design|Computer Science|Mathematics,English,Computer Science,reading,True
+28d9e81d-9bc8-4e4c-8bd5-2371c4701943,Sai,6,Biology|Geography|Hindi,Political Science|Music|Chemistry,Biology,kinesthetic,True
+f32f55f8-88b8-4a28-9181-b7180dc065a1,Yash,9,History|Economics|Chemistry,History,Geography|Computer Science,visual,True
+1a11bc41-131c-4997-952f-b3ffdac09818,Advait,12,Psychology|Computer Science|Political Science|Geography|Chemistry,History,Political Science|Computer Science,kinesthetic,True
+6f0c1132-16ad-4e83-a128-4ce8921cc4f7,Priya,11,History|Environmental Science|Computer Science|Biology,Environmental Science|History,Biology,reading,True
+5cdd0bce-9633-495c-b091-cd90718cbaba,Ahana,9,Art & Design|Computer Science|Mathematics|Political Science,Computer Science|Mathematics,Art & Design,kinesthetic,True
+0af80b74-3ebd-4338-9964-caa835dc6d87,Pari,4,Economics|Music|English,Political Science,Economics,auditory,True
+766df3ac-703f-43c5-bb76-73a44ef78ee3,Meera,10,Psychology|Political Science,Mathematics|Computer Science|Music,Physics|Art & Design,auditory,True
+2225d6d9-d66d-4d58-bd23-7ed7118670f6,Myra,1,English|Art & Design|Hindi|Chemistry,Chemistry,Economics|Psychology,auditory,True
+7347f9b2-9e85-4bb2-9be4-6349d0b8297c,Om,4,Music|Computer Science|Art & Design|English|Physics,Physics|Chemistry,Music,kinesthetic,True
+27ff9f56-3a99-4c61-91b8-c639b2b8a868,Ahana,12,Physics|Music|Hindi|Mathematics,Geography|Physics,Hindi|Music,reading,True
+c76ff11b-a9e4-4f3f-859c-0fe0568798e3,Pooja,9,Environmental Science|Political Science|English|Physics|Psychology,History,Political Science,reading,True
+0299650c-36fb-4379-82b3-a60d47f13c0d,Ayaan,9,Political Science|Physics|Psychology,Psychology|Art & Design,Political Science|Hindi,auditory,True
+11b53ef6-d42c-4c77-b937-35c5ab9d08c0,Krishna,K,Computer Science|History,Physics,Economics,kinesthetic,True
+1c508621-4a98-458d-bb3c-05169c154ea8,Mira,7,Political Science|Art & Design|Environmental Science|Geography,Economics|Art & Design,Hindi,visual,True
+a86999f3-770d-4dcf-afce-cb73b1282be1,Meera,7,Computer Science|Mathematics|Art & Design|English|Biology,History|Biology,Physics|Music,reading,True
+7b3ebb4a-a323-483c-8bcd-8c992809cb6e,Kabir,K,Computer Science|Biology|Physics|History|Music,Biology|Political Science|Environmental Science,Mathematics,auditory,True
+b7cc69f2-d90a-43db-82be-400fae58d7e5,Kavya,2,Physics|Environmental Science|Music,Biology|Economics|Psychology,Hindi,auditory,True
+aa8e9359-e903-4a4d-a3a7-eee6f652c7e7,Ayaan,12,Computer Science|Environmental Science,Chemistry,Environmental Science|Biology,visual,True
+be3fc0aa-fdf2-4eb2-af21-72bdfd6aa495,Pari,2,English|Music,Economics,Mathematics|Chemistry,visual,True
+941b5c85-329c-4c8f-a4e3-0e262254db8e,Karan,2,Geography|Physics|Art & Design|Environmental Science|History,Music|English,Geography,auditory,True
+f1059e12-a2f4-4f9f-9582-2c40d077f3f6,Zara,9,Art & Design|Music,Geography|Computer Science|History,Mathematics,kinesthetic,True
+654efa92-a975-40ba-8c98-aacf98dea2c3,Arjun,6,History|Art & Design,Physics|Psychology,Political Science|Biology,auditory,True
+351c4788-2294-44b6-b4a9-bd56c3406b18,Ayaan,4,Hindi|Economics|Geography|Computer Science,Geography|Economics,Physics|Environmental Science,auditory,True
+20be1ba3-0fd4-4145-aa64-e9bf5eecd72b,Aryan,6,Psychology|Biology|Hindi|English|History,Hindi|Art & Design,English,reading,True
+6e8c97e3-f75e-4043-8676-82d90386f83b,Aryan,10,English|Chemistry|Political Science|History,Physics,Chemistry,visual,True
+025c442d-5e56-4731-a6fe-b50d0af52dc7,Anika,11,Music|Chemistry|Geography|Mathematics,Geography|Psychology|English,History,kinesthetic,True
+501be360-3149-4242-b2db-7aa9b4918d83,Yash,11,Computer Science|Economics,English|Physics,Biology,kinesthetic,True
+feabd1fe-f7ce-4ed8-8ebe-fcc879a7eca1,Aryan,3,English|Environmental Science,English|Physics|Music,Art & Design|Computer Science,visual,True
+5e9dc6d4-19df-47f1-be69-bc1fcce288e9,Ishaan,9,Mathematics|Chemistry|Computer Science|Art & Design,Psychology|English,Mathematics|Chemistry,kinesthetic,True
+53a97ab4-2828-4fdf-bbdc-674f2abfa9bc,Neha,1,Art & Design|Political Science|Mathematics,Art & Design,Hindi,kinesthetic,True
+e1e5508f-a322-442e-b138-f0718343c735,Ishaan,5,English|Computer Science|Art & Design,Music|Economics,Mathematics,auditory,True
+9d191ff8-65fb-492b-ad87-815eeacf6ee9,Tanvi,12,Political Science|Physics,History|Political Science,Geography|Art & Design,kinesthetic,True
+f40523a4-6d72-4d1f-ae6c-c4010eeb0e88,Shreya,4,Music|Geography|Physics,Hindi|Physics,Music|Psychology,kinesthetic,True
+dfb23070-8af9-4154-8838-e18e1916f10c,Aanya,8,Mathematics|Biology|Hindi|Economics,Mathematics,English,auditory,True
+f0b144e4-494a-481f-884d-6db9f890ea74,Priya,12,Computer Science|English|Physics|Mathematics,Art & Design|Hindi,Chemistry,auditory,True
+4770f597-61d2-42d6-b87d-ab852dd16771,Arnav,8,Physics|Hindi|Art & Design|Mathematics,Mathematics|History,Hindi,kinesthetic,True
+19976f7d-c03e-4fb8-a6f5-e9650cbcddb7,Kiara,9,Art & Design|Political Science|Hindi|Computer Science|Physics,Mathematics|English,Psychology,kinesthetic,True
+9ffc3ef3-413c-4e02-ad19-d50821659bb4,Navya,11,Physics|Hindi|Psychology|Biology,Economics|Hindi,History,reading,True
+07482569-1c2d-4c9c-ac4f-648793554e6a,Anika,3,Music|Chemistry|Physics|Geography,Physics|Geography|Environmental Science,Hindi,auditory,True
+6c41c2ae-c11e-42e3-bde9-b27dbf2ae613,Rudra,3,Chemistry|Computer Science,Chemistry,Environmental Science,visual,True
+1f8764f9-0f6d-4e76-9b8a-0e8d67a9ace7,Ishaan,2,History|Music|Economics|Environmental Science|Psychology,Psychology|Economics|Political Science,Music|English,kinesthetic,True
+97c281fc-7136-42da-81d0-5903b6ab3a23,Dev,1,History|Political Science|Computer Science|Music|Economics,English,Computer Science,kinesthetic,True
+60ec872c-56f9-43cb-bca0-bf213c0506f1,Laksh,K,English|Environmental Science,Physics|Political Science,Art & Design,kinesthetic,True
+b1aaa3b6-058e-4878-82d5-033144ed0ba8,Vihaan,7,History|Music,Political Science|Biology|English,Art & Design|Chemistry,kinesthetic,True
+04903f85-d85e-4a31-b566-dd566f9698eb,Tanvi,1,Art & Design|Physics|Geography|Political Science,Mathematics,Music,kinesthetic,True
+f651a14e-2c21-45d4-af57-41d5c2def1e9,Vihaan,8,English|Psychology|Computer Science,Hindi|Music,Art & Design|Political Science,reading,True
+a7e65ee2-0f90-4ff7-95ef-db30dbca040d,Sai,1,Physics|Geography|Political Science|Hindi,Computer Science|Art & Design,Hindi,auditory,True
+935cbc71-b7cc-4375-8f30-8a1b08c41425,Pooja,5,Political Science|Art & Design|Psychology|Hindi,Economics,Computer Science,kinesthetic,True
+3e17cf33-64b8-4ed0-8a01-2de613f1d3a8,Vivaan,10,Environmental Science|Chemistry|Political Science|Art & Design,Political Science|Geography|Physics,Art & Design|Hindi,reading,True
+ffa44baf-feea-4035-ac63-fc3c3fa7d382,Arjun,4,Biology|English|Music,Biology|Psychology,Chemistry,reading,True
+5a1659e4-4bef-43a7-a323-0db6bc0decea,Kabir,12,Geography|Music,Environmental Science|Art & Design|Geography,Music,auditory,True
+5981acdf-8cf6-4581-831f-c3e33c6c9aea,Meera,9,Chemistry|Psychology|Environmental Science|Art & Design|Economics,Art & Design,Mathematics|Hindi,auditory,True
+f6986485-43fe-482a-bde3-10260d1165dc,Zara,7,Music|Art & Design|Psychology|History,Geography,Computer Science,auditory,True
+6690815f-ea52-46fc-85e4-4a40f5edfcf0,Vihaan,5,History|Music|Computer Science|Hindi|Geography,Hindi|Chemistry|Biology,History,kinesthetic,True
+2a6377e3-3b11-4296-8a7a-8bb0f43529ce,Myra,5,Art & Design|Environmental Science,Environmental Science|Physics|Computer Science,Biology,kinesthetic,True
+1d34f349-8700-49b2-a566-560cba7653df,Neha,8,Environmental Science|Hindi|Physics,Environmental Science,English|Mathematics,visual,True
+0a5a1b88-28da-4986-b5a1-82748797281b,Mira,6,Biology|Hindi|Physics|English,Mathematics,Chemistry|Music,reading,True
+39ad168c-eda0-4033-93bf-d8b0f95b631f,Sanya,12,Chemistry|Mathematics|Computer Science,Art & Design|Environmental Science,Psychology,kinesthetic,True
+ec46e1b5-df1d-4800-ad6d-de8d31e46ca4,Ishaan,7,Psychology|Physics,Computer Science,Psychology,kinesthetic,True
+dc63aed4-885c-4f8b-a93d-471a08948560,Riya,1,Biology|Computer Science|Physics|Mathematics,Hindi,Physics|Psychology,visual,True
+1826224c-9c88-4486-b936-1d37f2cc8eea,Neha,10,Art & Design|Chemistry|Computer Science,Mathematics|Economics,Computer Science|Art & Design,auditory,True
+9f274d71-8417-40fb-82c4-3e38c8b26525,Zara,10,Geography|English,Geography,Hindi,visual,True
+da0916f3-44ca-410b-8fe2-2540777129bd,Yash,10,English|Computer Science|Art & Design|Mathematics|Psychology,English,Music,visual,True
+59c539af-b1d8-4ae8-ad28-f7b1a65ee85b,Tara,12,Chemistry|Mathematics|English|Geography,Environmental Science|Political Science,Psychology,kinesthetic,True
+a86b0dee-af07-4802-950c-d59fdddbd97f,Saanvi,11,Political Science|Chemistry|Music|Environmental Science|Physics,Music|History|Mathematics,Computer Science|Physics,visual,True
+c707643f-4324-4140-a8ec-9bcc74be81cc,Anika,5,Geography|Hindi|Psychology|History,Mathematics|Music,English,visual,True
+094ff009-e7f8-4029-ae77-ed6d77aa4aa3,Diya,10,Computer Science|Physics|Music|English,Psychology|Hindi,History|English,kinesthetic,True
+fd41ebb2-ca3c-496b-925d-d71cab4944aa,Sara,11,English|Music|Geography|Computer Science|Physics,Hindi|Physics|Psychology,Political Science,reading,True
+ab3e0925-08e1-4945-a1b7-a08f599b2291,Tanvi,1,English|Political Science,Computer Science|History,Chemistry|Environmental Science,reading,True
+a7d3b354-0878-48dc-9ee3-f6684f3937e4,Arjun,7,Art & Design|Environmental Science,Economics|Hindi,Music|Mathematics,kinesthetic,True
+8ea3d018-94ff-4b5a-bb53-08f8bca23347,Isha,5,Mathematics|Chemistry|Economics,Music|History|Mathematics,Chemistry,reading,True
+b46fc3ca-38f7-4cb3-bbda-7926047350ea,Arnav,5,Economics|Mathematics|Psychology|Chemistry|Political Science,English|Psychology,Environmental Science|Physics,auditory,True
+2484722d-408e-4a46-8462-972d8acf3253,Diya,8,Hindi|English|Political Science|Computer Science,Physics,Music,kinesthetic,True
+f17e6e86-34e4-4053-8f08-c700db7f1501,Saanvi,8,Psychology|Geography|Physics|Computer Science|Art & Design,History|Biology|Economics,Psychology|Political Science,visual,True
+7e182d3e-06a8-4e96-8502-4adc7e4fbbb6,Sanya,2,History|Chemistry,History|Physics|Music,Environmental Science|Hindi,visual,True
+73c447ea-3ce1-4b85-ae80-1c4a71e3e9dd,Karan,8,Psychology|Computer Science|Chemistry|Art & Design,Psychology|Art & Design|Political Science,English,auditory,True
+a6a4285b-7342-4c13-962b-13e89fdac0f8,Krishna,1,Music|Chemistry|Biology,Mathematics|English,Economics|Political Science,visual,True
+20928875-7752-4e2e-8c4a-042b51fc79a6,Rohan,1,Hindi|Art & Design|Environmental Science|History,Hindi|Music|Psychology,Chemistry,visual,True
+40c2eef6-7dc3-40a2-a4ec-3002295bbfc6,Karan,7,Political Science|Geography|English|Chemistry|Environmental Science,Economics|Chemistry|Music,History,visual,True
+770b14be-8c9d-475e-ae9c-4a057a0655e8,Nisha,1,Computer Science|Chemistry|Environmental Science,Psychology|Art & Design,English,reading,True
+c6c34fc6-c8f3-40bf-acba-79228f2e2113,Sai,1,Biology|Political Science|Geography|Computer Science,Political Science,Economics|Geography,auditory,True
+8debaac0-289a-4695-8432-b732af8d6358,Sai,9,Chemistry|Political Science|Economics,Psychology|Economics|English,Mathematics,visual,True
+1d1178d9-51da-4674-b276-898aaa032f71,Advait,10,Political Science|Biology|Music|Economics,Economics|Political Science,History,reading,True
+d7758344-3472-468e-9f67-2e218e845ac8,Vihaan,10,History|Biology|Music|Political Science,Computer Science|History,Environmental Science,auditory,True
+4b05bd18-2056-4e3d-83bb-7cb6dc0859fd,Rahul,7,History|Psychology|Biology|English|Economics,English,Music|Hindi,auditory,True
+e83fac4e-204f-4ecf-b27e-4b717e5a7406,Tanvi,12,Geography|Psychology|Physics|English,History,Computer Science,auditory,True
+2957115a-30c7-4968-bf09-0192b2234f56,Rohan,2,Mathematics|Computer Science,Environmental Science|Economics,Biology|Chemistry,reading,True
+01489be8-a07e-4ce5-be80-4b67abf3b9e4,Rahul,3,History|Geography|Psychology,Psychology|Computer Science,Mathematics|Physics,kinesthetic,True
+b538c921-85ba-4bf0-84fc-b9335ee9a21e,Tara,3,Economics|English|Mathematics,Computer Science,Political Science|Art & Design,kinesthetic,True
+663193bd-3f6a-44dd-a087-768c2d5d6f70,Meera,4,Environmental Science|Physics,Chemistry|Computer Science,Psychology|Geography,visual,True
+3d46c0cd-143c-42e8-87be-a2e185583361,Karan,6,Economics|Geography,English,Physics|History,kinesthetic,True
+bb0cb6a5-45ae-404c-8e5c-c0140d5738e1,Meera,12,Environmental Science|Economics|Political Science|Psychology,Chemistry,History,reading,True
+8834fdfd-ad1c-4797-840f-1dd410cb32e5,Krishna,8,Music|Chemistry|Biology|Economics,Hindi|Geography|Mathematics,Physics,reading,True
+44b08c32-03fc-4933-bf94-bd08914be50e,Kiara,12,Geography|History|Chemistry|Economics|Psychology,English,Chemistry|History,reading,True
+27b3c5bf-4620-4a17-bdc8-c04469851943,Meera,9,Geography|Environmental Science|Psychology|Music,Art & Design|Economics,History|Mathematics,reading,True
+032e2407-8923-4035-bb76-717b55270900,Zara,10,Hindi|Economics,Music|Art & Design,Economics,reading,True
+2d341a5e-a61b-48cb-9737-71e0c851c462,Isha,10,Art & Design|Mathematics|Economics,Chemistry|Geography,Biology|Music,visual,True
+14be7c04-9c4b-4251-9683-f5fe45e29d04,Jai,9,Biology|Mathematics,English|Hindi,Geography,auditory,True
+1c6771f0-f251-4231-ac87-756434663a3b,Nisha,6,Environmental Science|Psychology|Art & Design|Music|Mathematics,Chemistry|Geography|Biology,Environmental Science|Political Science,kinesthetic,True
+c1e17b8c-f8c6-4e82-a890-8be5f554c38e,Saanvi,5,History|Geography|English,English|Political Science|Music,Art & Design|Geography,auditory,True
+b7b684c7-2331-4e02-8429-af6fbf33119c,Anika,4,Biology|Computer Science|Music|Environmental Science,Biology|Art & Design|Environmental Science,Hindi|Geography,reading,True
+2c3fba35-3623-4f0f-b747-c3048daed79e,Aditya,4,Economics|Political Science,Hindi|Psychology|English,Computer Science,reading,True
+31563911-a0db-4994-92a4-1cb308e279a3,Varun,11,English|History,Computer Science|Art & Design|History,Biology,reading,True
+c4f392cd-16b1-45d3-9f8e-7b1e06158cc2,Aadhya,8,Chemistry|Physics|Economics|Art & Design,Biology|Psychology|Mathematics,Music,visual,True
+c5d278e2-ad96-4390-aa49-c9b0d43efd49,Mira,1,English|Art & Design|History|Physics|Political Science,Mathematics,History,kinesthetic,True
+36e7f0ba-8757-450c-be89-1938eef5f660,Arnav,7,Music|Computer Science|English,Political Science|Mathematics,Music,auditory,True
+5c150052-4c11-4f70-abf5-c21a8b57b410,Rahul,8,Psychology|Chemistry,Psychology|Environmental Science,Mathematics,kinesthetic,True
+3008137b-3d71-4aa1-b567-e3445795106d,Varun,2,Psychology|Mathematics|Environmental Science|Computer Science,Economics|Physics|English,Political Science|Environmental Science,kinesthetic,True
+0bdf55da-29bd-4d44-a03b-c0f4e621b07e,Sanya,2,Computer Science|Biology|Music|Physics|English,Art & Design,Political Science|Computer Science,auditory,True
+82778b69-0248-4635-b679-d6b7a5a3adca,Karan,K,Music|Computer Science|Economics|Political Science,Chemistry,Psychology|History,reading,True
+0918477a-d36c-4eea-ac42-4cbec660c5ba,Priya,1,Political Science|Physics|Chemistry|Music|History,Psychology|Biology,English,auditory,True
+48e3e64c-67e6-40d9-8b52-310e3e428797,Vihaan,7,English|Computer Science|Economics|Art & Design,Mathematics|Computer Science|Political Science,Psychology|English,visual,True
+f010191d-928a-4993-b927-3f6e534ba5fd,Sara,7,Chemistry|Hindi|Political Science|Geography,Music|Computer Science|Art & Design,Environmental Science,reading,True
+5b234488-d169-4c6e-b24f-c6576ce50993,Pooja,9,Biology|Chemistry|History,History,Hindi|Music,kinesthetic,True
+de781a74-ab62-44f5-8207-ba6bde8d5ca7,Arjun,12,Music|Biology|Political Science,Environmental Science|Music|Physics,Economics|Hindi,visual,True
+aa942f5a-458a-4937-b99b-8f6e276e1bea,Aanya,K,Economics|Geography|Chemistry,English,Physics|Art & Design,kinesthetic,True
+8e4def28-dda2-4d74-8baf-891b4afd7a40,Dev,1,Music|Mathematics|History|Chemistry|Geography,History|Economics,Political Science,reading,True
+5fe5c65d-f93f-46ae-9ca6-ff2d6cb8fc4d,Arjun,11,Hindi|Computer Science,Art & Design,Economics,visual,True
+80b18c51-9a2a-4a2d-817f-19659f9397f6,Neha,6,Art & Design|Physics|Geography|Mathematics,Psychology,Mathematics|Computer Science,auditory,True
+27f21fa1-cad1-4511-a4f0-0b9e28bfbbd9,Sai,12,Music|Political Science|Art & Design,Hindi|English|Psychology,Geography|Environmental Science,auditory,True
+33808bb6-fee1-47e1-83ac-53e1bc4ef784,Navya,10,Physics|Chemistry|Geography|Hindi,Chemistry|Art & Design|Biology,Mathematics,kinesthetic,True
+f977572f-edfa-49fc-a249-665972cd5127,Rudra,10,Geography|Hindi|Biology|Music|History,Chemistry|Computer Science,Environmental Science,visual,True
+42ec3520-df4f-4c4d-986a-626b6ccd06fe,Laksh,K,Economics|Music|Mathematics|Biology|Art & Design,Physics,Geography,visual,True
+f8a5b220-2d70-4c80-92f3-46779e74a4de,Kavya,3,Hindi|History,Geography,Environmental Science,visual,True
+243089f8-2147-4eee-9835-171cf08486b7,Ishaan,2,Biology|Environmental Science|Art & Design|Economics,Economics|Psychology,Biology|Computer Science,auditory,True
+0268d417-bba2-4b59-af6c-5a618cf3e8fb,Vihaan,6,Computer Science|Mathematics|Geography|Economics,Psychology|Chemistry|Political Science,Economics|Geography,reading,True
+6861781d-7eff-4030-a024-011eac07fd8b,Zara,10,Music|Geography|English|Art & Design|Hindi,Chemistry|Computer Science,Biology|Political Science,auditory,True
+da9d3fa4-eb90-434a-be73-a64149a8a87e,Nisha,3,Environmental Science|Art & Design|Chemistry|History,Geography,Hindi|Economics,auditory,True
+7056b8aa-606f-434c-b03c-c2c266181224,Om,6,Computer Science|Biology|English,Physics|History|English,Art & Design,auditory,True
+2bf9d938-bfb5-4bce-a3f5-033f26ac676c,Rudra,K,Hindi|Political Science|Economics|Music,Environmental Science,Biology,auditory,True
+6a321b85-1ba4-41f0-beb8-2108c16641ea,Ayaan,7,Environmental Science|English|Computer Science,Biology,Music,kinesthetic,True
+4021a409-d0da-41f8-8832-e2f52cddc9b7,Mira,3,Hindi|Biology|Geography,Music|Computer Science,Geography|Economics,reading,True
+5eeb9f26-98d1-4a83-a97e-f43ed5422ac4,Aanya,4,English|Geography|History|Music,Music,Environmental Science|English,reading,True
+f689f914-4f2a-40c7-8b02-be696076bdc4,Saanvi,5,Mathematics|Economics|Biology|Art & Design|Chemistry,Computer Science,English|Chemistry,reading,True
+79d66af3-2c0a-4d4f-83a8-8ea1d263ba80,Ahana,3,Economics|Environmental Science|Biology|History|Geography,Political Science|English|Computer Science,Psychology|Environmental Science,kinesthetic,True
+3a63d16f-dedf-49ab-9c62-27522ed84fb1,Mira,7,Art & Design|Music|English,Chemistry,Biology|Economics,visual,True
+0b22e41e-beff-4a3d-a297-8febcb87a710,Aarav,8,Environmental Science|Psychology,Environmental Science,Music,kinesthetic,True
+f7fa72b1-5c29-4ac1-85b0-63182b37c756,Kiara,2,Physics|Art & Design|Chemistry,Biology,Hindi|Mathematics,kinesthetic,True
+e31c057a-bb94-4b01-8b11-b7154ac2a26a,Vivaan,10,Mathematics|Psychology|Geography|Music|Hindi,Mathematics,Economics|English,kinesthetic,True
+60410e39-d92c-4845-8e82-e94653e4bf98,Nisha,12,Physics|Psychology|Geography,Biology,Political Science,reading,True
+246f7e94-af84-4fd7-9265-272aa28c8ced,Aadhya,5,Music|Hindi|Physics|English,History|Economics,Environmental Science,reading,True
+62cce201-39dd-440c-b8c3-c580b587a1a2,Pooja,10,Political Science|Environmental Science,Music|Mathematics|Physics,Geography|Psychology,kinesthetic,True
+c4c2686e-adb0-4ef0-9107-a46d30c52a4b,Kabir,K,Art & Design|Chemistry,History,Art & Design|Environmental Science,visual,True
+31c7c908-1951-4a3f-9349-0ddfa72efbce,Tara,8,Biology|Psychology,Psychology|Economics|History,Mathematics|Physics,reading,True
+57d10699-d43e-4ef3-afde-c8492f2989be,Sanya,8,Chemistry|Environmental Science,Mathematics|Biology,Psychology,kinesthetic,True
+1163da02-39e5-4e05-a409-d0930745c4be,Krishna,1,Chemistry|Economics|Biology|Environmental Science,Political Science|Geography,Hindi|Environmental Science,visual,True
+8c0356c9-2c47-4a18-9d2f-697ab8403c57,Vivaan,8,Mathematics|Physics|Hindi|Biology,English,Environmental Science|Hindi,reading,True
+01e32ed4-b1ed-4616-8092-9c2ed30d43b3,Sara,12,History|Biology|English|Geography|Hindi,Chemistry|Political Science,Physics|Art & Design,auditory,True
+66f89765-bc2c-45e4-8ebe-14507be057c9,Priya,11,Physics|Computer Science,Hindi,Music,reading,True
+f22a7889-4b43-4ce2-9596-af069b941c91,Sai,5,Physics|Mathematics,History|English,Physics|Chemistry,auditory,True
+1c38fe5e-643e-40e1-abeb-040626657d32,Laksh,6,Geography|Psychology|Environmental Science|Hindi|Physics,Physics,Economics|Chemistry,reading,True
+fdcbd941-348f-4f13-ba64-74c429e8bdd8,Nisha,6,Computer Science|Hindi,Music|Physics,Political Science,auditory,True
+ac96b8f3-46bb-4f94-8343-c10a237b56d2,Myra,10,Chemistry|Psychology|Computer Science|Music|Art & Design,Chemistry|Physics,Geography,kinesthetic,True
+ffabfa5a-00cd-404b-ae42-73457a6633a1,Reyansh,4,Music|Physics|English|Computer Science|Biology,Political Science|History|Economics,Geography,auditory,True
+fb112580-fbc5-4e89-bbad-e4c7b4fbdaff,Mira,4,Hindi|English,Hindi|Music|English,History|Geography,auditory,True
+d0f19a16-95b7-480e-8800-5e0135a353ab,Jai,4,Economics|Art & Design|Biology|History,Chemistry|Hindi,English|Environmental Science,kinesthetic,True
+98daf2e0-8149-454f-8609-d4b88fc8ca20,Varun,9,English|Hindi|Computer Science,English|Physics,Art & Design,auditory,True
+cb787996-dd12-4527-97f1-374849238477,Neha,10,Art & Design|History,Biology|History|Music,Psychology|Physics,kinesthetic,True
+58df2a96-c8df-4023-b06f-9370fc580464,Laksh,2,Biology|Computer Science|Political Science|Chemistry,Hindi|Music|Psychology,Geography,kinesthetic,True
+51b8df82-73e6-4d09-b519-940b3cc64811,Varun,9,Geography|Psychology|Art & Design|Hindi|Environmental Science,Music,Art & Design|Environmental Science,visual,True
+3190b2dd-4047-4690-a8d1-a959e54c1060,Mira,1,Political Science|Psychology|English,Political Science,Economics,kinesthetic,True
+9dbaa06b-4e8e-4cd6-a0a8-b2d1176e085c,Ahana,12,Music|Hindi|Physics|Mathematics,Computer Science,Economics,auditory,True
+971dd2c6-7676-429a-a4e2-df8f4aa8bf0f,Reyansh,7,Hindi|History|Music|Political Science,Art & Design|Geography|Chemistry,Mathematics|Economics,reading,True
+3bfccb01-2a54-4cee-9c19-0b3abf15edf6,Nisha,6,Physics|Environmental Science,Chemistry|English|Computer Science,Political Science|Hindi,kinesthetic,True
+6f13ceea-f907-4010-a38e-d61b3695a770,Sanya,5,Physics|History|Art & Design|Music|Environmental Science,Physics|Computer Science,Psychology,visual,True
+ca2b61af-9dfb-4fd5-bd62-139f761db502,Pooja,K,Political Science|Physics|Psychology|Chemistry,Biology|Geography|Chemistry,History,kinesthetic,True
+15e97d9f-0170-42ff-bf19-ca60613b0eff,Ahana,7,Music|Hindi|Political Science,Chemistry,History|Mathematics,auditory,True
+6f284bb0-2308-4362-8625-42a85d5a9344,Reyansh,7,Hindi|Mathematics|Art & Design|Biology|Music,Music|Art & Design,Economics,auditory,True
+e39db969-99fc-41f1-9d82-5c93aa9acbe2,Kiara,5,Biology|History|Physics|Computer Science,Environmental Science|History|Geography,Art & Design|Hindi,kinesthetic,True
+8170bee3-2259-4261-8d8d-fbc91be35d42,Sai,9,English|Psychology,Economics|Chemistry,Art & Design|Psychology,auditory,True
+c4538ea1-087d-4d35-bf13-62ba4dd6520d,Karan,5,Biology|Computer Science,Chemistry,Music|Biology,kinesthetic,True
+fa4c131e-cfbc-43b6-b572-4e372746fd9b,Ananya,6,Economics|Hindi|Environmental Science,History,Economics,kinesthetic,True
+7ff93dfe-93c0-4794-b13a-902727f28d10,Krishna,4,Chemistry|English|History,Mathematics|Environmental Science|English,Economics,auditory,True
+4b95d518-c891-4484-97f8-e3380d862787,Rudra,6,Hindi|Political Science|History|Psychology|Music,Chemistry|Physics,Psychology,auditory,True
+3eec45d4-6c20-4d73-8160-b08f03f1f750,Pooja,4,Computer Science|Biology,Computer Science|Chemistry|Music,Art & Design|Economics,visual,True
+c9b9334e-ceb5-4914-bbb5-000fb352f88c,Tanvi,9,Computer Science|Music,Environmental Science|English|Geography,Psychology,auditory,True
+79c09930-6dae-48f9-8d9e-06a0deccacc2,Pari,6,Art & Design|Environmental Science,Music|Biology|Computer Science,Economics,reading,True
+33f3b6cf-3400-4c9b-9a36-539c9920844c,Krishna,1,Environmental Science|Physics|Music|Biology|Art & Design,Economics|Art & Design|English,Chemistry|Music,auditory,True
+d2e8eba6-c0e8-4e71-9226-43c5dd30b9c9,Sanya,3,Economics|English,Computer Science|Economics|Geography,Hindi,reading,True
+6670c85d-d0a9-44fb-8116-269e19f72a82,Mira,4,Environmental Science|Geography|Political Science|Physics,Music,Mathematics|Computer Science,auditory,True
+850e51dc-1278-440b-8893-34a649ad39d7,Arnav,11,Biology|Chemistry|Art & Design,Environmental Science|Biology,Geography|Chemistry,reading,True
+919a43b0-5654-4863-b59e-985a025e6392,Dev,10,Hindi|History|Physics|Political Science|Music,Geography|Art & Design,Environmental Science|English,kinesthetic,True
+ba81acfb-c464-4b32-92c4-3ebd4a007235,Rahul,5,Environmental Science|Music,Physics|Art & Design|History,Chemistry|Political Science,auditory,True
+adf43aac-e50f-485d-a940-12bf27b52d4c,Riya,6,History|Computer Science|English,English|Geography,Art & Design,reading,True
+eb0e05d3-bd83-4809-8818-a46662707e31,Ananya,10,Mathematics|Physics,Music|Environmental Science|History,Physics,kinesthetic,True
+92ee9fbe-85e7-4b68-8d60-1f7f1fe31c24,Sai,7,Hindi|Biology,Psychology|Chemistry|Political Science,Biology|English,reading,True
+e0b35cd1-2c7b-47e0-93ed-c79d20387029,Aryan,4,English|Political Science,Chemistry|Mathematics|Hindi,Psychology|English,visual,True
+9472c2e6-7915-4f77-9a45-541fd029fc30,Tara,11,Mathematics|Biology,Physics|Chemistry,Political Science,kinesthetic,True
+3d62fd41-f492-4ccd-b822-3f02e414b123,Zara,K,Art & Design|English,Environmental Science,Art & Design|Chemistry,visual,True
+09763d3e-75c3-4162-b022-47062a2a7401,Kavya,3,Physics|Art & Design|Music|Psychology|Environmental Science,English|Computer Science,Geography,auditory,True
+c0909652-8d0a-418a-8c3b-cddb688480b4,Anika,10,Physics|Geography|Economics,Economics,History,auditory,True
+2b5c3938-6cf3-4727-97bf-283889d5874d,Krishna,10,Psychology|Hindi|Economics,History|Environmental Science|Biology,Physics,visual,True
+2eafe263-d549-40fd-8857-8e7b6d7d4129,Laksh,9,English|Hindi|Psychology|Chemistry|Biology,Political Science|Physics,Economics,reading,True
+dcaadc59-2cfa-42cd-b4bb-6588d9b30d48,Rahul,12,Environmental Science|Psychology,Psychology|Computer Science|Biology,Environmental Science,reading,True
+afb03438-3a01-4a7d-a9bd-490768bd221c,Riya,10,Music|Psychology,History,Physics|Biology,visual,True
+4905f734-84ab-4bb4-93b7-164a2e05efa9,Tara,8,English|Psychology,Hindi,English|Economics,auditory,True
+93ed789f-2deb-4b59-aeb1-77c1fa8f5638,Vihaan,12,Music|Physics|Mathematics|Economics|Environmental Science,Computer Science,Mathematics,kinesthetic,True
+9a930fdb-5f06-457d-97ab-1483fce7e169,Varun,8,Political Science|Art & Design|Geography|Hindi,Art & Design|Hindi,Music,auditory,True
+5d9a0b7e-f970-49a1-97b4-0e96b101594f,Rohan,4,Computer Science|Physics,Psychology|Biology|Music,Economics,kinesthetic,True
+30024dee-34c1-44cf-b9f2-e5b009a01f6d,Isha,9,Computer Science|Art & Design,Art & Design|Environmental Science,Mathematics,visual,True
+114745b3-3d29-4264-a307-b557199e16d2,Aarav,6,History|Economics,Mathematics|Computer Science|Political Science,Chemistry,auditory,True
+43c76cac-21f0-4fcd-9152-c1e0bc395254,Krishna,11,Chemistry|History,Geography|Psychology,Chemistry|English,reading,True
+5f16a38d-e0b4-4fe7-81da-38f56785712b,Pari,11,Music|Mathematics,Music|Hindi,Economics|Physics,visual,True
+1d8fea66-7046-41b2-ab78-a3c457759f83,Kavya,7,Geography|English|Mathematics|History|Economics,English,Computer Science,visual,True
+c4e141e5-3e4e-4dfb-afee-5e37c48d04a6,Zara,9,Biology|Art & Design,Mathematics|Psychology|Environmental Science,Physics,reading,True
+3d219dc5-276c-476d-8196-a879700e5e7f,Isha,6,Chemistry|Environmental Science|Mathematics,Music|Art & Design|Environmental Science,Biology|English,kinesthetic,True
+6d4e54f9-06bc-4db6-b513-cf700afdd49a,Aadhya,11,Computer Science|Environmental Science|Physics|Economics,Physics|Geography,Biology,visual,True
+ac60b27b-9af4-4a95-bcfc-5b9e03a6c486,Pooja,6,Psychology|History,Music|Environmental Science,English|Physics,kinesthetic,True
+4098f47f-8386-467c-8cc7-ab711bb9c7d7,Kavya,K,Biology|Computer Science|Economics|Environmental Science,Economics|Biology|History,Music|Political Science,auditory,True
+8a0b7a0a-1d53-4e9d-9d10-cbe05a9c2ddc,Aarav,11,Chemistry|Mathematics|Hindi,Biology,Art & Design|Music,reading,True
+c27a902d-cfa5-4e5c-a7b9-fbf339a9e0be,Riya,K,Environmental Science|Art & Design|Psychology|Computer Science|Physics,Geography,Hindi,visual,True
+8de20c51-b959-47a4-beb4-d940cb2b482d,Shreya,2,Physics|Mathematics|Biology|Geography,Art & Design|English,Environmental Science|Physics,visual,True
+ee04bade-882c-4cdb-b5af-abdc115e616e,Yash,8,Political Science|Environmental Science|Hindi,Economics,Hindi,auditory,True
+ec182bee-53e5-45d8-89b5-612665f8869a,Aadhya,3,Computer Science|Environmental Science|English|Hindi,Environmental Science|Art & Design|English,Geography|Computer Science,visual,True
+cae1c41a-93c5-4570-8d83-0bdf73e3953e,Tanvi,3,Music|Psychology|Economics,Chemistry,Biology,kinesthetic,True
+22fde01b-d2e4-44cd-b2f2-d8f9e12debfd,Ananya,5,Physics|Geography|English|Biology|History,History|Computer Science,Physics,reading,True
+bb22cb89-c272-4e6b-8c22-441a9e516420,Rahul,11,Biology|Environmental Science,Chemistry|Physics,History,visual,True
+1eac74b0-22db-4c35-a68b-d732b8ebeca0,Dev,10,Computer Science|Environmental Science|Chemistry|Mathematics,Environmental Science|History,Physics,visual,True
+6e673f47-adba-4642-8ed7-e5e9c8f2f192,Rahul,12,Physics|Mathematics|Environmental Science,Chemistry,Psychology,reading,True
+a1010b74-70a7-484d-a61c-3308d2bbc878,Arjun,10,Economics|Psychology,Psychology|Environmental Science,Mathematics,auditory,True
+019abe05-4349-4a7b-902e-d82aaef43b36,Arnav,10,Music|Chemistry|Physics|English|Psychology,History,Chemistry,kinesthetic,True
+0a065d65-cb1d-42fe-8857-73c237ef9267,Myra,11,History|Mathematics|Hindi|Political Science|Music,English,Chemistry,reading,True
+6d2aed0d-46f3-4a5d-aebd-6fd59b5eefe2,Zara,7,Mathematics|Economics|Environmental Science,Biology|Political Science|Computer Science,Geography|Art & Design,visual,True
+8d6c051c-31b2-468d-9283-a1346a462bbb,Varun,1,Hindi|Chemistry|Psychology|Biology,Psychology|Music|Geography,Art & Design,visual,True
+9ce1d60d-5963-4810-a809-49267f4b3d12,Diya,6,History|Geography|Music|Psychology,Psychology|Economics,Hindi|Computer Science,visual,True
+e49c0db7-798a-4a1f-80d2-d75f038a9072,Kavya,5,Mathematics|Music|Environmental Science,Mathematics|Music,Economics|Hindi,auditory,True
+eb025efa-80de-4da9-91ee-a5d28b8a5dff,Aadhya,2,Biology|Political Science,Computer Science,Environmental Science,kinesthetic,True
+bceb8ec9-51c6-4c2a-a31e-1b0010273015,Sanya,5,Chemistry|Biology|Economics,Music|Art & Design,Economics|Mathematics,reading,True
+89782365-e82e-4555-835d-df1f558bcdcd,Aditya,9,Economics|Biology|Music,Geography|Computer Science,Economics,visual,True
+cf6d445d-6471-488c-be5d-afa95afa41f3,Kabir,K,Economics|Biology|Mathematics,History|Mathematics|English,Biology,auditory,True
+2eb65ca3-ee14-488e-9db9-25243eef2cb8,Meera,12,Mathematics|Psychology|Chemistry|Economics,Psychology|Chemistry|Music,Economics,visual,True
+21dd55f9-2acc-431b-b42a-4a2c1faae37a,Riya,5,Economics|Physics|English|Computer Science|Music,Chemistry,Environmental Science|Art & Design,reading,True
+4ad90664-404b-465e-9fac-ed223631ad17,Om,2,Biology|Political Science|Economics|Chemistry,Computer Science|Art & Design,Chemistry|Psychology,visual,True
+5fd50c7f-8f85-494d-88b9-cb2d5121bf0f,Arnav,11,Environmental Science|Music|Economics|Mathematics|Chemistry,English|Music|Economics,Environmental Science,visual,True
+768c9462-35be-42f5-bcb1-c9ce6155ad17,Sai,7,English|Art & Design|Physics,English,Chemistry|Art & Design,reading,True
+ab14c288-1461-404e-bca8-815c643a1a99,Pari,7,Computer Science|Biology,Art & Design,English,visual,True
+49374838-9169-4681-9683-77d6d40f38e2,Riya,11,Mathematics|Hindi,Art & Design|Hindi,History,kinesthetic,True
+1f3d3da5-c915-4794-ae16-41ba57b8a1de,Sara,5,Physics|Environmental Science|History|Economics|Political Science,Biology|Chemistry|History,Mathematics,visual,True
+9eb75d8c-cb61-4b25-a447-b09a3d39b771,Sai,5,Physics|Psychology|English|Chemistry,Chemistry|Art & Design,Economics,reading,True
+4925d3b3-99d4-49a5-aada-1878a2ce3ba1,Kabir,9,Art & Design|Mathematics|Hindi|Political Science|Chemistry,Psychology|Hindi|Chemistry,Physics,auditory,True
+fa6b500b-2a69-4e8b-92e4-007e2d361063,Vihaan,3,Art & Design|Geography|Psychology|Music|Environmental Science,Political Science|Computer Science,Biology|Physics,kinesthetic,True
+b737307a-1bc0-43fd-81d2-e87716f40214,Vivaan,9,Chemistry|Mathematics|English|Environmental Science|Hindi,Computer Science,Biology|Physics,auditory,True
+fc41f33f-59aa-4200-9093-f6b0089f91fe,Varun,2,Physics|History|Psychology|Computer Science,History|Psychology,Physics|Art & Design,kinesthetic,True
+54ace653-275c-4ee2-97cb-418afc4913b3,Aadhya,2,Psychology|Hindi|English|Chemistry,Mathematics|Computer Science,Economics|Hindi,reading,True
+3fff5c3e-413d-45d8-acf8-e1af4d53af43,Rudra,9,Chemistry|Music,Political Science|Physics|Environmental Science,Economics|History,auditory,True
+e31c7ee3-9e82-42b5-aa3f-d5ab05ee4612,Zara,8,Environmental Science|Hindi,Hindi|Geography|Political Science,Music|Biology,reading,True
+64cbe8b9-8bfb-41df-a405-be5c7bce2bda,Rudra,1,Psychology|Environmental Science|Art & Design|Mathematics|Geography,Psychology|Geography|Music,Physics,kinesthetic,True
+ca1d392a-4c14-4d09-b078-6904d51d238e,Aryan,2,Biology|Music|Psychology,Mathematics,Chemistry|Art & Design,auditory,True
+a1b1119c-0db8-4930-870a-823ec015ff04,Priya,10,Environmental Science|Economics|Computer Science,Psychology|Art & Design,Physics,kinesthetic,True
+99be8939-877a-4dd9-9a55-e9eb6fd2ee03,Ishaan,8,Environmental Science|Computer Science|Geography|History,Music,Physics|Hindi,auditory,True
+703dcd0d-d1ce-4fa3-8935-3a5f38c3c585,Neha,9,Psychology|Physics,Music|Physics|Psychology,Economics|Hindi,reading,True
+07da34e8-5e93-4e2a-8250-7fa11aa9fae9,Kabir,6,Economics|Psychology|History|Mathematics|Chemistry,Hindi|Chemistry,Mathematics|Geography,auditory,True
+200673e5-73a9-4dea-81ac-66788b5ae2b0,Reyansh,K,Psychology|Computer Science|English|Mathematics|Music,Computer Science|Psychology,Music|Art & Design,auditory,True
+ca9179e8-0734-432d-ac86-d529b66afd63,Tanvi,2,Art & Design|History|Music|English,Art & Design|Hindi,Biology,auditory,True
+40fd6085-887f-4441-a7e0-92318e3f677c,Rahul,6,Music|Geography|English|Mathematics|Environmental Science,Physics,Music|Economics,auditory,True
+dd5ba720-d112-472f-990b-52eabe9cf090,Aditya,12,Chemistry|Biology,Environmental Science,Biology,kinesthetic,True
+4c952b5c-32fb-47e7-a6f1-724a088fb234,Vivaan,K,Art & Design|Biology|Computer Science|English,Geography|Hindi,Music,auditory,True
+68a13d02-0619-4e32-9187-e6434ee98c33,Sara,5,Economics|History|Chemistry|Environmental Science|Psychology,English|Psychology|Chemistry,Environmental Science|Physics,visual,True
+5d2183a6-5dff-41ed-b12c-119ed97a678b,Aanya,6,Chemistry|Environmental Science,Music|Biology|Environmental Science,Art & Design,reading,True
+80fb6e93-0847-479a-a820-3fd7d45b4943,Aarav,10,Geography|Mathematics|Music|Political Science|Environmental Science,Psychology|Chemistry,Political Science,auditory,True
+5d48c8c1-3383-40f8-9a16-53c495169aec,Aanya,4,Art & Design|Psychology|Political Science|Computer Science,Psychology|Hindi,Geography|Computer Science,kinesthetic,True
+f2d32fc2-4ef2-42ac-bfd2-86d272cbd47b,Reyansh,4,Economics|Physics|Mathematics|Geography|Political Science,Geography|Political Science,Computer Science|Music,kinesthetic,True
+2755722e-de74-4b91-b082-91f0546b13ef,Nisha,1,Computer Science|Political Science|English|Psychology,Political Science|Art & Design,Biology|Chemistry,auditory,True
+4f647039-dbec-425d-b24c-3273ed2d560b,Ahana,K,Political Science|English|Psychology|Chemistry|Mathematics,History|Computer Science|Environmental Science,Geography|Psychology,visual,True
+59ebd485-7f1d-4a3e-bb71-764f5579817c,Karan,9,English|Art & Design|Environmental Science,Political Science,Art & Design|English,reading,True
+cbb54b39-6dec-43ae-928b-9f937f3ad2a3,Pooja,2,Computer Science|Physics|History,Art & Design,Music|Environmental Science,auditory,True
+216b974f-e287-465b-8353-e771f69df97e,Kabir,10,Political Science|Physics|Biology|English,Art & Design,Hindi|Environmental Science,reading,True
+d765c8a8-25d2-4c7b-b150-aa840e30feaa,Saanvi,4,History|Environmental Science|Physics|Psychology,Environmental Science,History,visual,True
+48ec2355-9f87-4bed-914d-99e1fac4f037,Dev,10,Geography|Computer Science|Hindi|Mathematics|Chemistry,Biology,History|Political Science,auditory,True
+190841e1-a600-4520-aeab-b0768258f43d,Aarav,5,Music|Physics|History,Political Science|Chemistry,Music|Mathematics,kinesthetic,True
+906ad5f5-8013-4f16-bbe7-e63200ea1eb0,Kiara,4,Music|Psychology|Chemistry,Music|Chemistry|History,Biology,kinesthetic,True
+f8b45865-a2f9-4056-bd4c-27d2d03ad178,Meera,10,Hindi|Psychology|History|Environmental Science|Mathematics,Geography,Music,visual,True
+686061fa-ad28-4bd3-a7b8-c1d91725db06,Reyansh,5,Mathematics|Political Science|Psychology,Art & Design|Biology|Environmental Science,English|Chemistry,kinesthetic,True
+37971885-6a0e-4a89-b2e1-1137fb2f1867,Krishna,8,Chemistry|Physics|Mathematics|Computer Science,History|Art & Design,Hindi|Music,reading,True
+4c3545e2-da88-4434-86df-de9d02475781,Krishna,7,Music|Biology|Chemistry|Hindi,Biology,Music,auditory,True
+6255da07-89f2-42d8-a7ff-065dff2a18b8,Aditya,11,Economics|Geography,Physics,Music|Art & Design,kinesthetic,True
+956fce88-42ed-46f2-a127-7f7e4bce7475,Jai,10,Music|Geography|Economics|Mathematics,Mathematics|Political Science|Physics,Chemistry,visual,True
+5d96e8a6-ff2a-4590-b635-9b4a53796f1a,Neha,6,Hindi|Physics|Geography|Computer Science|History,Chemistry|Biology|Art & Design,Hindi,visual,True
+efbd06ac-4953-44d3-996d-6eec3e9ebf46,Ayaan,10,Economics|Psychology|Art & Design|Chemistry,Environmental Science|Physics,English,visual,True
+7eebab68-bbb0-494b-a277-1b3184f8e99c,Sanya,7,Economics|Biology|Music,Environmental Science|Geography,English,kinesthetic,True
+92945fb6-984f-4856-9bc7-d709b93803f3,Aarav,4,Mathematics|Geography|History,Art & Design,English|Biology,visual,True
+ec4074f9-714f-495f-a0a1-a32e7db36b96,Arjun,10,Psychology|Physics,Political Science|History|Chemistry,Art & Design,visual,True
+d268bfd0-1766-4c52-894c-2e1c44ebeae9,Sara,4,History|Computer Science|Environmental Science,Mathematics|Physics,Chemistry,reading,True
+a547c220-d5a0-42ca-aafc-0e12a57303b1,Mira,12,Hindi|Art & Design|Physics|Music,Mathematics,Art & Design,auditory,True
+1abd2cdd-5896-4eb5-99f2-312899d47f82,Rahul,5,Psychology|History|Economics|Computer Science,Physics|English|Environmental Science,Chemistry,kinesthetic,True
+8cd3d8f7-b5d2-4bcf-85fc-e041334f3c56,Krishna,7,Environmental Science|Hindi|Art & Design|History,Political Science|Music,Physics,visual,True
+ee323fc1-cb55-495d-a343-4f033061832d,Priya,2,Hindi|Economics,Music|Economics,Chemistry|Political Science,reading,True
+e5b4a73e-8854-4dff-b2d7-f3bdb60e4ce7,Tanvi,9,Environmental Science|Political Science,Psychology|Chemistry|History,Physics|Geography,visual,True
+5f419a46-5ab3-4a33-9f8b-4e856982c483,Kabir,1,Political Science|English|Mathematics|Art & Design,Geography|Music|Art & Design,Environmental Science,visual,True
+051a6777-e37a-4430-b0c0-ea3dd5e15a4a,Mira,6,History|English|Political Science,Political Science|Hindi|Chemistry,Mathematics,auditory,True
+7651188c-2e33-4c0d-a80c-df31c5243ec8,Aadhya,8,Environmental Science|History|Chemistry|Physics|Psychology,Biology|English,Mathematics|Political Science,kinesthetic,True
+a6918be9-0a60-4eb9-b7e1-2a480c8f3d85,Riya,6,Physics|History|Environmental Science,History|Physics|Psychology,Hindi|Chemistry,visual,True
+a7a7d285-65cc-4dd9-bafc-a2c5ae339195,Aanya,1,Hindi|Mathematics|Geography|Music|Environmental Science,Music,Geography|Psychology,kinesthetic,True
+72b756aa-9db4-4e14-91ef-a2d30233d004,Meera,5,Environmental Science|Mathematics|Biology|History,Geography|Music,Environmental Science|Art & Design,kinesthetic,True
+ea11bc25-d512-42ef-aa91-dedf894b7b60,Sara,1,Music|Political Science,Mathematics,Hindi|Art & Design,reading,True
+9c220410-ad28-4697-9520-a710aa9edf90,Kiara,11,Mathematics|Chemistry,Chemistry|Environmental Science,Physics|English,auditory,True
+4d7ee83c-a66f-4c89-a552-7ce63e0afd8e,Kabir,3,Psychology|Environmental Science,Biology|History,Environmental Science,visual,True
+d328411f-9a31-497b-be68-884ff1e31456,Aarav,12,Mathematics|Political Science|Environmental Science|Economics|Physics,History|Political Science,Geography,visual,True
+885fdb0b-26ab-41d7-8d1c-8dbde8889889,Priya,8,Environmental Science|Economics|History|Geography|Chemistry,Economics|Chemistry|Art & Design,Physics,reading,True
+38a02539-5d27-4d96-92e8-4c2eed29bb77,Krishna,8,Hindi|Economics|Art & Design|Biology|Computer Science,English|Computer Science,Psychology|Chemistry,kinesthetic,True
+b8b7b9cb-7e88-4900-b651-331d2f29dbca,Aanya,9,Environmental Science|Art & Design|Geography|English,Art & Design|Geography|Political Science,Biology,reading,True
+2f2b3797-d5eb-4d88-b927-ad4eb66fbd75,Rudra,10,Psychology|Political Science|Chemistry|Art & Design,Chemistry|Geography|Environmental Science,Psychology|Physics,reading,True
+7e00fff6-ebf8-4d20-9a60-f9f10218efb1,Nisha,8,Economics|Psychology|Political Science|Art & Design|Hindi,Art & Design|Environmental Science|Geography,Hindi|Mathematics,visual,True
+d2d537b2-f692-461a-926d-ba1d45e1a721,Tara,K,Chemistry|Mathematics|Political Science|Environmental Science|Biology,Music|Psychology,Computer Science,reading,True
+f543f221-664b-4fad-bf7c-d4febff48915,Tanvi,2,Art & Design|Music,Biology|Music,Hindi,visual,True
+0a732704-f949-4b51-a5b3-418d0e0e50a0,Vihaan,9,Art & Design|Political Science|Geography,Biology|Geography,Environmental Science|Music,kinesthetic,True
+3417c8ec-a5d1-4005-ada6-3d904e7928c4,Kavya,6,Music|Political Science|English|Geography|Mathematics,Art & Design,Biology|Economics,kinesthetic,True
+8b8bec78-932a-45dd-8c31-57818885b209,Tanvi,3,Music|Economics|Geography|Art & Design,Biology|Music|Art & Design,English,auditory,True
+b70699de-1842-48a0-a5ca-72199cc385c7,Myra,10,Chemistry|Psychology,Geography|Physics|Hindi,Economics,reading,True
+fb1544ba-d157-4c63-b10f-1971ccabf791,Aditya,2,Economics|Environmental Science|Computer Science,English,Music|Chemistry,auditory,True
+541f026e-fc5f-4f98-8cd3-cdce9dbb7559,Anika,5,Music|Political Science,Environmental Science|Political Science|Computer Science,Art & Design|Economics,visual,True
+a0fdb2de-9efa-448d-9c08-4e03729ffba3,Varun,12,Geography|Biology|Chemistry|Psychology,Music,Hindi,kinesthetic,True
+3f155382-a9e6-4917-838b-8e489de307b1,Kiara,1,Biology|Psychology|Political Science|English,English|Computer Science,Psychology,kinesthetic,True
+e392c23d-f239-4b14-9097-665a448e1d43,Tara,8,Physics|Political Science,History|Biology,Mathematics,reading,True
+8a77bcf5-3f26-4853-ba0e-1228b3284a11,Tanvi,6,Hindi|Computer Science,Art & Design|Computer Science|Mathematics,Political Science|Psychology,kinesthetic,True
+00eb144d-caa4-4696-9fff-d7fade085247,Arjun,K,Psychology|Political Science|Biology|English,Physics|Psychology|Chemistry,Music,auditory,True
+5d00d7c0-4c63-477e-94bd-0fc9eae9d4e7,Ahana,10,Environmental Science|Political Science|Hindi,Biology,Art & Design|Physics,auditory,True
+84d088c1-ca38-418b-84db-9b4821ca761f,Arnav,K,Art & Design|English|Mathematics|Physics|Psychology,Chemistry,Economics|Physics,auditory,True
+d5bfef53-50ff-4a26-a9c0-e4451afc74c1,Aarav,4,Hindi|History|Political Science|Psychology|Art & Design,Mathematics|Hindi,Political Science,visual,True
+61fb49f0-c22f-4739-b2c6-5ce3b2ef5d34,Tara,12,Art & Design|Environmental Science,English,Computer Science,reading,True
+34d55e0a-6902-4fc1-a425-ba90168ed289,Ananya,9,Computer Science|Music,Hindi|Psychology,Geography,auditory,True
+97b5ae3e-b169-4139-9ac9-cd7d7617dd4c,Pooja,2,Music|Psychology|Geography|Computer Science|Political Science,Computer Science,Mathematics|Economics,auditory,True
+590dccda-48af-4852-ae61-7eec63aba9f5,Aanya,1,Mathematics|Economics,Hindi|Geography|Environmental Science,Computer Science,reading,True
+d03dbe8a-48ba-461f-814c-9e28e198eedf,Diya,3,Psychology|Political Science|Geography|Chemistry|Art & Design,Biology,Computer Science|Physics,visual,True
+134b4e4d-5fe4-4da5-94c3-0c48994d5288,Om,12,Political Science|Geography|Physics|Computer Science|Psychology,Computer Science,Biology,kinesthetic,True
+e719ed7d-c36c-4770-a9c1-e85018d97cd7,Rohan,5,Chemistry|Political Science|Environmental Science|Biology,Computer Science,Biology,kinesthetic,True
+b2b2ca30-44cf-4cf6-9cad-afa5e6f9eded,Ananya,7,Economics|Political Science|Computer Science|Art & Design,Chemistry|Economics|Environmental Science,Hindi|History,visual,True
+9fed5260-9bae-41ad-b5c6-61951268699c,Om,5,Music|Biology|Art & Design,Political Science|Hindi|Computer Science,Chemistry|Environmental Science,reading,True
+1abb0778-fb44-4460-ab87-52d85e955f56,Krishna,7,History|English|Music|Computer Science|Psychology,Physics|Chemistry|Political Science,Hindi,auditory,True
+671e6c95-d8a8-44a9-9263-de1f2539d1c4,Shreya,4,Art & Design|Physics,Environmental Science,Psychology,kinesthetic,True
+026d895e-8435-4e5e-9d59-1b3ebd5f8d36,Meera,12,Psychology|Mathematics|Geography,Geography|Psychology,Art & Design|Chemistry,kinesthetic,True
+a5395b2d-ebca-4936-bea7-39c7fab5fc26,Yash,3,Chemistry|History|Geography|Music,Hindi,Economics|Mathematics,auditory,True
+fb050dbb-cc3a-471f-8d09-0a6424365cfd,Om,12,Music|Geography|Chemistry,Chemistry|Psychology,Music,kinesthetic,True
+3eccb968-859f-4608-bf27-b11ef5af6d21,Aditya,5,Biology|Music,Biology|Physics,History|English,auditory,True
+752b5f65-633f-4768-af36-1cdeae728f24,Nisha,8,Hindi|History|Environmental Science|Mathematics,Political Science,Physics|Music,reading,True
+92488692-7402-4530-9406-7669294affa0,Arjun,11,Economics|Geography|Psychology|Chemistry,Political Science|Hindi,Art & Design|Music,reading,True
+200d847c-c0bf-46b6-b4fd-f4238d827424,Karan,6,Geography|Hindi|English,History|Music,Political Science|Mathematics,auditory,True
+93be1239-a964-4a07-a811-32a9511301c2,Meera,7,Biology|Physics|Geography,Computer Science|Biology|Chemistry,English,visual,True
+ee669463-eb90-4fb9-909a-c05b7fb51ac9,Shreya,10,Hindi|Music|English,Physics|History|Political Science,Economics|Computer Science,auditory,True
+652f1341-82e4-43b7-ba47-96f79bac316a,Ishaan,10,Mathematics|Biology|Psychology|Chemistry|Economics,Chemistry|Psychology|Political Science,Art & Design,visual,True
+743eb258-3bcf-4bbb-8f8c-e869db7d70eb,Tanvi,2,Psychology|Chemistry|Geography|Hindi,Economics|Political Science|Mathematics,Chemistry|Computer Science,kinesthetic,True
+9dada8cf-f4e5-4fd3-8598-0f5243cf5497,Yash,7,Biology|Environmental Science|Hindi,Chemistry|Music|Economics,Art & Design,reading,True
+16171a54-77ff-4283-aaca-d19849aba877,Reyansh,2,Psychology|History|Economics|Music,Biology,History|Chemistry,visual,True
+04934e47-3ded-47f0-8151-56c31149571b,Varun,3,Environmental Science|Chemistry|Economics|Physics|Psychology,Psychology|Economics,Environmental Science,visual,True
+fc2c90b0-4360-4848-8ea1-9338cc903f6e,Jai,1,Political Science|Chemistry|Economics|Geography|Mathematics,Political Science|Hindi|Geography,English|Mathematics,kinesthetic,True
+7968e28f-18e9-4d13-ae12-06e5baab2965,Krishna,3,Music|Psychology|Hindi|English|Economics,Psychology|Music|Art & Design,Hindi,reading,True
+630d174c-2e58-4824-9ffa-67171be99c2f,Aarav,7,Psychology|Environmental Science|Physics,Economics|Geography,Computer Science|Biology,visual,True
+b96644a9-ec21-458e-89a3-35a3ecbbfdac,Reyansh,9,Geography|Mathematics,Political Science|Biology,History|Hindi,auditory,True
+d13c0cc0-f509-464d-a51f-4e7b78e8f4d6,Pooja,6,Computer Science|Environmental Science|Geography|Hindi,English|Economics|Computer Science,Biology|Geography,kinesthetic,True
+0835d0da-49e7-412e-9b69-688da22998f4,Yash,2,Geography|Psychology|History|Computer Science,Economics|English,Environmental Science|Chemistry,visual,True
+dc0435f2-6016-4bc2-a434-b55e6633eeb8,Rahul,11,History|Music|Art & Design,Physics,Economics,reading,True
+513bba75-7d24-4b19-a395-dfa3cddd88cd,Laksh,12,Chemistry|Hindi,Mathematics|Music|Physics,Economics,kinesthetic,True
+36139039-61e8-47b2-8ae1-8c4439ded02e,Priya,1,Computer Science|Biology,Physics|Economics,Environmental Science,kinesthetic,True
+79598bf7-9c57-4556-b6a0-2dda862a4bd3,Nisha,9,Art & Design|Economics|Mathematics|Chemistry,History|Psychology|Mathematics,Music,reading,True
+c559d86f-dc58-42a5-9e20-16a550dba1fc,Aditya,3,Music|Economics,Geography|Art & Design|Biology,Environmental Science,reading,True
+07159900-b533-4de3-ba23-8c75b0fa4e3b,Rahul,3,Chemistry|Physics,Music|Hindi,Art & Design|History,auditory,True
+25932545-1d88-4722-8936-06643336bd84,Sara,8,Art & Design|Psychology,Psychology,Geography,reading,True
+eafda730-261d-47a9-abf5-9f8a06481add,Karan,5,Biology|Economics|Psychology|History,Economics|Mathematics,Biology|History,visual,True
+df45d35a-533c-4162-a822-d8ff8781be6f,Pari,8,Geography|Computer Science,Physics|Music,Economics|Political Science,kinesthetic,True
+41ffb463-f5a6-41c5-a188-7a3f700344c7,Arjun,6,Music|Biology|Psychology|English|History,History|Economics|Mathematics,Chemistry|English,kinesthetic,True
+7ce81fea-ca0b-489f-84fc-6fd2cde898d2,Pari,10,Political Science|Art & Design|Biology,Hindi|English,Environmental Science,auditory,True
+d7e5afed-a55a-4aee-81eb-2569b5fd4993,Rohan,4,Hindi|Political Science,Environmental Science|English|Physics,Economics,reading,True
+f015a309-6199-4ede-8ee8-4aaaa77151b2,Isha,3,Chemistry|Art & Design|Political Science|Biology,Art & Design|Biology,Environmental Science,reading,True
+9f8affef-ebd4-4dfa-9a1f-34254d58c000,Sai,3,Biology|Environmental Science|Psychology,English|Chemistry|Music,Physics,kinesthetic,True
+214564b8-b9da-4055-868a-eae025b964c3,Riya,9,Music|Environmental Science,Mathematics|Environmental Science|History,Art & Design|Hindi,reading,True
+4c21bd2e-b8af-49fc-9745-e7d339807a14,Nisha,7,Music|Geography|Computer Science,Biology|Music,Mathematics,kinesthetic,True
+801a6868-29f0-417b-a9f2-fa06b906ee14,Ayaan,7,Geography|English,Environmental Science|Political Science,History,kinesthetic,True
+7581b6d9-57ff-49aa-9831-524d940a8756,Meera,5,Mathematics|Political Science,Hindi,English,reading,True
+b0824af4-4230-4d31-b8e3-f47f8036c525,Neha,2,Biology|Computer Science|History|Economics,English|Chemistry,Geography|Computer Science,reading,True
+0e6b4066-551c-4214-94f7-cc859f3d07a4,Aryan,5,Computer Science|History|Chemistry|Economics|Music,Political Science|Biology|Physics,English|Art & Design,kinesthetic,True
+2b220d97-f631-4712-b82f-7d2fbf9ee71c,Riya,3,Music|Art & Design|Chemistry,Music|Mathematics,History,auditory,True
+d33b7cc0-60df-4241-926a-908de78af3d2,Vihaan,10,Music|History|Computer Science|Psychology,Environmental Science|Economics|Mathematics,Chemistry|Biology,auditory,True
+4a8606ad-6b4b-4906-a1d5-c348998e2a44,Neha,4,Environmental Science|Political Science|Physics|History|English,English|Psychology,Hindi|Mathematics,visual,True
+2e1381fa-d66c-4ef0-8168-1ef8a60efd8b,Tara,5,Economics|Psychology|Political Science,Geography|Chemistry|Music,Hindi|Psychology,kinesthetic,True
+8d50a0e4-3f65-4b69-8858-883371a66d67,Kabir,12,Psychology|Physics|Hindi|Economics|Computer Science,Political Science|Chemistry,Music,kinesthetic,True
+189dd3b1-e651-4e30-91f6-298d010cb0f0,Sanya,10,Environmental Science|Physics|Psychology|Chemistry|English,English,Art & Design|Computer Science,reading,True
+49b63e39-290c-4007-ad34-6c3139b58210,Krishna,9,Computer Science|History|Music|English|Economics,History|Hindi|Chemistry,Mathematics,auditory,True
+22ce7ddb-0a04-4eea-9926-aaab4fb89fc5,Arjun,10,Art & Design|Psychology|Environmental Science|Physics,Chemistry,Physics|Psychology,kinesthetic,True
+a1108901-1097-4cab-92ee-f83c41d94db1,Pari,8,Mathematics|Music,Geography|Music,Physics,auditory,True
+e45e5097-5a27-42c7-af2e-06fdfa9a1a21,Ananya,1,Computer Science|Biology|Environmental Science|Art & Design|Psychology,Political Science|Chemistry,Economics,visual,True
+7c37cb3e-7938-4708-8afe-ea65055e1fde,Diya,K,Environmental Science|English|History|Music,Psychology|Computer Science|Geography,Chemistry|Political Science,kinesthetic,True
+ffa0d32e-363e-45d3-9df3-fe9747360958,Sai,10,Geography|Political Science|Environmental Science|Psychology|Computer Science,History|Geography,Psychology,kinesthetic,True
+e7a4f584-e0d3-4486-9aca-3916b2298dc7,Sara,4,Hindi|Computer Science|Chemistry|Environmental Science,Mathematics,Hindi,kinesthetic,True
+28611178-21e0-4240-b490-682be0858dca,Laksh,8,Art & Design|History,Computer Science|Mathematics,Psychology|Hindi,auditory,True
+0c04bc50-3c05-4ddb-83ec-25d7575ca356,Ananya,12,Geography|English,Hindi,History|Biology,kinesthetic,True
+da2bbd3a-5341-4a45-b24b-9839d858ef2b,Ahana,6,Computer Science|Physics|Hindi,Biology|Geography|Music,English|Environmental Science,reading,True
+3d81b194-ee58-4ff4-8944-89726532a6b6,Dev,6,Environmental Science|Physics|Chemistry,Computer Science,Art & Design,kinesthetic,True
+bbf60f59-27f3-4eee-9161-a07590bb5223,Sanya,4,Biology|English|Mathematics|Chemistry|Music,Mathematics|Chemistry|Physics,History|English,kinesthetic,True
+c731c3cf-cf51-4562-8313-dad72e8c6656,Neha,11,Biology|Physics,Mathematics,Computer Science|Hindi,reading,True
+30cfa30a-5e42-4f8d-9782-c3363644346e,Myra,12,English|History|Art & Design|Mathematics|Psychology,Environmental Science,Mathematics,kinesthetic,True
+15fcd37c-6b78-4e44-b170-11c48bf3ced9,Kavya,1,Chemistry|Biology|Computer Science|Hindi|Mathematics,Music,Hindi,kinesthetic,True
+0a92204c-e924-460e-b8fc-1c80426f368e,Priya,3,Biology|History,Music|Physics|Geography,Economics,reading,True
+d8f23e4f-cd9a-439c-b5c8-8e5446ea16cb,Zara,5,Political Science|Art & Design|Mathematics,Psychology|Geography|Environmental Science,Computer Science,reading,True
+d1fb404f-61c6-4b79-9129-288e8dd3f823,Ananya,3,Psychology|Mathematics|Political Science|Biology,Biology,Hindi|Mathematics,reading,True
+14a42786-42fb-441e-aa7b-04ad93b579d0,Jai,9,Hindi|Music,Mathematics,Political Science,kinesthetic,True
+5945905e-2bea-4f25-8ed1-544371512718,Kiara,11,English|Music|Physics,Chemistry,Physics|Art & Design,reading,True
+f790a188-0b6c-4c12-b2df-5da412ea424b,Riya,12,Mathematics|English,Chemistry|Art & Design|Geography,Biology,auditory,True
+f72cc99b-b1dd-4be4-84fa-6cd6c6955ae0,Krishna,5,Music|History|Art & Design|Biology,Art & Design,English|Music,reading,True
+d1a6d466-3072-4d45-8de4-7b29a5791015,Anika,K,Art & Design|History|Geography|Computer Science|Music,History|Biology|Economics,Art & Design,reading,True
+833d095c-b82e-4de1-b729-f70a6b8c5ebe,Sara,11,Computer Science|Environmental Science|Economics|Geography|Chemistry,Geography,History,reading,True
+6af9d21d-69d2-4b22-9cb2-68d03197322d,Meera,8,History|Mathematics|Music|Political Science,Hindi|Art & Design|Chemistry,Music,auditory,True
+33a92f9c-84f6-4f06-8187-fc536cb16abf,Ishaan,5,Political Science|Geography,Biology|Geography,Psychology|Political Science,reading,True
+1d236a58-7762-4063-aaea-a6feffd29754,Saanvi,5,Political Science|English|Physics|Music|Geography,Physics|Mathematics|Chemistry,Biology,visual,True

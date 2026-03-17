@@ -1,3 +1,114 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap');
+
+:root {
+  --bg: #f6f4ef;
+  --bg-elevated: #ffffff;
+  --bg-muted: #f2eee6;
+  --text-primary: #172033;
+  --text-secondary: #3f4b61;
+  --text-muted: #677389;
+  --border: #e5dfd4;
+  --brand: #1f3c88;
+  --brand-soft: #dce5ff;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 999px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+body {
+  color: var(--text-primary);
+  background:
+    radial-gradient(1100px 480px at -12% -18%, rgba(31, 60, 136, 0.1), transparent 62%),
+    radial-gradient(900px 420px at 112% -10%, rgba(193, 153, 97, 0.09), transparent 58%),
+    var(--bg);
+  font-family: 'Sora', 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app-shell {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 6.25rem 1.25rem 2rem;
+}
+
+.surface-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  box-shadow: 0 14px 38px rgba(23, 32, 51, 0.08);
+}
+
+.surface-card-soft {
+  background: linear-gradient(180deg, #ffffff, #faf8f3);
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+}
+
+.subtle-chip {
+  border-radius: 999px;
+  border: 1px solid #e4ddcf;
+  background: #f9f6ee;
+  color: #414e65;
+}
+
+.scroll-row {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 0.5rem;
+  scroll-snap-type: x mandatory;
+}
+
+.scroll-row > * {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+}
+
+.card-hover {
+  transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 36px rgba(23, 32, 51, 0.14);
+  border-color: #d8c9af;
+}
+
+.subject-image {
+  filter: saturate(0.58) contrast(1.04);
+}
+
+.subject-image-overlay {
+  background: linear-gradient(to top, rgba(17, 24, 39, 0.52), rgba(17, 24, 39, 0.16));
+}
+
+.display-title {
+  font-family: 'Source Serif 4', Georgia, serif;
+  letter-spacing: -0.01em;
+}

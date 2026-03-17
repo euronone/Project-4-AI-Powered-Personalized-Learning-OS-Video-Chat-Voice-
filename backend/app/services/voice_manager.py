@@ -4,10 +4,11 @@ from app.config import settings
 
 
 async def create_realtime_session() -> dict:
-    """Create an OpenAI Realtime API session with ephemeral token.
+    """Create an OpenAI Realtime API ephemeral session token.
 
-    Configures server VAD for turn detection and
-    appropriate silence duration for natural pauses.
+    The browser uses the returned client_secret to connect directly to
+    OpenAI Realtime, keeping the audio path out of our backend.
+    Server VAD is enabled for natural turn detection.
     """
     async with httpx.AsyncClient() as client:
         response = await client.post(
@@ -17,7 +18,7 @@ async def create_realtime_session() -> dict:
                 "Content-Type": "application/json",
             },
             json={
-                "model": "gpt-4o-realtime-preview",
+                "model": settings.openai_realtime_model,
                 "voice": "alloy",
                 "modalities": ["audio", "text"],
                 "turn_detection": {
@@ -26,5 +27,7 @@ async def create_realtime_session() -> dict:
                     "silence_duration_ms": 800,
                 },
             },
+            timeout=10.0,
         )
+        response.raise_for_status()
         return response.json()

@@ -1,3 +1,5 @@
+from typing import Literal
+
 from pydantic import BaseModel
 
 
@@ -9,6 +11,10 @@ class LessonContent(BaseModel):
     formulas: list[str] = []
     key_concepts: list[str] = []
     summary: str = ""
+
+
+class ChapterStatusUpdate(BaseModel):
+    status: Literal["in_progress", "completed"]
 
 
 class ChatRequest(BaseModel):

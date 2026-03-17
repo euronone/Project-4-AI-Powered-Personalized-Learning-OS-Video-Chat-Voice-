@@ -1,0 +1,89 @@
+# =============================================================
+# LearnOS — .gitignore
+# =============================================================
+
+# ----- Python -----
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+
+# ----- Environment / secrets  (NEVER commit these) -----
+.env
+.env.local
+.env.*.local
+backend/.env
+frontend/.env.local
+
+# ----- Databases & local state -----
+*.db
+*.sqlite
+*.sqlite3
+
+# ----- Logs -----
+*.log
+logs/
+
+# ----- Test & coverage -----
+htmlcov/
+.coverage
+.coverage.*
+.pytest_cache/
+junit*.xml
+coverage.xml
+
+# ----- Type checkers / linters -----
+.mypy_cache/
+.ruff_cache/
+
+# ----- Node / Next.js -----
+node_modules/
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/build/
+frontend/.turbo/
+frontend/next-env.d.ts
+*.tsbuildinfo
+
+# ----- Supabase local dev -----
+supabase/.branches/
+supabase/.temp/
+
+# ----- Docker -----
+*.env.docker
+
+# ----- macOS -----
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# ----- Windows -----
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# ----- Editors -----
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ----- Uploads / generated files -----
+uploads/
+*.pdf
+*.png
+*.jpg
+*.jpeg
+# Exception: keep placeholder/seed assets if any are committed intentionally
+# !frontend/public/placeholder.png
