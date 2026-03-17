@@ -15,6 +15,10 @@ class Settings(BaseSettings):
     # AI
     anthropic_api_key: str = ""
     openai_api_key: str = ""
+    llm_mode: str = "mock"
+    llm_provider: str = "euron"
+    euron_api_key: str | None = None
+    euron_base_url: str = "https://api.euron.one/api/v1/euri"
 
     # Server
     api_host: str = "0.0.0.0"
