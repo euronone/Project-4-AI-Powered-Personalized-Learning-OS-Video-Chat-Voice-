@@ -1,4 +1,6 @@
+import sys
 from contextlib import asynccontextmanager
+from pathlib import Path
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
@@ -14,6 +16,9 @@ from app.routers import (
     video,
     voice,
 )
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "AI_ML"))
+from api.routes import router as recommendation_router
 
 
 @asynccontextmanager
@@ -46,6 +51,7 @@ app.include_router(voice.router, prefix="/api/voice", tags=["voice"])
 app.include_router(video.router, prefix="/api/video", tags=["video"])
 app.include_router(activities.router, prefix="/api/activities", tags=["activities"])
 app.include_router(progress.router, prefix="/api/progress", tags=["progress"])
+app.include_router(recommendation_router, prefix="/api/recommendations", tags=["recommendations"])
 
 
 @app.get("/api/health")

@@ -110,6 +110,31 @@ class RecommendationEngine:
             top_k=top_k,
         )
 
+    def predict(self, student_id: str, chapter_id: str) -> dict | None:
+        """Predict content, collaborative, and hybrid scores for one (student, chapter) pair."""
+        if not self._ready:
+            raise RuntimeError("Engine not trained — call .train() or .load() first")
+
+        students = self.data["students"]
+        student_row = students[students["student_id"] == student_id]
+        if student_row.empty:
+            return None
+
+        profile_text = build_student_profile_text(student_row).iloc[0]
+        result = self.hybrid.predict(student_id, chapter_id, profile_text)
+        if result is None:
+            return None
+
+        chapters = self.data["chapters"]
+        ch_row = chapters[chapters["chapter_id"] == chapter_id]
+        if not ch_row.empty:
+            ch = ch_row.iloc[0]
+            result["chapter_id"] = chapter_id
+            result["subject_name"] = ch.get("subject_name", "")
+            result["title"] = ch.get("title", "")
+            result["difficulty"] = ch.get("difficulty", "")
+        return result
+
     def get_similar_students(self, student_id: str, top_n: int = 5) -> list:
         if not self._ready:
             raise RuntimeError("Engine not trained")
