@@ -2,7 +2,7 @@ import sys
 from contextlib import asynccontextmanager
 from pathlib import Path
 
-from fastapi import FastAPI
+from fastapi import APIRouter, FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.config import settings
@@ -18,7 +18,11 @@ from app.routers import (
 )
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "AI_ML"))
-from api.routes import router as recommendation_router
+try:
+    from api.routes import router as recommendation_router
+except ModuleNotFoundError:
+    # Keep core API bootable when optional AI/ML dependencies are not installed.
+    recommendation_router = APIRouter()
 
 
 @asynccontextmanager
