@@ -3,7 +3,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from typing import Dict, Any, Optional
 import uuid
 
-from app.models.sentiment_log import SentimentLog, Emotion
+from app.models.sentiment_log import SentimentLog
 from app.repositories.sentiment_repository import SentimentRepository
 from app.ai.engines.sentiment_engine import SentimentEngine
 
@@ -31,10 +31,9 @@ class SentimentPipeline:
             analysis_result = await self.engine.analyze_frame(image_base64)
             
             emotion_str = analysis_result.get("emotion", "engaged")
-            try:
-                emotion_enum = Emotion(emotion_str)
-            except ValueError:
-                emotion_enum = Emotion.engaged
+            allowed_emotions = {"engaged", "confused", "bored", "frustrated", "happy", "drowsy"}
+            if emotion_str not in allowed_emotions:
+                emotion_str = "engaged"
                 
             confidence = analysis_result.get("confidence", 0.8)
             action_taken = analysis_result.get("suggested_action", None)
@@ -44,7 +43,7 @@ class SentimentPipeline:
                 id=uuid.uuid4(),
                 student_id=student_id,
                 chapter_id=chapter_id,
-                emotion=emotion_enum,
+                emotion=emotion_str,
                 confidence=confidence,
                 action_taken=action_taken
             )
@@ -55,7 +54,7 @@ class SentimentPipeline:
             return {
                 "status": "success",
                 "log_id": str(log_entry.id),
-                "emotion": emotion_enum.value,
+                "emotion": emotion_str,
                 "confidence": confidence,
                 "action": action_taken
             }
