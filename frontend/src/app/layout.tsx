@@ -1,6 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import Sidebar from '@/components/common/Sidebar'
+import { AuthProvider } from '@/context/AuthContext'
 
 export const metadata: Metadata = {
   title: 'LearnOS | AI Learning Platform',
@@ -14,13 +15,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="font-sans antialiased bg-[#070b14]">
-        <div className="min-h-screen text-slate-200">
-          <Sidebar />
-          <main className="min-h-screen overflow-y-auto">
-            {children}
-          </main>
-        </div>
+      <body className="font-sans antialiased">
+        <AuthProvider>
+          <div className="min-h-screen text-slate-900">
+            <Sidebar />
+            <main className="min-h-screen overflow-y-auto">
+              {children}
+            </main>
+          </div>
+        </AuthProvider>
       </body>
     </html>
   )

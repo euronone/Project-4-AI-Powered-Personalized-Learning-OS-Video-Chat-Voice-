@@ -12,7 +12,7 @@ export default function WelcomeBanner({ studentName, streak = 0 }: WelcomeBanner
   const greeting = hour < 12 ? 'Good morning' : hour < 17 ? 'Good afternoon' : 'Good evening'
 
   return (
-    <div className="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-2xl p-6 text-white">
+    <div className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl p-6 text-white">
       <h1 className="text-2xl font-bold">{greeting}, {studentName}! 👋</h1>
       <p className="mt-1 text-indigo-100">
         {streak > 0

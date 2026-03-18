@@ -4,7 +4,6 @@ import { useState, useRef, useEffect, useCallback } from 'react'
 import { Send, Bot, Loader2, RotateCcw } from 'lucide-react'
 import ChatBubble from '@/components/chatbot/ChatBubble'
 import { API_URL } from '@/lib/constants'
-import SubjectVisual from '@/components/common/SubjectVisual'
 
 type Message = {
   id: string
@@ -176,14 +175,15 @@ export default function ChatbotPage() {
       <section className="surface-card overflow-hidden p-5 md:p-6">
         <div className="grid gap-4 md:grid-cols-[1.2fr_1fr] md:items-center">
           <div>
-            <h1 className="text-2xl font-extrabold tracking-tight text-white md:text-3xl">AI Tutor Workspace</h1>
+            <h1 className="text-2xl font-extrabold tracking-tight text-slate-900 md:text-3xl">AI Tutor Workspace</h1>
             <p className="mt-1 text-sm text-slate-500">
               Concept explanations, guided problem solving, and focused revision support in one place.
             </p>
           </div>
-          <div className="relative overflow-hidden rounded-2xl border border-white/[0.06]">
-            <SubjectVisual subject="cs" className="h-28 w-full md:h-32" />
-            <div className="absolute bottom-2 left-2 rounded-lg bg-[#0f1629]/90 px-2 py-1 text-[11px] font-semibold text-slate-300">
+          <div className="relative overflow-hidden rounded-2xl border border-slate-200">
+            <img src="/subjects/cs.jpg" alt="AI tutor visual" className="subject-image h-28 w-full object-cover md:h-32" />
+            <div className="subject-image-overlay absolute inset-0" />
+            <div className="absolute bottom-2 left-2 rounded-lg bg-white/90 px-2 py-1 text-[11px] font-semibold text-slate-700">
               Personalized learning assistant
             </div>
           </div>
@@ -191,21 +191,21 @@ export default function ChatbotPage() {
       </section>
 
       <div className="surface-card flex h-[calc(100vh-16rem)] flex-col overflow-hidden">
-        <div className="flex items-center justify-between border-b border-white/[0.06] px-5 py-4">
+        <div className="flex items-center justify-between border-b border-slate-200 px-5 py-4">
           <div>
-            <h1 className="text-lg font-bold text-white">AI Tutor</h1>
+            <h1 className="text-lg font-bold text-slate-900">AI Tutor</h1>
             <p className="text-xs text-slate-500">Ask doubts, get explanations, and build confidence.</p>
           </div>
           <button
             onClick={handleClearChat}
-            className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] px-3 py-2 text-sm text-slate-400 hover:bg-white/[0.08]"
+            className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 hover:bg-slate-50"
           >
             <RotateCcw className="h-4 w-4" />
             New Chat
           </button>
         </div>
 
-        <div className="flex-1 overflow-y-auto bg-[#0a0e1a]/60 px-5 py-5">
+        <div className="flex-1 overflow-y-auto bg-slate-50/60 px-5 py-5">
           <div className="mx-auto max-w-3xl space-y-4">
             {messages.map((message) => (
               <ChatBubble
@@ -217,10 +217,10 @@ export default function ChatbotPage() {
             ))}
             {isLoading && (
               <div className="flex gap-3">
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-500/10 text-blue-400">
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-900 text-white">
                   <Bot className="h-4 w-4" />
                 </div>
-                <div className="inline-flex items-center gap-2 rounded-2xl rounded-tl-sm border border-white/[0.06] bg-[#131b30] px-4 py-2.5 text-sm text-slate-400">
+                <div className="inline-flex items-center gap-2 rounded-2xl rounded-tl-sm border border-slate-200 bg-white px-4 py-2.5 text-sm text-slate-600">
                   <Loader2 className="h-4 w-4 animate-spin" />
                   Thinking...
                 </div>
@@ -230,7 +230,7 @@ export default function ChatbotPage() {
           </div>
         </div>
 
-        <div className="border-t border-white/[0.06] bg-[#0f1629] px-5 py-4">
+        <div className="border-t border-slate-200 bg-white px-5 py-4">
           <div className="mx-auto flex max-w-3xl items-end gap-3">
             <textarea
               value={input}
@@ -242,13 +242,13 @@ export default function ChatbotPage() {
                 }
               }}
               placeholder="Ask your tutor anything..."
-              className="min-h-[52px] max-h-36 w-full resize-none rounded-xl border border-white/10 bg-white/[0.04] p-3.5 text-sm text-slate-200 outline-none placeholder:text-slate-600 focus:border-blue-500/40"
+              className="min-h-[52px] max-h-36 w-full resize-none rounded-xl border border-slate-200 bg-white p-3.5 text-sm text-slate-800 outline-none focus:border-slate-300"
               rows={1}
             />
             <button
               onClick={handleSend}
               disabled={!input.trim() || isLoading}
-              className="rounded-xl bg-blue-600 p-3.5 text-white hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-40"
+              className="rounded-xl bg-slate-900 p-3.5 text-white hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-40"
             >
               <Send className="h-4 w-4" />
             </button>
