@@ -1,5 +1,6 @@
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
 from sqlalchemy.orm import DeclarativeBase
+from sqlalchemy.pool import NullPool
 
 from app.config import settings
 
@@ -18,7 +19,10 @@ def _get_engine():
     global _engine
     if _engine is None:
         db_url = settings.supabase_db_url or settings.test_db_url or "sqlite+aiosqlite:///./learnos_dev.db"
-        _engine = create_async_engine(db_url, echo=False)
+        engine_kwargs = {"echo": False}
+        if db_url.startswith("postgresql+asyncpg://"):
+            engine_kwargs["poolclass"] = NullPool
+        _engine = create_async_engine(db_url, **engine_kwargs)
     return _engine
 
 

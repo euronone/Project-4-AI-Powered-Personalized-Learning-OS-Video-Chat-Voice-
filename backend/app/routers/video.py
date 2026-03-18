@@ -1,12 +1,14 @@
 import uuid
 
 from fastapi import APIRouter, Depends, HTTPException, WebSocket, WebSocketDisconnect, status
+from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.database import get_db_session
 from app.core.redis_client import redis_client
 from app.core.security import verify_supabase_jwt_ws
 from app.dependencies import get_current_user
+from app.models.chapter import Chapter
 from app.models.sentiment_log import SentimentLog
 from app.schemas.sentiment import SentimentRequest, SentimentResponse
 from app.services.sentiment_analyzer import analyze_frame, determine_adaptive_action
@@ -40,15 +42,19 @@ async def analyze_video_frame(
     confidence = result["confidence"]
     action = determine_adaptive_action(emotion, confidence)
 
-    log = SentimentLog(
-        student_id=student_id,
-        chapter_id=chapter_uuid,
-        emotion=emotion,
-        confidence=confidence,
-        action_taken=action,
+    chapter_result = await db.execute(
+        select(Chapter.id).where(Chapter.id == chapter_uuid)
     )
-    db.add(log)
-    await db.commit()
+    if chapter_result.scalar_one_or_none() is not None:
+        log = SentimentLog(
+            student_id=student_id,
+            chapter_id=chapter_uuid,
+            emotion=emotion,
+            confidence=confidence,
+            action_taken=action,
+        )
+        db.add(log)
+        await db.commit()
 
     # Cache latest sentiment in Redis (TTL 60s) — optional, graceful on failure
     try:

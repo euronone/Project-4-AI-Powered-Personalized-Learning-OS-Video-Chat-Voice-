@@ -1,8 +1,11 @@
 import json
 import re
 
+import app.core.ai_client as ai_client_module
 from app.config import settings
 from app.core.ai_client import claude_client
+
+_ORIGINAL_CLAUDE_CLIENT = claude_client
 
 _CURRICULUM_SYSTEM = """\
 You are a K-12 curriculum designer. Output valid JSON only—no markdown, no explanation.
@@ -48,6 +51,12 @@ def _extract_json(text: str) -> dict:
         raise ValueError("Could not parse JSON from model response")
 
 
+def _get_claude_client():
+    if claude_client is not _ORIGINAL_CLAUDE_CLIENT:
+        return claude_client
+    return ai_client_module.claude_client
+
+
 async def generate_curriculum(
     subject_name: str,
     grade: str,
@@ -65,7 +74,7 @@ async def generate_curriculum(
     )
 
     for attempt in range(2):
-        message = await claude_client.messages.create(
+        message = await _get_claude_client().messages.create(
             model=settings.claude_model,
             max_tokens=4096,
             system=_CURRICULUM_SYSTEM,
@@ -97,7 +106,7 @@ async def generate_chapter_content(
     )
 
     for attempt in range(2):
-        message = await claude_client.messages.create(
+        message = await _get_claude_client().messages.create(
             model=settings.claude_model,
             max_tokens=8192,
             system=_CONTENT_SYSTEM,

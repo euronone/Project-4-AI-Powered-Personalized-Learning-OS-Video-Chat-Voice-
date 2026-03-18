@@ -43,17 +43,23 @@ async def generate_curriculum_endpoint(
     )
     subject = existing.scalar_one_or_none()
     if subject is not None:
-        return await _build_response(subject, db)
+        chapters_result = await db.execute(
+            select(Chapter).where(Chapter.subject_id == subject.id)
+        )
+        existing_chapters = chapters_result.scalars().all()
+        if existing_chapters or getattr(subject, "status", None) != "not_started":
+            return await _build_response(subject, db, chapters=existing_chapters)
 
     # Create subject row first so we have an id for the FK
-    subject = Subject(
-        student_id=student_id,
-        name=data.subject_name,
-        difficulty_level=data.difficulty_level,
-        status="in_progress",
-    )
-    db.add(subject)
-    await db.flush()  # assigns subject.id without committing
+    if subject is None:
+        subject = Subject(
+            student_id=student_id,
+            name=data.subject_name,
+            difficulty_level=data.difficulty_level,
+            status="in_progress",
+        )
+        db.add(subject)
+        await db.flush()  # assigns subject.id without committing
 
     try:
         curriculum = await generate_curriculum(
@@ -150,14 +156,17 @@ async def get_chapter(
     )
 
 
-async def _build_response(subject: Subject, db: AsyncSession) -> CurriculumResponse:
+async def _build_response(
+    subject: Subject, db: AsyncSession, chapters: list[Chapter] | None = None
+) -> CurriculumResponse:
     """Build CurriculumResponse from a Subject and its chapters."""
-    chapters_result = await db.execute(
-        select(Chapter)
-        .where(Chapter.subject_id == subject.id)
-        .order_by(Chapter.order_index)
-    )
-    chapters = chapters_result.scalars().all()
+    if chapters is None:
+        chapters_result = await db.execute(
+            select(Chapter)
+            .where(Chapter.subject_id == subject.id)
+            .order_by(Chapter.order_index)
+        )
+        chapters = chapters_result.scalars().all()
 
     return CurriculumResponse(
         subject_id=str(subject.id),
