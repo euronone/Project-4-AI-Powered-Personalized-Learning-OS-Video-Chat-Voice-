@@ -39,6 +39,16 @@ class ChapterRecommendation(BaseModel):
     hybrid_score: float
 
 
+class PredictionResult(BaseModel):
+    chapter_id: str
+    subject_name: str
+    title: str
+    difficulty: str
+    content_score: float
+    collab_score: float
+    hybrid_score: float
+
+
 class SubjectRecommendation(BaseModel):
     subject_name: str
     relevance_score: float
@@ -47,6 +57,16 @@ class SubjectRecommendation(BaseModel):
 class SimilarStudent(BaseModel):
     student_id: str
     similarity: float
+
+
+@router.get("/predict/{student_id}/{chapter_id}", response_model=PredictionResult)
+def predict_score(student_id: str, chapter_id: str):
+    """Predict content, collaborative, and hybrid scores for a specific (student, chapter) pair."""
+    engine = get_engine()
+    result = engine.predict(student_id, chapter_id)
+    if result is None:
+        raise HTTPException(status_code=404, detail="Student or chapter not found")
+    return result
 
 
 @router.get("/chapters/{student_id}", response_model=list[ChapterRecommendation])

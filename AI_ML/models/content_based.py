@@ -78,6 +78,16 @@ class ContentBasedRecommender:
         result = result.sort_values("content_score", ascending=False).head(top_k)
         return result[["chapter_id", "subject_name", "title", "difficulty", "content_score"]].reset_index(drop=True)
 
+    def predict(self, student_profile_text: str, chapter_id: str) -> float | None:
+        """Predict the content similarity score for a specific chapter."""
+        if not self._fitted:
+            raise RuntimeError("Call .fit() first")
+        if chapter_id not in self.chapter_ids:
+            return None
+        student_vec = self.vectorizer.transform([student_profile_text])
+        c_idx = self.chapter_ids.index(chapter_id)
+        return float(cosine_similarity(student_vec, self.chapter_matrix[c_idx]).flatten()[0])
+
     def save(self, path: Path):
         with open(path, "wb") as f:
             pickle.dump({

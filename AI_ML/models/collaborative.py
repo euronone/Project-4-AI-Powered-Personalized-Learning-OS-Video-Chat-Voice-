@@ -116,6 +116,16 @@ class CollaborativeRecommender:
         result = result.sort_values("collab_score", ascending=False).head(top_k)
         return result[["chapter_id", "subject_name", "title", "difficulty", "collab_score"]].reset_index(drop=True)
 
+    def predict(self, student_id: str, chapter_id: str) -> float | None:
+        """Predict the score for a specific (student, chapter) pair."""
+        if not self._fitted:
+            raise RuntimeError("Call .fit() first")
+        if student_id not in self.student_ids or chapter_id not in self.chapter_ids:
+            return None
+        s_idx = self.student_ids.index(student_id)
+        c_idx = self.chapter_ids.index(chapter_id)
+        return float(self.predicted_matrix[s_idx, c_idx])
+
     def find_similar_students(
         self, student_id: str, top_n: int = 10
     ) -> list[tuple[str, float]]:

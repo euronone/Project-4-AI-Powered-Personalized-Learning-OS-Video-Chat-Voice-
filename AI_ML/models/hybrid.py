@@ -100,6 +100,26 @@ class HybridRecommender:
                 "content_score", "collab_score", "hybrid_score"]
         return merged[[c for c in cols if c in merged.columns]].reset_index(drop=True)
 
+    def predict(
+        self,
+        student_id: str,
+        chapter_id: str,
+        student_profile_text: str,
+    ) -> dict | None:
+        """Predict content, collaborative, and hybrid scores for a single chapter."""
+        content_score = self.content_model.predict(student_profile_text, chapter_id)
+        collab_score = self.collab_model.predict(student_id, chapter_id)
+        if content_score is None and collab_score is None:
+            return None
+        cs = content_score or 0.0
+        cb = collab_score or 0.0
+        hybrid = self.content_weight * cs + self.collab_weight * cb
+        return {
+            "content_score": round(cs, 4),
+            "collab_score": round(cb, 4),
+            "hybrid_score": round(hybrid, 4),
+        }
+
     def _apply_sentiment_boost(
         self,
         recs: pd.DataFrame,
