@@ -1,0 +1,131 @@
+chapter_id,subject_id,subject_name,order_index,title,difficulty,tags
+81515dbd-3147-4920-a5b6-7ec45624c3ba,132b832a-4b13-47b1-9953-da7022debe18,Mathematics,0,Number Systems,beginner,algebra|statistics|arithmetic
+b393628d-fd15-4228-8623-69ab6692930c,132b832a-4b13-47b1-9953-da7022debe18,Mathematics,1,Algebra Basics,intermediate,algebra|arithmetic|calculus
+68a91d13-8c54-4591-b7bc-c76250101a0e,132b832a-4b13-47b1-9953-da7022debe18,Mathematics,2,Linear Equations,beginner,statistics|arithmetic|geometry
+37c32447-0279-46e8-837c-1054aa1ac8ff,132b832a-4b13-47b1-9953-da7022debe18,Mathematics,3,Quadratic Equations,advanced,algebra|calculus|arithmetic
+1d5a8a86-b8ce-4ae8-a836-0130bf528dd9,132b832a-4b13-47b1-9953-da7022debe18,Mathematics,4,Geometry Fundamentals,beginner,algebra|calculus|statistics
+1c41656f-3030-4e2e-8ea1-60d77eb87353,132b832a-4b13-47b1-9953-da7022debe18,Mathematics,5,Coordinate Geometry,advanced,statistics|algebra|arithmetic
+c964d248-a457-4f82-af61-6311bf8a5e12,132b832a-4b13-47b1-9953-da7022debe18,Mathematics,6,Trigonometry,intermediate,statistics|arithmetic|algebra
+61c217be-f5d5-46bc-80dd-c4fcff0bda8c,132b832a-4b13-47b1-9953-da7022debe18,Mathematics,7,Statistics & Probability,beginner,geometry|statistics|calculus
+0fdab15a-81d0-4631-8cc4-7aa3cda3f46f,132b832a-4b13-47b1-9953-da7022debe18,Mathematics,8,Calculus Intro,intermediate,arithmetic|algebra|calculus
+1f82ff6b-efc7-4308-b26b-2a11036058c2,132b832a-4b13-47b1-9953-da7022debe18,Mathematics,9,Matrices,intermediate,arithmetic|statistics|algebra
+80a55392-6659-450e-9532-c82d1e23f13f,46fba44d-ccaf-4608-80ce-1c05de3ac970,Physics,0,Motion & Kinematics,advanced,waves|electricity|optics
+b6145cf5-6f94-47e3-9956-c7e2638e48d0,46fba44d-ccaf-4608-80ce-1c05de3ac970,Physics,1,Newton's Laws,intermediate,thermodynamics|electricity|waves
+49495563-f342-4742-abc9-60a11b89879f,46fba44d-ccaf-4608-80ce-1c05de3ac970,Physics,2,Work & Energy,advanced,waves|optics|thermodynamics
+bd927693-8e63-4da4-b7c9-7ed9088c6f22,46fba44d-ccaf-4608-80ce-1c05de3ac970,Physics,3,Gravitation,intermediate,electricity|optics|waves
+08502d75-001a-4746-9f8c-6c389813626b,46fba44d-ccaf-4608-80ce-1c05de3ac970,Physics,4,Thermodynamics,beginner,waves|thermodynamics|electricity
+c5c23961-7ec9-43dd-ad5b-19b0566cabba,46fba44d-ccaf-4608-80ce-1c05de3ac970,Physics,5,Waves & Sound,advanced,optics|waves|thermodynamics
+edb51569-452c-49e3-98b7-5e9bffc04af4,46fba44d-ccaf-4608-80ce-1c05de3ac970,Physics,6,Optics,intermediate,electricity|mechanics|optics
+cf584edd-a79c-4ff5-bef9-981538bad376,46fba44d-ccaf-4608-80ce-1c05de3ac970,Physics,7,Electricity,beginner,optics|mechanics|waves
+b4a2ed94-bf28-4d21-833e-2f31148d7f3e,9e09301e-0786-4eba-ae51-e0462a008ab4,Chemistry,0,Atomic Structure,advanced,physical|organic|inorganic
+c568c0b5-ddbd-48fa-92bb-6d79f0c6c473,9e09301e-0786-4eba-ae51-e0462a008ab4,Chemistry,1,Periodic Table,advanced,inorganic|physical|organic
+488ab9b5-a926-4e08-b02a-5a83b066c43b,9e09301e-0786-4eba-ae51-e0462a008ab4,Chemistry,2,Chemical Bonding,advanced,physical|inorganic|organic
+76d0b3f4-e5de-4d09-908e-302d6445c552,9e09301e-0786-4eba-ae51-e0462a008ab4,Chemistry,3,States of Matter,beginner,physical|inorganic|organic
+62d398a6-966c-4576-81c8-03c074037009,9e09301e-0786-4eba-ae51-e0462a008ab4,Chemistry,4,Thermochemistry,beginner,periodic-table|inorganic|organic
+c50f003b-39a7-4345-8e9b-03c93589d37f,9e09301e-0786-4eba-ae51-e0462a008ab4,Chemistry,5,Equilibrium,beginner,physical|organic|periodic-table
+be3433bb-0603-4761-8b54-da5c5b9a6d44,9e09301e-0786-4eba-ae51-e0462a008ab4,Chemistry,6,Acids & Bases,intermediate,inorganic|organic|physical
+1c8a1c89-f53d-4936-a38a-92de2d443dba,9e09301e-0786-4eba-ae51-e0462a008ab4,Chemistry,7,Electrochemistry,intermediate,biochemistry|inorganic|periodic-table
+b5cb166f-e2b7-4f3f-9dbf-5e4b860bbd26,b2d662fb-c682-478a-94a8-9d7765ce42d7,Biology,0,Cell Structure,intermediate,anatomy|genetics|evolution
+85260111-12b2-4fd0-b5de-cd24c289549e,b2d662fb-c682-478a-94a8-9d7765ce42d7,Biology,1,Cell Division,advanced,cell-biology|genetics|evolution
+47800378-7c13-4873-8a4e-15082ec11d6f,b2d662fb-c682-478a-94a8-9d7765ce42d7,Biology,2,Genetics & Heredity,advanced,anatomy|evolution|ecology
+e86ad7f3-85cd-49c5-8480-3660505bf512,b2d662fb-c682-478a-94a8-9d7765ce42d7,Biology,3,Evolution,intermediate,genetics|ecology|anatomy
+504f60ec-d1ff-4f98-9aec-49d697bb14be,b2d662fb-c682-478a-94a8-9d7765ce42d7,Biology,4,Plant Biology,intermediate,evolution|genetics|anatomy
+ffae8f8f-24c1-46c0-bc37-891d644e1322,b2d662fb-c682-478a-94a8-9d7765ce42d7,Biology,5,Human Anatomy,advanced,cell-biology|genetics|ecology
+a06a7a9f-24b8-41eb-ba81-7ef658fd75a2,b2d662fb-c682-478a-94a8-9d7765ce42d7,Biology,6,Ecology,intermediate,anatomy|ecology|cell-biology
+982ca04f-0de4-4422-aa38-1c52420ab45b,b4258a6f-a1d1-4925-9024-58fccfe4800f,Computer Science,0,Intro to Programming,intermediate,algorithms|programming|data-structures
+3e87658f-d780-4702-bd3e-597ea92204ae,b4258a6f-a1d1-4925-9024-58fccfe4800f,Computer Science,1,Variables & Data Types,intermediate,web|ai|data-structures
+3d15d168-6545-4ede-b4a5-6f25c4596491,b4258a6f-a1d1-4925-9024-58fccfe4800f,Computer Science,2,Control Flow,intermediate,programming|algorithms|web
+1d9b057c-8f47-4618-a18f-dc90a2aec0e1,b4258a6f-a1d1-4925-9024-58fccfe4800f,Computer Science,3,Functions,beginner,web|algorithms|programming
+556fe5ee-7479-43dc-9c4d-01e0eb44bd7c,b4258a6f-a1d1-4925-9024-58fccfe4800f,Computer Science,4,Arrays & Lists,intermediate,web|programming|data-structures
+12bc27c1-fe24-42c3-a1cf-68cb14fc2726,b4258a6f-a1d1-4925-9024-58fccfe4800f,Computer Science,5,Object-Oriented Programming,intermediate,programming|web|data-structures
+37b2797c-6682-48ce-99ab-d05419b0a0ef,b4258a6f-a1d1-4925-9024-58fccfe4800f,Computer Science,6,Algorithms,intermediate,algorithms|ai|web
+d40fea6c-3613-4b99-a371-76a271c014ad,b4258a6f-a1d1-4925-9024-58fccfe4800f,Computer Science,7,Data Structures,intermediate,web|ai|data-structures
+a4c5443b-e174-48e0-93d4-af08ddab52f3,b4258a6f-a1d1-4925-9024-58fccfe4800f,Computer Science,8,Web Development,intermediate,ai|algorithms|programming
+1c4ca3db-bb96-4416-b617-09d20a18a84f,b4258a6f-a1d1-4925-9024-58fccfe4800f,Computer Science,9,Intro to AI,beginner,web|data-structures|ai
+040f6143-b050-45d2-b792-4fc7e02b10a5,4edd612d-9be4-4c9f-a024-4fe8c190553d,English,0,Parts of Speech,beginner,comprehension|vocabulary|literature
+ef314c2a-307f-483b-af4d-91cafdd781c3,4edd612d-9be4-4c9f-a024-4fe8c190553d,English,1,Sentence Structure,intermediate,writing|vocabulary|comprehension
+74c0a84d-8118-4803-abb3-9eef87423282,4edd612d-9be4-4c9f-a024-4fe8c190553d,English,2,Tenses,intermediate,writing|literature|comprehension
+daf5f868-5d44-4ecd-8764-a983b962ab7f,4edd612d-9be4-4c9f-a024-4fe8c190553d,English,3,Comprehension Skills,intermediate,comprehension|literature|vocabulary
+8b819ce8-dda4-4d88-8dda-938fe2c68549,4edd612d-9be4-4c9f-a024-4fe8c190553d,English,4,Essay Writing,beginner,literature|vocabulary|writing
+4a36793c-77ad-4cab-80a4-6b64611bb1f2,4edd612d-9be4-4c9f-a024-4fe8c190553d,English,5,Creative Writing,intermediate,grammar|vocabulary|writing
+204272e4-3f3b-41f2-b581-a4b701416cd3,4edd612d-9be4-4c9f-a024-4fe8c190553d,English,6,Poetry Analysis,beginner,vocabulary|literature|comprehension
+0e295d82-1d83-4500-894a-bc20de432a37,7cc58e0a-1db4-4602-9b12-e8953fc11994,Hindi,0,वर्णमाला,intermediate,grammar|writing|literature
+f99fdd8c-edd0-4948-98c7-5e392d9c0464,7cc58e0a-1db4-4602-9b12-e8953fc11994,Hindi,1,संज्ञा-सर्वनाम,intermediate,writing|literature|vocabulary
+d533105a-38b2-4ef9-8b15-31fcc4551c19,7cc58e0a-1db4-4602-9b12-e8953fc11994,Hindi,2,क्रिया-विशेषण,intermediate,literature|writing|comprehension
+37040e86-f442-4ba4-a04c-a5d15b7c83de,7cc58e0a-1db4-4602-9b12-e8953fc11994,Hindi,3,वाक्य रचना,intermediate,literature|grammar|vocabulary
+5b1383c4-f3b9-49da-a87a-45162fad7c1a,7cc58e0a-1db4-4602-9b12-e8953fc11994,Hindi,4,कविता,intermediate,vocabulary|grammar|literature
+a1d55a6b-ff70-43f1-987e-d141ffc18797,7cc58e0a-1db4-4602-9b12-e8953fc11994,Hindi,5,कहानी लेखन,beginner,writing|literature|vocabulary
+87a7cbdc-d8f0-4a03-a0ca-80bf4cc990d8,a6d8e805-254c-4c68-a127-059bef938031,History,0,Ancient Civilizations,beginner,ancient|civilizations|medieval
+ade28424-1ae3-4004-bb2b-88ac4c209b59,a6d8e805-254c-4c68-a127-059bef938031,History,1,Medieval Period,intermediate,modern|ancient|world-wars
+397ff43b-23d6-44f9-9bee-a66bd529c7e3,a6d8e805-254c-4c68-a127-059bef938031,History,2,Renaissance,beginner,world-wars|medieval|civilizations
+4c8b0fc2-b09a-4ad2-899c-94a22afddfc0,a6d8e805-254c-4c68-a127-059bef938031,History,3,Industrial Revolution,intermediate,ancient|modern|medieval
+4ff596db-71f0-42a7-8915-82f158811983,a6d8e805-254c-4c68-a127-059bef938031,History,4,World War I,advanced,civilizations|ancient|world-wars
+23e88287-b24d-42fa-8a8f-704e09231f2b,a6d8e805-254c-4c68-a127-059bef938031,History,5,World War II,beginner,world-wars|ancient|civilizations
+4d408542-5db9-4700-bb69-466d9e0ebde8,a6d8e805-254c-4c68-a127-059bef938031,History,6,Indian Freedom Movement,beginner,civilizations|modern|medieval
+e9d935bb-2083-48f9-b20a-470f1a36dea6,a6d8e805-254c-4c68-a127-059bef938031,History,7,Cold War,intermediate,medieval|ancient|civilizations
+bfa710a4-417a-4d07-9292-d32fe6753957,a6d8e805-254c-4c68-a127-059bef938031,History,8,Modern India,intermediate,modern|civilizations|ancient
+9fb3cd92-cb39-4b2e-baf6-b42bb7a9ea40,a6d8e805-254c-4c68-a127-059bef938031,History,9,Globalization,advanced,civilizations|modern|ancient
+294aa85e-026a-4715-b190-a658b298f876,7a9bb232-9e5b-4936-82d6-8135a61a05c1,Geography,0,Earth & Universe,advanced,physical|climate|resources
+cb19f6c9-50ca-4122-9270-f35a122f1f05,7a9bb232-9e5b-4936-82d6-8135a61a05c1,Geography,1,Landforms,beginner,maps|human|physical
+0e15e934-3f5d-4e88-b6c4-94333128ed14,7a9bb232-9e5b-4936-82d6-8135a61a05c1,Geography,2,Climate & Weather,intermediate,resources|human|maps
+844227b8-8bfb-442d-96ef-130589840aab,7a9bb232-9e5b-4936-82d6-8135a61a05c1,Geography,3,Water Resources,beginner,human|maps|resources
+da16a725-436d-4f91-9fb7-bdf400f3ec02,7a9bb232-9e5b-4936-82d6-8135a61a05c1,Geography,4,Map Skills,advanced,climate|maps|resources
+41194007-21eb-45e9-8563-feb76a729f41,7a9bb232-9e5b-4936-82d6-8135a61a05c1,Geography,5,Agriculture,beginner,human|resources|physical
+67f97c04-2061-4cce-9fee-21e6d9359156,7a9bb232-9e5b-4936-82d6-8135a61a05c1,Geography,6,Industries,intermediate,resources|human|maps
+167bddb9-7ef3-409f-afdf-93a74ae9742b,7a9bb232-9e5b-4936-82d6-8135a61a05c1,Geography,7,Population,advanced,human|resources|maps
+d15e5d75-1455-4ae6-85cb-77c026aa7ee7,7a9bb232-9e5b-4936-82d6-8135a61a05c1,Geography,8,Urbanization,beginner,resources|physical|maps
+59fc814f-59e3-41fa-a40e-444a148ff604,7a9bb232-9e5b-4936-82d6-8135a61a05c1,Geography,9,Natural Disasters,intermediate,human|physical|resources
+ef191b5d-7c28-4758-be48-d6e35df07861,3684ba33-e85e-45d2-a978-8a7dd9729ce1,Economics,0,Intro to Economics,advanced,finance|markets|development
+39ac3102-1ea8-48fc-9019-99f785343a49,3684ba33-e85e-45d2-a978-8a7dd9729ce1,Economics,1,Supply & Demand,advanced,finance|macro|micro
+fdd06f53-1583-4039-a7d1-094cc7e86636,3684ba33-e85e-45d2-a978-8a7dd9729ce1,Economics,2,Money & Banking,beginner,macro|micro|finance
+f88e52d4-0310-4e95-90a0-f6de7fd6da86,3684ba33-e85e-45d2-a978-8a7dd9729ce1,Economics,3,Government Budget,intermediate,development|macro|finance
+0c832f13-ea9f-41d3-89ac-772dceb42325,3684ba33-e85e-45d2-a978-8a7dd9729ce1,Economics,4,Inflation,beginner,micro|finance|development
+d2581614-c3b4-4dd0-8455-60c529e83518,3684ba33-e85e-45d2-a978-8a7dd9729ce1,Economics,5,International Trade,intermediate,markets|macro|finance
+15e2d466-e762-4143-bc31-dec48913cb86,3684ba33-e85e-45d2-a978-8a7dd9729ce1,Economics,6,Development Economics,advanced,markets|finance|micro
+4eee1525-0d5f-4bb6-8aab-d9411a52aea0,3684ba33-e85e-45d2-a978-8a7dd9729ce1,Economics,7,Poverty,advanced,markets|development|micro
+84bc861c-223e-40c4-8b85-5dcc91df3683,3684ba33-e85e-45d2-a978-8a7dd9729ce1,Economics,8,Market Structures,beginner,macro|micro|development
+6a1527b7-274e-4025-8d62-7300aeef1254,3684ba33-e85e-45d2-a978-8a7dd9729ce1,Economics,9,GDP & Growth,advanced,micro|finance|macro
+e82c5df7-88ec-4e25-b105-2019a9375744,4e79c043-20be-462e-9f00-94f20874359e,Political Science,0,Democracy,intermediate,governance|policy|democracy
+1d099128-15d4-4875-b1d8-eab82f8aed02,4e79c043-20be-462e-9f00-94f20874359e,Political Science,1,Indian Constitution,beginner,international|policy|constitution
+935af49a-428e-4816-ac6e-4254df96f876,4e79c043-20be-462e-9f00-94f20874359e,Political Science,2,Fundamental Rights,intermediate,international|governance|policy
+e0f26522-fe7a-4f6e-a56b-e6ca98ea9374,4e79c043-20be-462e-9f00-94f20874359e,Political Science,3,Parliament,intermediate,democracy|international|constitution
+cdb9c870-6a5f-4bff-a70d-30ff378dc227,4e79c043-20be-462e-9f00-94f20874359e,Political Science,4,Judiciary,intermediate,policy|democracy|constitution
+fb345bab-83cb-4c90-aa1e-a292e0edd380,4e79c043-20be-462e-9f00-94f20874359e,Political Science,5,Local Government,beginner,international|democracy|policy
+0c6dd6a9-48f2-4b9e-a8d5-151fd3509d29,4e79c043-20be-462e-9f00-94f20874359e,Political Science,6,Political Parties,intermediate,international|democracy|constitution
+21085b8c-ec80-44f4-a9d2-7d1cc2512bbd,4e79c043-20be-462e-9f00-94f20874359e,Political Science,7,Elections,intermediate,democracy|governance|international
+765e3c8a-1a6c-4dcb-a1ab-1ba43fe8fc9c,4e79c043-20be-462e-9f00-94f20874359e,Political Science,8,International Relations,intermediate,constitution|policy|governance
+51991ecf-9aa8-4a63-9f00-1b8aa8110f04,43656296-e3fc-4d7d-a7cf-d3764bdf22e8,Art & Design,0,Elements of Art,intermediate,design|drawing|sculpture
+e14f9028-8b03-4650-a739-145d2d982681,43656296-e3fc-4d7d-a7cf-d3764bdf22e8,Art & Design,1,Color Theory,intermediate,painting|digital-art|sculpture
+dd7aed4e-d39b-4066-9018-9f465ab9a7a5,43656296-e3fc-4d7d-a7cf-d3764bdf22e8,Art & Design,2,Sketching,intermediate,design|drawing|digital-art
+0155c85b-1daa-4984-871a-9e1c812c2947,43656296-e3fc-4d7d-a7cf-d3764bdf22e8,Art & Design,3,Perspective Drawing,advanced,design|painting|digital-art
+c275656c-3b7c-47a3-8286-16ef03f443b1,43656296-e3fc-4d7d-a7cf-d3764bdf22e8,Art & Design,4,Painting Techniques,intermediate,digital-art|drawing|design
+4385ae08-242e-4c84-b33e-5fcde0be1a90,43656296-e3fc-4d7d-a7cf-d3764bdf22e8,Art & Design,5,Sculpture,intermediate,painting|digital-art|drawing
+6ddf6edd-0111-4d2f-870d-f65e58390b74,43656296-e3fc-4d7d-a7cf-d3764bdf22e8,Art & Design,6,Digital Art Basics,beginner,painting|drawing|digital-art
+0df67ef8-a5b2-4654-baca-ba6685f98dc3,43656296-e3fc-4d7d-a7cf-d3764bdf22e8,Art & Design,7,Graphic Design,beginner,digital-art|sculpture|drawing
+d36c49ce-ada4-48e5-8b41-a38540bbb7d8,c4eed9a0-a773-41d0-a6e8-f5ce054e5fcd,Music,0,Music Theory,intermediate,history|instruments|composition
+9a7c4fac-bbda-4085-98af-7f7745a2d030,c4eed9a0-a773-41d0-a6e8-f5ce054e5fcd,Music,1,Rhythm & Beats,intermediate,theory|instruments|composition
+17e3bb60-a2ea-4ba3-b7f5-8b9e2924f125,c4eed9a0-a773-41d0-a6e8-f5ce054e5fcd,Music,2,Scales,intermediate,instruments|history|theory
+155f0282-1f95-41ab-816c-3cf05f57af5c,c4eed9a0-a773-41d0-a6e8-f5ce054e5fcd,Music,3,Indian Classical Basics,beginner,theory|composition|instruments
+300b812d-9c81-4bce-b9a4-1fc75370c5de,c4eed9a0-a773-41d0-a6e8-f5ce054e5fcd,Music,4,Western Classical Basics,intermediate,composition|vocals|history
+8dd6ec82-aade-4637-b559-4e255880a389,c4eed9a0-a773-41d0-a6e8-f5ce054e5fcd,Music,5,Instruments,beginner,instruments|history|theory
+4ca8ec79-b388-42d0-bf0b-180931b9b93c,c4eed9a0-a773-41d0-a6e8-f5ce054e5fcd,Music,6,Vocal Training,intermediate,vocals|theory|instruments
+f0c6241d-a146-482a-80ea-0eef734336c3,c4eed9a0-a773-41d0-a6e8-f5ce054e5fcd,Music,7,Composition,intermediate,composition|theory|vocals
+e88545fa-cec2-448d-8828-c49397dc82ef,c4eed9a0-a773-41d0-a6e8-f5ce054e5fcd,Music,8,Music History,advanced,instruments|history|vocals
+ed9167ed-68fe-4b84-a02b-456fb6930937,c4eed9a0-a773-41d0-a6e8-f5ce054e5fcd,Music,9,Digital Music,intermediate,composition|history|instruments
+631a96bf-f75b-4247-9cd1-361e889a732b,56f89f44-909d-426c-bec8-9b9fa91538fc,Environmental Science,0,Ecosystems,intermediate,ecology|sustainability|pollution
+f7f29b8d-347c-4aed-a7d3-76b61d8cf0b0,56f89f44-909d-426c-bec8-9b9fa91538fc,Environmental Science,1,Biodiversity,beginner,climate|sustainability|ecology
+629ac5a5-7c34-4fb0-8e37-e248ba4325b1,56f89f44-909d-426c-bec8-9b9fa91538fc,Environmental Science,2,Pollution,beginner,ecology|pollution|climate
+577248b6-eb14-4461-978d-772d72b3c0e8,56f89f44-909d-426c-bec8-9b9fa91538fc,Environmental Science,3,Climate Change,beginner,ecology|pollution|sustainability
+bb276bc1-4f5a-4e59-8d3a-d7fa101465d2,56f89f44-909d-426c-bec8-9b9fa91538fc,Environmental Science,4,Renewable Energy,advanced,ecology|climate|sustainability
+6d2cb61c-f38a-4f06-99fb-9ca8adbf79b0,56f89f44-909d-426c-bec8-9b9fa91538fc,Environmental Science,5,Water Conservation,advanced,sustainability|pollution|conservation
+060ede3b-86bc-419b-bdc6-ab0fb06da831,56f89f44-909d-426c-bec8-9b9fa91538fc,Environmental Science,6,Waste Management,intermediate,climate|sustainability|conservation
+92eb2c16-0836-4b66-ac4c-1c7eee48553b,cc00fed2-afc5-440b-89fa-ed9941365896,Psychology,0,Intro to Psychology,advanced,cognitive|developmental|behavioral
+c7e9a054-eaed-4c63-a666-b0e14f023539,cc00fed2-afc5-440b-89fa-ed9941365896,Psychology,1,Perception & Sensation,intermediate,social|cognitive|behavioral
+1783414f-2acb-4df6-b3fa-c7faf2e9c4f5,cc00fed2-afc5-440b-89fa-ed9941365896,Psychology,2,Memory & Learning,advanced,cognitive|developmental|behavioral
+2bfab3a2-dd1e-4b36-834a-d02c615efb0c,cc00fed2-afc5-440b-89fa-ed9941365896,Psychology,3,Motivation,beginner,developmental|neuroscience|social
+e746ba55-bef7-48ec-bbfe-e991838593f1,cc00fed2-afc5-440b-89fa-ed9941365896,Psychology,4,Emotions,intermediate,behavioral|neuroscience|developmental
+8f30755b-4816-4a84-9f4a-d068f4940126,cc00fed2-afc5-440b-89fa-ed9941365896,Psychology,5,Developmental Psychology,beginner,neuroscience|cognitive|behavioral
+977bc3d1-d6d6-4352-b980-58eb6406b49a,cc00fed2-afc5-440b-89fa-ed9941365896,Psychology,6,Social Psychology,intermediate,neuroscience|developmental|behavioral
+434fda94-4178-4801-b233-4fe8b6377172,cc00fed2-afc5-440b-89fa-ed9941365896,Psychology,7,Abnormal Psychology,intermediate,developmental|neuroscience|social
+f195f5da-112c-4ebd-94af-dd02e1f0b797,cc00fed2-afc5-440b-89fa-ed9941365896,Psychology,8,Cognitive Psychology,intermediate,neuroscience|developmental|cognitive
+7eca250a-43f4-41e4-9265-5e186f87be71,cc00fed2-afc5-440b-89fa-ed9941365896,Psychology,9,Positive Psychology,intermediate,social|neuroscience|behavioral

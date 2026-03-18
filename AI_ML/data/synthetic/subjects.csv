@@ -1,0 +1,16 @@
+subject_id,name,category,difficulty_level,tags
+132b832a-4b13-47b1-9953-da7022debe18,Mathematics,STEM,intermediate,algebra|geometry|calculus|arithmetic|statistics
+46fba44d-ccaf-4608-80ce-1c05de3ac970,Physics,STEM,beginner,mechanics|thermodynamics|optics|electricity|waves
+9e09301e-0786-4eba-ae51-e0462a008ab4,Chemistry,STEM,beginner,organic|inorganic|physical|biochemistry|periodic-table
+b2d662fb-c682-478a-94a8-9d7765ce42d7,Biology,STEM,beginner,genetics|ecology|anatomy|cell-biology|evolution
+b4258a6f-a1d1-4925-9024-58fccfe4800f,Computer Science,STEM,advanced,programming|algorithms|data-structures|web|ai
+4edd612d-9be4-4c9f-a024-4fe8c190553d,English,Language,advanced,grammar|literature|writing|comprehension|vocabulary
+7cc58e0a-1db4-4602-9b12-e8953fc11994,Hindi,Language,intermediate,grammar|literature|writing|comprehension|vocabulary
+a6d8e805-254c-4c68-a127-059bef938031,History,Humanities,advanced,ancient|medieval|modern|world-wars|civilizations
+7a9bb232-9e5b-4936-82d6-8135a61a05c1,Geography,Humanities,intermediate,physical|human|climate|maps|resources
+3684ba33-e85e-45d2-a978-8a7dd9729ce1,Economics,Humanities,advanced,micro|macro|finance|markets|development
+4e79c043-20be-462e-9f00-94f20874359e,Political Science,Humanities,advanced,democracy|governance|constitution|international|policy
+43656296-e3fc-4d7d-a7cf-d3764bdf22e8,Art & Design,Creative,advanced,drawing|painting|sculpture|digital-art|design
+c4eed9a0-a773-41d0-a6e8-f5ce054e5fcd,Music,Creative,advanced,theory|instruments|vocals|composition|history
+56f89f44-909d-426c-bec8-9b9fa91538fc,Environmental Science,STEM,intermediate,ecology|sustainability|pollution|conservation|climate
+cc00fed2-afc5-440b-89fa-ed9941365896,Psychology,Humanities,beginner,cognitive|behavioral|developmental|social|neuroscience

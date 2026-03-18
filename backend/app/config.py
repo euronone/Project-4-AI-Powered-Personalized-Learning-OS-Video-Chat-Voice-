@@ -15,6 +15,10 @@ class Settings(BaseSettings):
     # AI — API keys
     anthropic_api_key: str = ""
     openai_api_key: str = ""
+    llm_mode: str = "mock"
+    llm_provider: str = "euron"
+    euron_api_key: str | None = None
+    euron_base_url: str = "https://api.euron.one/api/v1/euri"
 
     # AI — Model selection (change here to swap models globally)
     claude_model: str = "claude-3-5-sonnet-20241022"
