@@ -31,8 +31,8 @@ export default function SubjectPicker({ selected, onChange }: SubjectPickerProps
 
   return (
     <div className="space-y-4 animate-fade-in">
-      <h2 className="text-xl font-semibold text-slate-900">Choose your subjects</h2>
-      <p className="text-sm text-slate-600">Pick your focus areas. You can adjust these later as goals evolve.</p>
+      <h2 className="text-xl font-semibold text-white">Choose your subjects</h2>
+      <p className="text-sm text-slate-400">Pick your focus areas. You can adjust these later as goals evolve.</p>
       <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
         {availableSubjects.map((subject) => (
           <button
@@ -40,12 +40,12 @@ export default function SubjectPicker({ selected, onChange }: SubjectPickerProps
             onClick={() => toggle(subject.name)}
             className={`rounded-xl border p-4 text-left transition-all ${
               selected.includes(subject.name)
-                ? 'border-brand-300 bg-brand-50 shadow-sm ring-1 ring-brand-200'
-                : 'border-slate-200 bg-white hover:border-slate-300'
+                ? 'border-blue-500/30 bg-blue-500/10 shadow-sm ring-1 ring-blue-500/20'
+                : 'border-white/10 bg-white/[0.04] hover:border-white/20'
             }`}
           >
             <span className="text-2xl">{subject.icon}</span>
-            <p className="mt-2 text-sm font-medium text-slate-700">{subject.name}</p>
+            <p className="mt-2 text-sm font-medium text-slate-300">{subject.name}</p>
           </button>
         ))}
       </div>

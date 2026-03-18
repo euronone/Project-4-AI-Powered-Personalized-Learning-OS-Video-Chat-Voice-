@@ -14,8 +14,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="font-sans antialiased">
-        <div className="min-h-screen text-slate-900">
+      <body className="font-sans antialiased bg-[#070b14]">
+        <div className="min-h-screen text-slate-200">
           <Sidebar />
           <main className="min-h-screen overflow-y-auto">
             {children}

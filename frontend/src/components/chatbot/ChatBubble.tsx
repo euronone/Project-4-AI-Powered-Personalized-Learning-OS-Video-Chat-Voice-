@@ -11,7 +11,7 @@ export default function ChatBubble({ message, isUser, timestamp }: ChatBubblePro
     <div className={`flex gap-3 ${isUser ? 'flex-row-reverse' : ''}`}>
       <div
         className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${
-          isUser ? 'bg-slate-900 text-white' : 'bg-blue-50 text-blue-700'
+          isUser ? 'bg-blue-600 text-white' : 'bg-blue-500/10 text-blue-400'
         }`}
       >
         {isUser ? <User className="h-4 w-4" /> : <Bot className="h-4 w-4" />}
@@ -21,8 +21,8 @@ export default function ChatBubble({ message, isUser, timestamp }: ChatBubblePro
         <div
           className={`rounded-2xl px-4 py-3 text-sm leading-relaxed ${
             isUser
-              ? 'rounded-tr-sm bg-slate-900 text-white'
-              : 'rounded-tl-sm border border-slate-200 bg-white text-slate-800'
+              ? 'rounded-tr-sm bg-blue-600 text-white'
+              : 'rounded-tl-sm border border-white/[0.06] bg-[#131b30] text-slate-200'
           }`}
         >
           <p className="whitespace-pre-wrap">{message}</p>

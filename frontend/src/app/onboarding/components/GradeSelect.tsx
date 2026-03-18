@@ -24,8 +24,8 @@ const grades = [
 export default function GradeSelect({ value, onChange }: GradeSelectProps) {
   return (
     <div className="space-y-4 animate-fade-in">
-      <h2 className="text-xl font-semibold text-slate-900">What grade are you in?</h2>
-      <p className="text-sm text-slate-600">This helps us calibrate lesson depth and the right pace from day one.</p>
+      <h2 className="text-xl font-semibold text-white">What grade are you in?</h2>
+      <p className="text-sm text-slate-400">This helps us calibrate lesson depth and the right pace from day one.</p>
       <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
         {grades.map((grade) => (
           <button
@@ -33,8 +33,8 @@ export default function GradeSelect({ value, onChange }: GradeSelectProps) {
             onClick={() => onChange(grade.value)}
             className={`rounded-xl border p-3.5 text-center text-sm font-medium transition-all ${
               value === grade.value
-                ? 'border-brand-300 bg-brand-50 text-brand-700 shadow-sm'
-                : 'border-slate-200 bg-white text-slate-600 hover:border-slate-300 hover:text-slate-800'
+                ? 'border-blue-500/30 bg-blue-500/10 text-blue-400 shadow-sm'
+                : 'border-white/10 bg-white/[0.04] text-slate-400 hover:border-white/20 hover:text-white'
             }`}
           >
             {grade.label}

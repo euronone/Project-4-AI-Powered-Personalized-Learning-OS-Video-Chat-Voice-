@@ -1,4 +1,4 @@
-// File: C:\AI_Projects\Projects\Project-4-AI-Powered-Personalized-Learning-OS-Video-Chat-Voice\frontend\src\app\layout.tsx
+// File: C:\project4\Project-4-AI-Powered-Personalized-Learning-OS-Video-Chat-Voice-\frontend\src\app\layout.tsx
 import * as entry from '../../../src/app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
