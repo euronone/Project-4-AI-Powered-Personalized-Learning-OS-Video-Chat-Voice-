@@ -57,9 +57,23 @@ const config: Config = {
         sans: ['"Sora"', '"Segoe UI"', 'sans-serif'],
       },
       animation: {
-        'fade-in': 'fadeIn 0.45s ease-out',
-        'slide-up': 'slideUp 0.45s ease-out',
-        'slide-right': 'slideRight 0.35s ease-out',
+        'fade-in': 'fadeIn 0.45s ease-out both',
+        'slide-up': 'slideUp 0.5s cubic-bezier(0.16,1,0.3,1) both',
+        'slide-right': 'slideRight 0.35s ease-out both',
+        'float': 'float 6s ease-in-out infinite',
+        'glow-pulse': 'glowPulse 3s ease-in-out infinite',
+        'count-up': 'countUp 0.8s cubic-bezier(0.16,1,0.3,1) both',
+        'scale-in': 'scaleIn 0.5s cubic-bezier(0.16,1,0.3,1) both',
+        'shimmer': 'shimmer 2.5s linear infinite',
+        'gradient-shift': 'gradientShift 8s ease infinite',
+        'slide-up-1': 'slideUp 0.5s cubic-bezier(0.16,1,0.3,1) 0.05s both',
+        'slide-up-2': 'slideUp 0.5s cubic-bezier(0.16,1,0.3,1) 0.1s both',
+        'slide-up-3': 'slideUp 0.5s cubic-bezier(0.16,1,0.3,1) 0.15s both',
+        'slide-up-4': 'slideUp 0.5s cubic-bezier(0.16,1,0.3,1) 0.2s both',
+        'slide-up-5': 'slideUp 0.5s cubic-bezier(0.16,1,0.3,1) 0.25s both',
+        'slide-up-6': 'slideUp 0.5s cubic-bezier(0.16,1,0.3,1) 0.3s both',
+        'slide-up-7': 'slideUp 0.5s cubic-bezier(0.16,1,0.3,1) 0.35s both',
+        'slide-up-8': 'slideUp 0.5s cubic-bezier(0.16,1,0.3,1) 0.4s both',
       },
       keyframes: {
         fadeIn: {
@@ -67,17 +81,42 @@ const config: Config = {
           '100%': { opacity: '1' },
         },
         slideUp: {
-          '0%': { transform: 'translateY(20px)', opacity: '0' },
+          '0%': { transform: 'translateY(24px)', opacity: '0' },
           '100%': { transform: 'translateY(0)', opacity: '1' },
         },
         slideRight: {
           '0%': { transform: 'translateX(-10px)', opacity: '0' },
           '100%': { transform: 'translateX(0)', opacity: '1' },
         },
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-12px)' },
+        },
+        glowPulse: {
+          '0%, 100%': { opacity: '0.6' },
+          '50%': { opacity: '1' },
+        },
+        countUp: {
+          '0%': { transform: 'scale(0.5)', opacity: '0' },
+          '60%': { transform: 'scale(1.08)' },
+          '100%': { transform: 'scale(1)', opacity: '1' },
+        },
+        scaleIn: {
+          '0%': { transform: 'scale(0.92)', opacity: '0' },
+          '100%': { transform: 'scale(1)', opacity: '1' },
+        },
+        shimmer: {
+          '0%': { backgroundPosition: '-200% 0' },
+          '100%': { backgroundPosition: '200% 0' },
+        },
+        gradientShift: {
+          '0%, 100%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+        },
       },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 };
 
 export default config;

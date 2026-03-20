@@ -2,7 +2,7 @@ import logging
 from collections.abc import AsyncGenerator
 
 from app.config import settings
-from app.core.ai_client import claude_client
+from app.core.ai_client import openai_client
 
 logger = logging.getLogger(__name__)
 
@@ -27,9 +27,10 @@ def _build_messages(
     student_message: str,
     conversation_history: list[dict],
     chapter_content: dict | None,
+    system_prompt: str,
 ) -> list[dict]:
-    """Build Claude messages from prior conversation and optional chapter context."""
-    messages: list[dict] = []
+    """Build OpenAI messages from prior conversation and optional chapter context."""
+    messages: list[dict] = [{"role": "system", "content": system_prompt}]
 
     context_parts = []
     if chapter_content:
@@ -44,7 +45,7 @@ def _build_messages(
         if role in ("user", "assistant") and content:
             messages.append({"role": role, "content": content})
 
-    if not messages and context_parts:
+    if not messages[1:] and context_parts:
         prefixed = "\n".join(context_parts) + "\n\n" + student_message
         messages.append({"role": "user", "content": prefixed})
     else:
@@ -60,7 +61,7 @@ async def stream_teaching_response(
     student_grade: str = "",
     student_background: str | None = None,
 ) -> AsyncGenerator[str, None]:
-    """Stream a Socratic tutoring response from Claude."""
+    """Stream a Socratic tutoring response via OpenAI."""
     safe_content = chapter_content or {}
     system_prompt = _SYSTEM_TEMPLATE.format(
         grade=student_grade or "10",
@@ -69,19 +70,21 @@ async def stream_teaching_response(
         chapter_text=safe_content.get("text", "")[:2000],
     )
 
-    messages = _build_messages(student_message, conversation_history, chapter_content)
+    messages = _build_messages(student_message, conversation_history, chapter_content, system_prompt)
 
     try:
-        async with claude_client.messages.stream(
-            model=settings.claude_model,
+        stream = await openai_client.chat.completions.create(
+            model=settings.llm_model,
             max_tokens=1024,
-            system=system_prompt,
             messages=messages,
-        ) as stream:
-            async for chunk in stream.text_stream:
-                yield chunk
+            stream=True,
+        )
+        async for chunk in stream:
+            delta = chunk.choices[0].delta.content
+            if delta:
+                yield delta
     except Exception as e:
-        logger.exception("Claude API streaming error")
+        logger.exception("OpenAI API streaming error")
         yield f"I'm sorry, I encountered an error processing your request. Please try again. ({type(e).__name__})"
 
 
@@ -92,7 +95,7 @@ async def get_teaching_response(
     student_grade: str = "",
     student_background: str | None = None,
 ) -> str:
-    """Return a full non-streaming tutoring response from Claude."""
+    """Return a full non-streaming tutoring response via OpenAI."""
     safe_content = chapter_content or {}
     system_prompt = _SYSTEM_TEMPLATE.format(
         grade=student_grade or "10",
@@ -100,16 +103,15 @@ async def get_teaching_response(
         key_concepts=", ".join(safe_content.get("key_concepts", [])),
         chapter_text=safe_content.get("text", "")[:2000],
     )
-    messages = _build_messages(student_message, conversation_history, chapter_content)
+    messages = _build_messages(student_message, conversation_history, chapter_content, system_prompt)
 
     try:
-        response = await claude_client.messages.create(
-            model=settings.claude_model,
+        response = await openai_client.chat.completions.create(
+            model=settings.llm_model,
             max_tokens=1024,
-            system=system_prompt,
             messages=messages,
         )
-        return response.content[0].text
+        return response.choices[0].message.content or ""
     except Exception as e:
-        logger.exception("Claude API error")
+        logger.exception("OpenAI API error")
         return f"I'm sorry, I encountered an error processing your request. Please try again. ({type(e).__name__})"

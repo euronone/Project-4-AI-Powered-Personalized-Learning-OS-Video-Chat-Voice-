@@ -4,6 +4,15 @@ import { NextResponse, type NextRequest } from 'next/server'
 const publicPaths = ['/login', '/register']
 
 export async function middleware(request: NextRequest) {
+  // Bypass auth in e2e tests: Playwright sets the 'e2e-bypass=true' cookie
+  // This is only honoured outside of production.
+  if (
+    process.env.NODE_ENV !== 'production' &&
+    request.cookies.get('e2e-bypass')?.value === 'true'
+  ) {
+    return NextResponse.next({ request: { headers: request.headers } })
+  }
+
   let response = NextResponse.next({ request: { headers: request.headers } })
 
   const supabase = createServerClient(

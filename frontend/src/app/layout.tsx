@@ -17,7 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="font-sans antialiased">
         <AuthProvider>
-          <div className="min-h-screen text-slate-900">
+          <div className="min-h-screen text-slate-100">
             <Sidebar />
             <main className="min-h-screen overflow-y-auto">
               {children}

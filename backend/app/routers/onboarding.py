@@ -103,24 +103,28 @@ async def upload_marksheet(
 
     # Upload via sync Supabase SDK, offloaded to thread pool to avoid blocking
     supabase = get_supabase_client()
-    await asyncio.to_thread(
-        _sync_upload,
-        supabase,
-        "marksheets",
-        storage_path,
-        content,
-        file.content_type or "application/octet-stream",
-    )
+    try:
+        await asyncio.to_thread(
+            _sync_upload,
+            supabase,
+            "marksheets",
+            storage_path,
+            content,
+            file.content_type or "application/octet-stream",
+        )
+    except Exception:
+        # Storage bucket may not exist — upload is optional, proceed without it
+        storage_path = None
 
     # Record storage path on the student row
     student_id = uuid.UUID(user["sub"])
     result = await db.execute(select(Student).where(Student.id == student_id))
     student = result.scalar_one_or_none()
-    if student:
+    if student and storage_path:
         student.marksheet_path = storage_path
         await db.commit()
 
-    return {"path": storage_path}
+    return {"path": storage_path or ""}
 
 
 def _sync_upload(

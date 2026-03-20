@@ -2,7 +2,7 @@ import json
 import re
 
 from app.config import settings
-from app.core.ai_client import claude_client
+from app.core.ai_client import openai_client
 
 _EVALUATE_SYSTEM = """\
 You are an expert K-12 educator grading a student submission. Output valid JSON only—no markdown, no explanation.
@@ -52,10 +52,7 @@ async def evaluate_submission(
     student_response: dict,
     student_grade: str,
 ) -> dict:
-    """Evaluate a student's activity submission using Claude.
-
-    Returns score (0-100), correctness map, feedback, and guidance.
-    """
+    """Evaluate a student's activity submission using OpenAI."""
     user_prompt = (
         f"Grade level: {student_grade}\n\n"
         f"Activity instructions:\n{json.dumps(activity_prompt, indent=2)}\n\n"
@@ -64,15 +61,16 @@ async def evaluate_submission(
     )
 
     for attempt in range(2):
-        message = await claude_client.messages.create(
-            model=settings.claude_model,
+        response = await openai_client.chat.completions.create(
+            model=settings.llm_model,
             max_tokens=1024,
-            system=_EVALUATE_SYSTEM,
-            messages=[{"role": "user", "content": user_prompt}],
+            messages=[
+                {"role": "system", "content": _EVALUATE_SYSTEM},
+                {"role": "user", "content": user_prompt},
+            ],
         )
         try:
-            result = _extract_json(message.content[0].text)
-            # Clamp score to valid range
+            result = _extract_json(response.choices[0].message.content or "")
             result["score"] = max(0, min(100, int(result.get("score", 0))))
             return result
         except (ValueError, IndexError):
@@ -81,7 +79,7 @@ async def evaluate_submission(
 
 
 async def generate_activities(chapter_content: dict, subject_name: str, grade: str) -> list[dict]:
-    """Generate 3-5 assessment activities for a chapter using Claude."""
+    """Generate 3-5 assessment activities for a chapter using OpenAI."""
     user_prompt = (
         f"Subject: {subject_name}\n"
         f"Grade: {grade}\n\n"
@@ -91,14 +89,16 @@ async def generate_activities(chapter_content: dict, subject_name: str, grade: s
     )
 
     for attempt in range(2):
-        message = await claude_client.messages.create(
-            model=settings.claude_model,
+        response = await openai_client.chat.completions.create(
+            model=settings.llm_model,
             max_tokens=2048,
-            system=_GENERATE_SYSTEM,
-            messages=[{"role": "user", "content": user_prompt}],
+            messages=[
+                {"role": "system", "content": _GENERATE_SYSTEM},
+                {"role": "user", "content": user_prompt},
+            ],
         )
         try:
-            result = _extract_json(message.content[0].text)
+            result = _extract_json(response.choices[0].message.content or "")
             return result.get("activities", [])
         except (ValueError, IndexError):
             if attempt == 1:

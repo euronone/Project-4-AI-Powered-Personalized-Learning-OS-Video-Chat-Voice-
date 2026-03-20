@@ -247,11 +247,43 @@ class LLMRouter:
     async def _call_openai(self, operation: str, prompt: str, schema: Optional[Type[T]] = None, **kwargs: Any) -> Any:
         if not self.openai_api_key:
             raise ValueError("OPENAI_API_KEY not configured in environment")
-            
-        # Implementation hook for OpenAI Client
+
+        import json
+        from app.config import settings
+        from app.core.ai_client import openai_client
+
+        model = settings.openai_model
+
         if operation == "generate_stream":
-            async def _mock_stream():
-                for chunk in ["Mock ", "OpenAI ", "Stream"]:
-                    yield chunk
-            return _mock_stream()
-        raise NotImplementedError("OpenAI implementation pending")
+            async def _openai_stream():
+                stream = await openai_client.chat.completions.create(
+                    model=model,
+                    messages=[{"role": "user", "content": prompt}],
+                    stream=True,
+                )
+                async for chunk in stream:
+                    delta = chunk.choices[0].delta.content
+                    if delta:
+                        yield delta
+            return _openai_stream()
+
+        response = await openai_client.chat.completions.create(
+            model=model,
+            messages=[{"role": "user", "content": prompt}],
+        )
+        content = response.choices[0].message.content or ""
+
+        if schema is not None or operation == "generate_structured":
+            cleaned = content.strip()
+            if cleaned.startswith("```json"):
+                cleaned = cleaned[7:]
+            if cleaned.startswith("```"):
+                cleaned = cleaned[3:]
+            if cleaned.endswith("```"):
+                cleaned = cleaned[:-3]
+            try:
+                return json.loads(cleaned.strip())
+            except json.JSONDecodeError:
+                return content
+
+        return content

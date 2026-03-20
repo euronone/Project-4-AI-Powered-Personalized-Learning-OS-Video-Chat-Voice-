@@ -7,6 +7,8 @@ import GradeSelect from './components/GradeSelect'
 import SubjectPicker from './components/SubjectPicker'
 import BackgroundForm from './components/BackgroundForm'
 import MarksheetUpload from './components/MarksheetUpload'
+import { useAuth } from '@/context/AuthContext'
+import { apiPost, apiPostFormData } from '@/lib/api'
 
 const STEPS = ['Grade', 'Subjects', 'Background', 'Marksheet']
 
@@ -17,6 +19,8 @@ export default function OnboardingPage() {
   const [background, setBackground] = useState('')
   const [marksheetFile, setMarksheetFile] = useState<File | null>(null)
   const [submitting, setSubmitting] = useState(false)
+  const [error, setError] = useState('')
+  const { user } = useAuth()
 
   const canAdvance =
     (step === 0 && grade !== '') ||
@@ -26,10 +30,26 @@ export default function OnboardingPage() {
 
   const handleSubmit = async () => {
     setSubmitting(true)
-    // TODO: POST to /api/onboarding with { grade, subjects, background, marksheet }
-    setTimeout(() => {
+    setError('')
+    try {
+      await apiPost('/api/onboarding', {
+        name: user?.user_metadata?.name || user?.email || 'Student',
+        grade,
+        background: background || null,
+        interests: subjects,
+      })
+
+      if (marksheetFile) {
+        const formData = new FormData()
+        formData.append('file', marksheetFile)
+        await apiPostFormData('/api/onboarding/marksheet', formData)
+      }
+
       window.location.href = '/dashboard'
-    }, 1000)
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.')
+      setSubmitting(false)
+    }
   }
 
   return (
@@ -66,6 +86,9 @@ export default function OnboardingPage() {
             <p className="mb-6 text-sm text-slate-600">A few quick details help us tailor pacing, content depth, and guidance style.</p>
 
             <div className="min-h-[300px]">
+              {error && (
+                <div className="mb-4 rounded-lg border border-red-200 bg-red-50 p-3 text-sm text-red-700">{error}</div>
+              )}
               {step === 0 && <GradeSelect value={grade} onChange={setGrade} />}
               {step === 1 && <SubjectPicker selected={subjects} onChange={setSubjects} />}
               {step === 2 && <BackgroundForm value={background} onChange={setBackground} />}

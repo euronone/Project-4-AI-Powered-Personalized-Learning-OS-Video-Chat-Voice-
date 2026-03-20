@@ -1,11 +1,8 @@
 import json
 import re
 
-import app.core.ai_client as ai_client_module
 from app.config import settings
-from app.core.ai_client import claude_client
-
-_ORIGINAL_CLAUDE_CLIENT = claude_client
+from app.core.ai_client import openai_client
 
 _CURRICULUM_SYSTEM = """\
 You are a K-12 curriculum designer. Output valid JSON only—no markdown, no explanation.
@@ -51,19 +48,13 @@ def _extract_json(text: str) -> dict:
         raise ValueError("Could not parse JSON from model response")
 
 
-def _get_claude_client():
-    if claude_client is not _ORIGINAL_CLAUDE_CLIENT:
-        return claude_client
-    return ai_client_module.claude_client
-
-
 async def generate_curriculum(
     subject_name: str,
     grade: str,
     background: str | None,
     difficulty_level: str,
 ) -> dict:
-    """Generate ordered chapters for a subject using Claude. Retries once on parse failure."""
+    """Generate ordered chapters for a subject using OpenAI. Retries once on parse failure."""
     user_prompt = (
         f"Create a curriculum for:\n"
         f"Subject: {subject_name}\n"
@@ -74,14 +65,16 @@ async def generate_curriculum(
     )
 
     for attempt in range(2):
-        message = await _get_claude_client().messages.create(
-            model=settings.claude_model,
+        response = await openai_client.chat.completions.create(
+            model=settings.llm_model,
             max_tokens=4096,
-            system=_CURRICULUM_SYSTEM,
-            messages=[{"role": "user", "content": user_prompt}],
+            messages=[
+                {"role": "system", "content": _CURRICULUM_SYSTEM},
+                {"role": "user", "content": user_prompt},
+            ],
         )
         try:
-            return _extract_json(message.content[0].text)
+            return _extract_json(response.choices[0].message.content or "")
         except (ValueError, IndexError):
             if attempt == 1:
                 raise
@@ -106,14 +99,16 @@ async def generate_chapter_content(
     )
 
     for attempt in range(2):
-        message = await _get_claude_client().messages.create(
-            model=settings.claude_model,
+        response = await openai_client.chat.completions.create(
+            model=settings.llm_model,
             max_tokens=8192,
-            system=_CONTENT_SYSTEM,
-            messages=[{"role": "user", "content": user_prompt}],
+            messages=[
+                {"role": "system", "content": _CONTENT_SYSTEM},
+                {"role": "user", "content": user_prompt},
+            ],
         )
         try:
-            return _extract_json(message.content[0].text)
+            return _extract_json(response.choices[0].message.content or "")
         except (ValueError, IndexError):
             if attempt == 1:
                 raise

@@ -1,45 +1,51 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useMemo, useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Search, Star, Users, Clock3, SlidersHorizontal } from 'lucide-react'
+import { Search, BookOpen, SlidersHorizontal } from 'lucide-react'
+import { apiGet } from '@/lib/api'
 
-const courses = [
-  { id: 1, slug: 'mathematics', title: 'Mathematics — Algebra & Calculus', category: 'Mathematics', level: 'Intermediate', duration: '16 weeks', rating: 4.9, students: 4200, coverImg: '/subjects/math.jpg', progress: 72 },
-  { id: 2, slug: 'physics', title: 'Physics — Mechanics & Thermodynamics', category: 'Science', level: 'Intermediate', duration: '14 weeks', rating: 4.8, students: 3100, coverImg: '/subjects/physics.jpg', progress: 45 },
-  { id: 3, slug: 'chemistry', title: 'Chemistry — Organic & Inorganic', category: 'Science', level: 'Intermediate', duration: '14 weeks', rating: 4.7, students: 2800, coverImg: '/subjects/chemistry.jpg', progress: 60 },
-  { id: 4, slug: 'biology', title: 'Biology — Cell Biology & Genetics', category: 'Science', level: 'Beginner', duration: '12 weeks', rating: 4.8, students: 3500, coverImg: '/subjects/biology.jpg', progress: 33 },
-  { id: 5, slug: 'english', title: 'English — Literature & Composition', category: 'Language Arts', level: 'Intermediate', duration: '16 weeks', rating: 4.9, students: 5600, coverImg: '/subjects/english.jpg', progress: 85 },
-  { id: 6, slug: 'cs', title: 'Computer Science — Programming Fundamentals', category: 'Computer Science', level: 'Beginner', duration: '10 weeks', rating: 4.8, students: 6200, coverImg: '/subjects/cs.jpg', progress: 20 },
-  { id: 7, slug: 'history', title: 'History — World Civilizations', category: 'Social Studies', level: 'Beginner', duration: '12 weeks', rating: 4.6, students: 2400, coverImg: '/subjects/history.jpg', progress: 55 },
-  { id: 8, slug: 'geography', title: 'Geography — Physical & Human', category: 'Social Studies', level: 'Beginner', duration: '10 weeks', rating: 4.7, students: 1900, coverImg: '/subjects/geography.jpg', progress: 40 },
-  { id: 9, slug: 'economics', title: 'Economics — Micro & Macroeconomics', category: 'Social Studies', level: 'Intermediate', duration: '12 weeks', rating: 4.5, students: 1500, coverImg: '/subjects/economics.jpg', progress: 28 },
-  { id: 10, slug: 'hindi', title: 'Hindi — Literature & Grammar', category: 'Language Arts', level: 'Intermediate', duration: '14 weeks', rating: 4.7, students: 3800, coverImg: '/subjects/hindi.jpg', progress: 68 },
-  { id: 11, slug: 'environmental', title: 'Environmental Science — Ecology & Conservation', category: 'Science', level: 'Beginner', duration: '8 weeks', rating: 4.6, students: 2200, coverImg: '/subjects/environmental.jpg', progress: 50 },
-  { id: 12, slug: 'art', title: 'Art & Design — Visual Arts Foundations', category: 'Creative Arts', level: 'Beginner', duration: '8 weeks', rating: 4.8, students: 1700, coverImg: '/subjects/art.jpg', progress: 15 },
-]
+interface Chapter {
+  id: string
+  status: string
+}
 
-const categories = ['All', 'Mathematics', 'Science', 'Language Arts', 'Computer Science', 'Social Studies', 'Creative Arts']
+interface Subject {
+  subject_id: string
+  subject_name: string
+  chapters: Chapter[]
+}
 
 export default function CoursesPage() {
+  const [subjects, setSubjects] = useState<Subject[]>([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState('')
   const [searchQuery, setSearchQuery] = useState('')
-  const [selectedCategory, setSelectedCategory] = useState('All')
 
-  const filteredCourses = useMemo(() => {
-    return courses.filter((course) => {
-      const matchesSearch = course.title.toLowerCase().includes(searchQuery.toLowerCase())
-      const matchesCategory = selectedCategory === 'All' || course.category === selectedCategory
-      return matchesSearch && matchesCategory
-    })
-  }, [searchQuery, selectedCategory])
+  useEffect(() => {
+    apiGet<Subject[]>('/api/curriculum/')
+      .then((data) => setSubjects(data))
+      .catch((err: unknown) => {
+        const msg = err instanceof Error ? err.message : String(err)
+        setError(`Failed to load courses: ${msg}`)
+      })
+      .finally(() => setLoading(false))
+  }, [])
+
+  const filteredSubjects = useMemo(() => {
+    if (!searchQuery) return subjects
+    return subjects.filter((s) =>
+      s.subject_name.toLowerCase().includes(searchQuery.toLowerCase())
+    )
+  }, [subjects, searchQuery])
 
   return (
     <div className="app-shell space-y-6">
       <section className="surface-card p-6">
         <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
           <div>
-            <h1 className="display-title text-2xl font-semibold tracking-tight text-slate-900 md:text-3xl">Course Library</h1>
-            <p className="mt-1 text-sm text-slate-500">Structured paths designed for focused, measurable progress.</p>
+            <h1 className="display-title text-2xl font-semibold tracking-tight text-slate-900 md:text-3xl">My Courses</h1>
+            <p className="mt-1 text-sm text-slate-500">Your personalized AI-generated curriculum.</p>
           </div>
 
           <div className="flex w-full gap-3 lg:w-auto">
@@ -59,65 +65,66 @@ export default function CoursesPage() {
             </button>
           </div>
         </div>
-
-        <div className="mt-5 flex gap-2 overflow-x-auto pb-1">
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setSelectedCategory(category)}
-              className={
-                selectedCategory === category
-                  ? 'rounded-full bg-brand-700 px-3.5 py-1.5 text-xs font-semibold text-white'
-                  : 'subtle-chip px-3.5 py-1.5 text-xs font-semibold hover:bg-slate-100'
-              }
-            >
-              {category}
-            </button>
-          ))}
-        </div>
       </section>
 
-      <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-        {filteredCourses.map((course) => (
-          <Link key={course.id} href={`/learn/${course.slug}`} className="card-hover overflow-hidden rounded-2xl border border-slate-200 bg-white">
-            <div className="relative">
-              <img src={course.coverImg} alt={course.title} className="subject-image h-40 w-full object-cover" />
-              <div className="subject-image-overlay absolute inset-0" />
-              <span className="absolute right-3 top-3 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-semibold text-slate-700">
-                {course.level}
-              </span>
-            </div>
-            <div className="p-4">
-              <h3 className="line-clamp-2 text-base font-semibold text-slate-900">{course.title}</h3>
-              <p className="mt-1 text-xs uppercase tracking-wide text-slate-500">{course.category}</p>
-
-              <div className="mt-4 flex items-center gap-4 text-xs text-slate-600">
-                <span className="inline-flex items-center gap-1">
-                  <Star className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
-                  {course.rating}
-                </span>
-                <span className="inline-flex items-center gap-1">
-                  <Users className="h-3.5 w-3.5" />
-                  {(course.students / 1000).toFixed(1)}K
-                </span>
-                <span className="inline-flex items-center gap-1">
-                  <Clock3 className="h-3.5 w-3.5" />
-                  {course.duration}
-                </span>
-              </div>
-
-              <div className="mt-4 h-2 overflow-hidden rounded-full bg-slate-100">
-                <div className="h-full rounded-full bg-brand-700" style={{ width: `${course.progress}%` }} />
-              </div>
-              <p className="mt-2 text-xs font-medium text-slate-600">{course.progress}% completed</p>
-            </div>
-          </Link>
-        ))}
-      </section>
-
-      {filteredCourses.length === 0 && (
+      {loading && (
         <section className="surface-card p-10 text-center">
-          <p className="text-sm text-slate-500">No courses match your current search and category filters.</p>
+          <div className="flex flex-col items-center gap-3 text-slate-400">
+            <div className="h-8 w-8 animate-spin rounded-full border-2 border-brand-700 border-t-transparent" />
+            <p className="text-sm">Loading your courses…</p>
+          </div>
+        </section>
+      )}
+
+      {error && (
+        <section className="surface-card p-6">
+          <p className="text-sm text-red-500">{error}</p>
+        </section>
+      )}
+
+      {!loading && !error && (
+        <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          {filteredSubjects.map((subject) => {
+            const completedCount = subject.chapters.filter(c => c.status === 'completed').length
+            const totalChapters = subject.chapters.length
+            const progress = totalChapters > 0 ? Math.round((completedCount / totalChapters) * 100) : 0
+
+            return (
+              <Link
+                key={subject.subject_id}
+                href={`/learn/${subject.subject_id}`}
+                className="card-hover overflow-hidden rounded-2xl border border-slate-200 bg-white"
+              >
+                <div className="flex items-center justify-center h-40 bg-gradient-to-br from-brand-700/10 to-brand-700/20">
+                  <BookOpen className="h-12 w-12 text-brand-700/60" />
+                </div>
+                <div className="p-4">
+                  <h3 className="line-clamp-2 text-base font-semibold text-slate-900">{subject.subject_name}</h3>
+                  <p className="mt-1 text-xs uppercase tracking-wide text-slate-500">{totalChapters} chapters</p>
+
+                  <div className="mt-4 h-2 overflow-hidden rounded-full bg-slate-100">
+                    <div className="h-full rounded-full bg-brand-700" style={{ width: `${progress}%` }} />
+                  </div>
+                  <p className="mt-2 text-xs font-medium text-slate-600">{progress}% completed</p>
+                </div>
+              </Link>
+            )
+          })}
+        </section>
+      )}
+
+      {!loading && !error && filteredSubjects.length === 0 && (
+        <section className="surface-card p-10 text-center">
+          <p className="text-sm text-slate-500">
+            {subjects.length === 0
+              ? 'No courses yet. Complete onboarding to generate your curriculum.'
+              : 'No courses match your search.'}
+          </p>
+          {subjects.length === 0 && (
+            <Link href="/onboarding" className="mt-4 inline-block rounded-lg bg-brand-700 px-4 py-2 text-sm text-white hover:bg-brand-600">
+              Go to Onboarding
+            </Link>
+          )}
         </section>
       )}
     </div>

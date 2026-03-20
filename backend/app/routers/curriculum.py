@@ -93,6 +93,23 @@ async def generate_curriculum_endpoint(
     return await _build_response(subject, db)
 
 
+@router.get("/", response_model=list[CurriculumResponse])
+async def list_subjects(
+    user: dict = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db_session),
+):
+    """List all subjects for the current student."""
+    student_id = uuid.UUID(user["sub"])
+    result = await db.execute(
+        select(Subject).where(Subject.student_id == student_id).order_by(Subject.created_at)
+    )
+    subjects = result.scalars().all()
+    responses = []
+    for subject in subjects:
+        responses.append(await _build_response(subject, db))
+    return responses
+
+
 @router.get("/{subject_id}", response_model=CurriculumResponse)
 async def get_curriculum(
     subject_id: str,

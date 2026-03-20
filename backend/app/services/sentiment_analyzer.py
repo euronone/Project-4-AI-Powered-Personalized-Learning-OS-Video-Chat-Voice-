@@ -1,7 +1,7 @@
 import json
 import re
 
-from app.core.ai_client import claude_client
+from app.core.ai_client import openai_client
 from app.config import settings
 
 _VALID_EMOTIONS = {"engaged", "confused", "bored", "frustrated", "happy", "drowsy"}
@@ -22,38 +22,37 @@ def _extract_json(text: str) -> dict:
         match = re.search(r"\{.*?\}", text, re.DOTALL)
         if match:
             return json.loads(match.group())
-        raise ValueError(f"No JSON found in Claude response: {text!r}")
+        raise ValueError(f"No JSON found in response: {text!r}")
 
 
 async def analyze_frame(frame_base64: str) -> dict:
-    """Analyze a video frame for student sentiment using Claude Vision.
+    """Analyze a video frame for student sentiment using GPT-4o Vision.
 
     Detects: engagement, confusion, boredom, frustration, happiness, drowsiness.
     Returns a dict with 'emotion' and 'confidence' keys.
     """
-    response = await claude_client.messages.create(
-        model=settings.claude_vision_model,
+    response = await openai_client.chat.completions.create(
+        model=settings.openai_vision_model,
         max_tokens=64,
-        system=_SYSTEM_PROMPT,
         messages=[
+            {"role": "system", "content": _SYSTEM_PROMPT},
             {
                 "role": "user",
                 "content": [
                     {
-                        "type": "image",
-                        "source": {
-                            "type": "base64",
-                            "media_type": "image/jpeg",
-                            "data": frame_base64,
+                        "type": "image_url",
+                        "image_url": {
+                            "url": f"data:image/jpeg;base64,{frame_base64}",
+                            "detail": "low",
                         },
                     },
                     {"type": "text", "text": "Analyze the student's emotional state."},
                 ],
-            }
+            },
         ],
     )
 
-    result = _extract_json(response.content[0].text)
+    result = _extract_json(response.choices[0].message.content or "")
     emotion = result.get("emotion", "engaged")
     if emotion not in _VALID_EMOTIONS:
         emotion = "engaged"

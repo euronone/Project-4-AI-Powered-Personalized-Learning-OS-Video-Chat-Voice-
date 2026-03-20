@@ -159,12 +159,12 @@ async def teaching_chat(
                 student_background=student.background if student else None,
             ):
                 response_parts.append(chunk)
-                yield f"data: {json.dumps({'content': chunk})}\\n\\n"
+                yield f"data: {json.dumps({'content': chunk})}\n\n"
         except Exception:
             logger.exception("SSE stream error")
-            yield f"data: {json.dumps({'error': 'Stream interrupted'})}\\n\\n"
+            yield f"data: {json.dumps({'error': 'Stream interrupted'})}\n\n"
         finally:
-            yield "data: [DONE]\\n\\n"
+            yield "data: [DONE]\n\n"
             full_content = "".join(response_parts)
             if full_content:
                 async with create_session() as persist_db:
@@ -227,11 +227,11 @@ async def general_chat_stream(data: ChatRequest):
                 student_message=data.message,
                 conversation_history=data.conversation_history,
             ):
-                yield f"data: {json.dumps(chunk)}\\n\\n"
-            yield "data: [DONE]\\n\\n"
+                yield f"data: {json.dumps(chunk)}\n\n"
+            yield "data: [DONE]\n\n"
         except Exception:
             logger.exception("SSE stream error")
-            yield f"data: {json.dumps('[ERROR]')}\\n\\n"
+            yield f"data: {json.dumps('[ERROR]')}\n\n"
 
     return StreamingResponse(
         event_stream(),
